@@ -1083,3 +1083,7 @@ main section:not(.hero):not(.page-hero)>.wrap>h2::after{content:"";display:block
 @media (max-width:760px){.page-hero{padding-block:52px 56px!important}.page-hero .lede{font-size:15.5px;text-wrap:pretty}.page-hero h1::after{margin-top:16px}}
 .pt-mq .mq-track .pt-n img[src$="china-broadnet.png"]{height:36px}
 .pt-mq .mq-track .pt-n img[src$="google-cloud.png"]{height:32px}
+/* 客户与合作伙伴标志：原色显示 */
+.mq-track img,.pt-mq .mq-track .pt-n img,.logos.logos-img img{filter:none!important;opacity:1!important}
+/* 触屏设备：手指碰到不暂停，持续滚动；电脑鼠标悬停仍暂停 */
+@media (hover:none),(pointer:coarse){.logos-mq:hover .mq-track,.logos-mq:active .mq-track{animation-play-state:running!important}}
