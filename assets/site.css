@@ -1087,3 +1087,16 @@ main section:not(.hero):not(.page-hero)>.wrap>h2::after{content:"";display:block
 .mq-track img,.pt-mq .mq-track .pt-n img,.logos.logos-img img{filter:none!important;opacity:1!important}
 /* 触屏设备：手指碰到不暂停，持续滚动；电脑鼠标悬停仍暂停 */
 @media (hover:none),(pointer:coarse){.logos-mq:hover .mq-track,.logos-mq:active .mq-track{animation-play-state:running!important}}
+/* 首屏照片边缘渐隐：底部融入白色、左右两侧轻微淡出，消除硬边 */
+.hero-split .hero-copy{background-image:
+  linear-gradient(0deg,#fff 0%,rgba(255,255,255,.85) 10%,rgba(255,255,255,0) 32%),
+  linear-gradient(90deg,rgba(255,255,255,.75) 0%,rgba(255,255,255,0) 14%,rgba(255,255,255,0) 86%,rgba(255,255,255,.75) 100%),
+  radial-gradient(70% 60% at 50% 45%,rgba(255,255,255,.92) 0%,rgba(243,248,252,.84) 55%,rgba(243,248,252,.70) 100%),
+  url(hero-dc-m.jpg)!important;background-size:auto,auto,auto,cover!important;background-position:center,center,center,center!important}
+@media (min-width:761px){.hero-split .hero-copy{background-image:
+  linear-gradient(0deg,#fff 0%,rgba(255,255,255,.88) 9%,rgba(255,255,255,0) 30%),
+  linear-gradient(90deg,rgba(255,255,255,.8) 0%,rgba(255,255,255,.25) 8%,rgba(255,255,255,0) 16%,rgba(255,255,255,0) 84%,rgba(255,255,255,.25) 92%,rgba(255,255,255,.8) 100%),
+  radial-gradient(46% 42% at 50% 46%,rgba(255,255,255,.90) 0%,rgba(255,255,255,.72) 55%,rgba(255,255,255,0) 100%),
+  linear-gradient(180deg,rgba(243,248,252,.66) 0%,rgba(243,248,252,.48) 40%,rgba(243,248,252,.40) 100%),
+  url(hero-dc.jpg)!important;background-size:auto,auto,auto,auto,cover!important;background-position:center,center,center,center,49% 58%!important}}
+.hero{background:#fff!important}
