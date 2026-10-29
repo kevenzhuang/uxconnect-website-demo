@@ -878,3 +878,47 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 .hero-copy>.cta{justify-content:center}
 @media (max-width:760px){.hero-copy>.cta{flex-direction:column;align-items:stretch;max-width:340px;margin-inline:auto}.hero-copy>.cta .btn{justify-content:center}}
 .hero-copy>.lede,.hero-copy>h1{text-wrap:balance}
+
+/* ================= uXconnect 品牌：蓝色为主，金/棕点缀（≈10%） ================= */
+:root{--ux-gold:#FFB100;--ux-brown:#7C5A39}
+.logo img{height:40px!important}
+@media (max-width:700px){.logo img{height:34px!important}}
+/* 页脚：uXconnect 主标志 + 友讯实业母公司标识 */
+.site-footer .flogo{height:44px;margin-bottom:16px}
+.fco{display:flex;align-items:center;gap:12px;margin:0 0 18px;padding:10px 12px;background:#fff;border-radius:8px;width:max-content;max-width:100%}
+.fco img{height:30px;width:auto;display:block}
+.fco span{font-size:12.5px;color:#3D4A57;line-height:1.4}
+/* 1. 小标签前的三根竖条 = 标志里的楼宇竖条 */
+.eyebrow i b,.eyebrow i b:nth-child(2){background:var(--ux-gold)!important}
+.eyebrow i b:nth-child(1),.eyebrow i b:nth-child(3){background:var(--ux-brown)!important}
+/* 2. 地图上海/香港枢纽 = 金色 */
+.sm .hub{fill:var(--ux-gold)!important;stroke:#052E5A!important;stroke-width:2.2}
+.sm .ring{stroke:var(--ux-gold)!important}
+/* 3. 数据栏 + / % 上标 = 金色 */
+.stat b sup{color:#E59E00}
+/* 4. 子页面首屏装饰竖条 = 标志竖条（金/棕） */
+.page-hero .bars i{background:#F3E3C3!important}
+.page-hero .bars i:nth-child(odd){background:#E3CDA8!important}
+.page-hero .bars i:nth-child(3n){background:#C9A57E!important}
+.page-hero .bars i:nth-child(6){background:var(--ux-gold)!important}
+/* 5. 板块标题下的短金线 */
+.pg-index section:not(.hero)>.wrap>h2::after{content:"";display:block;width:36px;height:3px;border-radius:2px;background:var(--ux-gold);margin:18px auto 0}
+/* 6. 导航当前项下划线 = 金色 */
+.nav a[aria-current="page"],.nav .on{box-shadow:inset 0 -2px 0 var(--ux-gold)}
+/* 7. 试用横幅右侧条纹加入金色 */
+.band .stripes{background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(1,144,238,.10) 18px 24px,transparent 24px 34px,rgba(255,177,0,.30) 34px 37px)!important}
+.nav a[aria-current="page"],.nav .dd.cur>button{box-shadow:inset 0 -2px 0 var(--ux-gold)!important}
+.band .wrap::after{background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(1,144,238,.20) 18px 24px,transparent 24px 34px,rgba(255,177,0,.45) 34px 37px)!important}
+/* 8. 页面中段深色区："为什么选择友讯"——深藏青底 + 金色图标，形成 亮-暗-亮 节奏 */
+.pg-index section.why{background:#052E5A!important;color:#C9D6E3;position:relative;overflow:hidden}
+.pg-index section.why::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 0%,rgba(1,144,238,.22),transparent 60%),radial-gradient(40% 60% at 10% 100%,rgba(255,177,0,.10),transparent 60%);pointer-events:none}
+.pg-index section.why h2{color:#fff}
+.pg-index section.why h2::after{background:var(--ux-gold)}
+.pg-index section.why .lede{color:#A9B8C8}
+.pg-index section.why .eyebrow{color:#7CC4F0}
+.pg-index .why .feats{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.10)}
+.pg-index .why .feats>div{background:rgba(5,46,90,.82);transition:background .25s}
+.pg-index .why .feats>div:hover{background:rgba(11,64,120,.9)}
+.pg-index .why .feats svg{stroke:var(--ux-gold)!important}
+.pg-index .why .feats h3{color:#fff}
+.pg-index .why .feats p{color:#A9B8C8}
