@@ -49,9 +49,9 @@
     var x=c.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,w,H);
     // soft glow under mainland China, drawn first so land dots stay crisp above it
     var cg=this.P(112,31),g=x.createRadialGradient(cg[0],cg[1],0,cg[0],cg[1],Math.max(60,22*p));
-    g.addColorStop(0,'rgba(248,181,0,.14)');g.addColorStop(.6,'rgba(248,181,0,.04)');g.addColorStop(1,'rgba(248,181,0,0)');x.fillStyle=g;x.fillRect(0,0,w,H);
+    g.addColorStop(0,'rgba(1,144,238,.16)');g.addColorStop(.6,'rgba(1,144,238,.05)');g.addColorStop(1,'rgba(1,144,238,0)');x.fillStyle=g;x.fillRect(0,0,w,H);
     var s=this.mode==='narrow'?4.2:Math.max(3.6,Math.min(4.6,w/300)),r=s*.26;
-    x.fillStyle='#D8D2C6';x.beginPath();
+    x.fillStyle='#C9D6E3';x.beginPath();
     for(var yy=s/2,row=0;yy<H;yy+=s*.866,row++){
       for(var xx=(row%2?s:s/2);xx<w;xx+=s){
         var lon=lon0+xx/p,lat=lat0-yy/py;if(lon>=180+160)lon-=360;

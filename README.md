@@ -1,4 +1,4 @@
-# uXconnect 友讯官网 · 预览版
+# UXconnect 友讯官网 · 预览版
 
 上海友讯实业有限公司新官网的公开预览版（静态页面，GitHub Pages 托管）。
 
