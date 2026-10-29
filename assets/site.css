@@ -807,3 +807,23 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (max-width:760px){.mq-track span{width:150px;height:76px;padding:0 20px}.mq-track img{max-height:32px}.mq-track{animation-duration:34s}.mq-row.rev .mq-track{animation-duration:38s}}
 @media (prefers-reduced-motion:reduce){.mq-track{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.mq-track span[aria-hidden]{display:none}.logos-mq{-webkit-mask-image:none;mask-image:none}}
+
+/* ---------- 设计打磨：字体 / 高亮 / 数据 / 居中节奏 ---------- */
+/* 1. 不再使用等宽"代码字体"，统一为正文黑体 */
+:root{--f-mono:var(--f-sans)}
+.eyebrow{font-size:12.5px;letter-spacing:.18em;font-weight:600}
+/* 2. 去掉标题荧光笔高亮，只靠字号与字重区分层次 */
+.hero h1 em,.hero h1 em span{background:none!important;color:inherit}
+.hero h1 span:last-child{color:#035A9D}
+/* 3. 数据栏：大数字说话 */
+.stat b{font-size:clamp(30px,3.6vw,46px);font-weight:600;letter-spacing:-.02em;line-height:1.1;color:#052E5A}
+.stat b sup{font-size:.42em;font-weight:600;color:#0190EE;margin-left:2px;vertical-align:.95em}
+.stat span{font-size:13.5px;color:#5B6673}
+.hero-copy>.lede{font-size:18px;color:#3D4A57}
+/* 4. 首页展示型板块：标题区居中，卡片内容保持左对齐 */
+.pg-index section:not(.hero)>.wrap>.eyebrow{justify-content:center}
+.pg-index section:not(.hero)>.wrap>h2,.pg-index section:not(.hero)>.wrap>.lede{text-align:center;margin-inline:auto}
+.pg-index section:not(.hero)>.wrap>.lede{max-width:40em}
+.pg-index section:not(.hero)>.wrap>.cta,.pg-index section:not(.hero)>.wrap>p:has(>a.link){justify-content:center;text-align:center}
+.pg-index .feats h3 small{display:none}
+@media (max-width:760px){.eyebrow{font-size:11.5px;letter-spacing:.1em}}
