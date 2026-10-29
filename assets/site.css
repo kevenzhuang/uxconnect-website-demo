@@ -1100,3 +1100,4 @@ main section:not(.hero):not(.page-hero)>.wrap>h2::after{content:"";display:block
   linear-gradient(180deg,rgba(243,248,252,.66) 0%,rgba(243,248,252,.48) 40%,rgba(243,248,252,.40) 100%),
   url(hero-dc.jpg)!important;background-size:auto,auto,auto,auto,cover!important;background-position:center,center,center,center,49% 58%!important}}
 .hero{background:#fff!important}
+.logos-mq:hover .mq-track,.logos-mq:active .mq-track{animation-play-state:running!important}
