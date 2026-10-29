@@ -52,3 +52,5 @@ d.addEventListener('click',function(e){if(e.target===d||e.target.tagName==='BUTT
   var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var e=en.target;e.classList.add('in');if(e.classList.contains('stat')){var b=e.querySelector('b');if(b&&!b.dataset.c){b.dataset.c=1;count(b)}}io.unobserve(e)}})},{rootMargin:'0px 0px -8% 0px',threshold:.12});
   els.forEach(function(e){io.observe(e)});
 })();
+(function(){var bar=document.querySelector('.mbar');if(!bar)return;var hero=document.querySelector('.hero,.page-hero');
+function u(){var lim=hero?hero.offsetTop+hero.offsetHeight*0.6:200;bar.classList.toggle('show',scrollY>lim)}addEventListener('scroll',u,{passive:true});u()})();

@@ -972,3 +972,29 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 @media (min-width:901px) and (max-width:1200px){.site-footer .cols{grid-template-columns:2fr 1fr 1fr 1fr 1fr}}
 @media (max-width:1100px){.site-footer .cols{grid-template-columns:repeat(4,1fr)!important}.site-footer .cols>div:first-child{grid-column:1/-1}}
 @media (max-width:640px){.site-footer .cols{grid-template-columns:1fr 1fr!important}}
+/* ---------- 首屏按钮：克制、等高、并排 ---------- */
+.hero-copy .btn .arr{margin-left:6px;transition:transform .2s}
+.hero-copy .btn.primary:hover .arr{transform:translateX(3px)}
+.hero-note{margin:16px auto 0;font-size:13px;color:#6B7785;letter-spacing:.02em}
+@media (max-width:760px){
+  .hero-copy>.cta{flex-direction:row!important;flex-wrap:nowrap;justify-content:center;gap:10px;max-width:none!important}
+  .hero-copy>.cta .btn{padding:12px 18px;font-size:15px;border-radius:999px;flex:0 1 auto}
+  .hero-copy>.cta .btn.ghost{background:transparent;border-color:transparent;color:#035A9D;padding-inline:8px}
+  .hero-copy>.cta .btn.ghost::after{content:" →"}
+  .hero-note{font-size:12px;margin-top:14px}
+}
+/* ---------- 手机底部联系条 v2：更轻、更薄，滚过首屏才出现 ---------- */
+@media (max-width:760px){
+  .mbar{grid-template-columns:repeat(3,52px) 1fr;align-items:center;gap:2px;padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));
+    background:rgba(255,255,255,.92);border-top:1px solid rgba(5,46,90,.08);box-shadow:0 -6px 20px rgba(5,46,90,.06);
+    transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+  .mbar.show{transform:none}
+  .mbar a,.mbar button{min-height:44px;font-size:10.5px;color:#5B6673;gap:1px}
+  .mbar svg{width:20px;height:20px;stroke-width:1.6}
+  .mbar a.go{height:42px;min-height:0;margin:0 0 0 8px;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:.04em;background:#035A9D;box-shadow:0 4px 12px rgba(3,90,157,.25)}
+  body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
+}
+.hero-copy .btn .sm-t{display:none}
+@media (max-width:760px){.hero-copy .btn .lg{display:none}.hero-copy .btn .sm-t{display:inline}
+  .hero-copy>.cta .btn.primary{padding:11px 22px;font-size:15px}
+  .hero-copy>.cta .btn.ghost::after{content:" →"}}
