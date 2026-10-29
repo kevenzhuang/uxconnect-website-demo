@@ -33,7 +33,7 @@
     function go(){var w=box.clientWidth;if(!w)return;var k=self.pick(w)+w;if(k===last)return;last=k;self.render()}
     loadMask(src,go);var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){if(maskData)go()},150)});
   }
-  Show.prototype.pick=function(w){if(w<700)return 'narrow';if(this.box.closest&&this.box.closest('.hero-split')&&window.matchMedia&&window.matchMedia('(min-width:1200px)').matches)return 'narrow';return 'wide'};
+  Show.prototype.pick=function(w){if(w<700)return 'narrow';return 'wide'};
   Show.prototype.render=function(){
     var w=this.box.clientWidth,mode=this.pick(w),win=WIN[mode];
     var lonSpan=win.lon[1]-win.lon[0],latSpan=win.lat[0]-win.lat[1];
