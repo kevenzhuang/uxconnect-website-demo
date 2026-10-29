@@ -845,3 +845,29 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
   .hero-copy>.cta .btn{padding:15px 30px;font-size:16px}
   .hero-copy>.eyebrow{font-size:13px}
 }
+/* 合作伙伴：单行滚动（与客户墙同一套动效，方向相反、略慢） */
+.partners{padding-block:44px 28px;border-bottom:1px solid #DCE5EE}
+.pt-title{margin-bottom:8px}
+.pt-mq{margin-top:0}
+.pt-mq .mq-track{animation-duration:40s;animation-direction:reverse}
+.pt-mq .mq-track .pt-n{flex:0 0 auto;width:auto;height:72px;padding:0 40px;display:flex;align-items:center;font-size:19px;font-weight:700;color:#8A97A6;letter-spacing:.02em;white-space:nowrap}
+.pt-mq .mq-track .pt-n img{height:32px;width:auto;filter:grayscale(1);opacity:.6;transition:filter .25s,opacity .25s}
+.pt-mq .mq-track .pt-n:hover img{filter:none;opacity:1}
+@media (max-width:760px){.pt-mq .mq-track .pt-n{height:58px;padding:0 24px;font-size:16px}.pt-mq .mq-track{animation-duration:28s}}
+@media (prefers-reduced-motion:reduce){.pt-mq .mq-track .pt-n[aria-hidden]{display:none}}
+.pt-mq .mq-track .pt-n img{height:34px}
+.pt-mq .mq-track .pt-n img[src$="china-unicom.png"],.pt-mq .mq-track .pt-n img[src$="aws.png"],.pt-mq .mq-track .pt-n img[src$="equinix.png"]{height:42px}
+.pt-mq .mq-track .pt-n img[src$="azure.png"],.pt-mq .mq-track .pt-n img[src$="huawei-cloud.png"]{height:36px}
+@media (max-width:760px){.pt-mq .mq-track .pt-n img{height:26px!important}}
+.pt-mq .mq-track .pt-n img[src$="gds.png"]{height:42px}
+.pt-mq .mq-track .pt-n img[src$="china-unicom.png"]{height:50px}
+.pt-mq .mq-track .pt-n img[src$="aliyun.png"],.pt-mq .mq-track .pt-n img[src$="tencent-cloud.png"]{height:28px}
+/* 滚动速度统一为约 30px/秒，客户墙与合作伙伴条节奏一致 */
+.mq-track{animation-duration:60s}
+.mq-row.rev .mq-track{animation-duration:66s}
+.pt-mq .mq-track{animation-duration:105s}
+@media (max-width:760px){.mq-track{animation-duration:45s}.mq-row.rev .mq-track{animation-duration:50s}.pt-mq .mq-track{animation-duration:80s}}
+/* 合作伙伴条移到客户评价之后，作为"客户 → 生态 → 资质"的过渡 */
+.partners{border-bottom:0;padding-block:8px 36px}
+.partners .pt-title{font-size:16px;color:#3D4A57;font-weight:600}
+.partners{padding-block:48px 44px;border-top:1px solid #DCE5EE}.partners .pt-title{margin-bottom:14px}
