@@ -674,3 +674,18 @@ body{color:#3D4A57}
 .certs{grid-template-columns:repeat(5,1fr)}
 @media (max-width:900px){.certs{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:520px){.certs{grid-template-columns:repeat(2,1fr)}}
+
+/* 标志元素：图形 + 书法字（不含网址） */
+.logo img{height:47px}
+@media (max-width:700px){.logo img{height:42px}}
+.site-footer .flogo{height:50px;margin-bottom:18px}
+
+.rz-head{margin-top:64px;padding-top:40px;border-top:1px solid var(--line)}
+.rz-head h3{font-size:22px;color:var(--ink,#052E5A)}
+.rz-head p{color:var(--muted);margin-top:8px;max-width:640px}
+.certs.rz{grid-template-columns:repeat(6,1fr);margin-top:28px}
+.rz-list{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px 20px}
+.rz-list li{font-size:13px;color:var(--muted);padding:8px 0 8px 14px;border-bottom:1px solid var(--line);position:relative}
+.rz-list li::before{content:"";position:absolute;left:0;top:15px;width:5px;height:5px;border-radius:1px;background:#035A9D}
+@media (max-width:900px){.certs.rz{grid-template-columns:repeat(3,1fr)}.rz-list{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.certs.rz{grid-template-columns:repeat(2,1fr)}.rz-list{grid-template-columns:1fr}}
