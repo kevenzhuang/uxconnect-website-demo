@@ -939,3 +939,27 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 .flogos{flex-wrap:nowrap;gap:16px}.flogos img{height:30px}.flogos img+img{padding-left:16px}
 .pt-grid img[src$="azure.png"]{max-height:34px}
 @media (max-width:600px){.pt-grid{display:flex;flex-wrap:wrap;justify-content:center}.pt-grid span{flex:0 0 calc(33.33% - 14px)}}
+/* 合作伙伴：首屏下方单行滚动 */
+.partners .pt-title{margin-bottom:10px}
+.partners{padding-block:36px 30px}
+/* ---------- 克制的动效 ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .rv.in{opacity:1;transform:none}
+  .js .rv-d1{transition-delay:.08s}.js .rv-d2{transition-delay:.16s}.js .rv-d3{transition-delay:.24s}.js .rv-d4{transition-delay:.32s}.js .rv-d5{transition-delay:.40s}
+  /* 首屏入场 */
+  .js .hero-copy>*{animation:heroIn .8s cubic-bezier(.2,.7,.2,1) both}
+  .js .hero-copy>:nth-child(2){animation-delay:.08s}.js .hero-copy>:nth-child(3){animation-delay:.16s}.js .hero-copy>:nth-child(4){animation-delay:.24s}
+  .js .hero-map{animation:mapIn 1.2s .3s ease both}
+  /* 板块标题下的金线展开 */
+  .js .pg-index section:not(.hero)>.wrap>h2.rv::after{width:0;transition:width .8s .35s cubic-bezier(.2,.7,.2,1)}
+  .js .pg-index section:not(.hero)>.wrap>h2.rv.in::after{width:36px}
+  /* 卡片悬停轻微上浮 */
+  .card,.quote,.cert .shot{transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover,.quote:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(5,46,90,.08)}
+}
+@keyframes heroIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes mapIn{from{opacity:0}to{opacity:1}}
+/* 页眉：滚动后加细阴影 */
+.site-header{transition:box-shadow .3s ease}
+.site-header.scrolled{box-shadow:0 4px 18px rgba(5,46,90,.07)}
