@@ -659,3 +659,8 @@ body{color:#3D4A57}
 /* ---------- official VI (UXconnect-LOGO.pdf): navy #052E5A · blue #035A9D/#01398C · sky #0190EE ---------- */
 .logo img{height:34px}
 .site-footer .flogo{height:36px}
+
+/* ---------- 老标志 SYX 友讯实业（蓝色版） ---------- */
+.logo img{height:46px}
+.site-footer .flogo{height:60px}
+@media (max-width:700px){.logo img{height:40px}}
