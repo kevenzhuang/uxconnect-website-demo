@@ -827,3 +827,21 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 .pg-index section:not(.hero)>.wrap>.cta,.pg-index section:not(.hero)>.wrap>p:has(>a.link){justify-content:center;text-align:center}
 .pg-index .feats h3 small{display:none}
 @media (max-width:760px){.eyebrow{font-size:11.5px;letter-spacing:.1em}}
+/* ---------- 合作伙伴条 ---------- */
+.partners{padding-block:44px 8px}
+.pt-title{text-align:center;font-size:15px;color:#5B6673;margin:0 0 24px;letter-spacing:.04em}
+.pt-row{display:flex;justify-content:center;align-items:stretch;gap:0;border-block:1px solid #DCE5EE}
+.pt-g{display:flex;flex-direction:column;align-items:center;gap:12px;padding:22px 36px}
+.pt-g+.pt-g{border-left:1px solid #DCE5EE}
+.pt-g em{font-style:normal;font-size:12px;letter-spacing:.14em;color:#035A9D;font-weight:600}
+.pt-g>div{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px}
+.pt-g span{font-size:17px;font-weight:700;color:#8A97A6;letter-spacing:.02em;white-space:nowrap}
+.pt-g img{height:30px;width:auto;filter:grayscale(1);opacity:.6}
+@media (max-width:900px){.pt-row{flex-direction:column}.pt-g+.pt-g{border-left:0;border-top:1px solid #DCE5EE}.pt-g{padding:18px 8px}.pt-g span{font-size:15px}}
+/* ---------- 首屏字号加大 ---------- */
+@media (min-width:1200px){
+  .hero-copy>h1{font-size:clamp(56px,4.4vw,80px);line-height:1.16;letter-spacing:.03em}
+  .hero-copy>.lede{font-size:clamp(18px,1.3vw,21px);margin-top:26px}
+  .hero-copy>.cta .btn{padding:15px 30px;font-size:16px}
+  .hero-copy>.eyebrow{font-size:13px}
+}
