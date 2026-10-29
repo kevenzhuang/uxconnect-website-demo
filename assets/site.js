@@ -8,7 +8,7 @@
   // lightbox
   var lb=document.querySelector('dialog.lb');
   if(lb){var li=lb.querySelector('img');
-    document.querySelectorAll('.cert .shot').forEach(function(s){s.addEventListener('click',function(){var im=s.querySelector('img');li.src=im.getAttribute('data-full')||im.src;li.alt=im.alt;try{lb.showModal()}catch(e){lb.setAttribute('open','')}})});
+    document.querySelectorAll('.cert .shot, .rz-shots .shot').forEach(function(s){s.addEventListener('click',function(){var im=s.querySelector('img');li.src=im.getAttribute('data-full')||im.src;li.alt=im.alt;try{lb.showModal()}catch(e){lb.setAttribute('open','')}})});
     lb.addEventListener('click',function(){if(lb.close)lb.close();else lb.removeAttribute('open')})}
   // copy
   document.querySelectorAll('.copy').forEach(function(c){c.addEventListener('click',function(){var t=c.getAttribute('data-c');try{navigator.clipboard.writeText(t).then(function(){c.textContent='已复制'},function(){c.textContent=t})}catch(e){c.textContent=t}})});

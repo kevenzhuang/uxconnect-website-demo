@@ -717,3 +717,5 @@ body{color:#3D4A57}
 .rz-cat li{padding:3px 10px;font-size:12.5px;line-height:1.6;background:#F3F8FC;border:1px solid #DCE5EE;border-radius:999px;color:#3D4A57}
 @media (max-width:980px){.rz-cats{grid-template-columns:1fr}}
 @media (max-width:620px){.rz-cat{grid-template-columns:1fr;gap:8px}}
+.rz-shots .shot{width:84px}
+.rz-tip{font-size:12px!important;color:var(--muted);margin-top:10px!important}
