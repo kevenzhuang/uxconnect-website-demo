@@ -719,3 +719,10 @@ body{color:#3D4A57}
 @media (max-width:620px){.rz-cat{grid-template-columns:1fr;gap:8px}}
 .rz-shots .shot{width:84px}
 .rz-tip{font-size:12px!important;color:var(--muted);margin-top:10px!important}
+
+/* 软著：6 张证书成列 + 分类标签 */
+.certs.rz6{grid-template-columns:repeat(6,1fr);margin-top:28px}
+.rz-head+.certs.rz6+.rz-cats{margin-top:36px}
+@media (max-width:900px){.certs.rz6{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.certs.rz6{grid-template-columns:repeat(2,1fr)}}
+.certs.rz6 .cert h3{font-size:13px;line-height:1.45}
