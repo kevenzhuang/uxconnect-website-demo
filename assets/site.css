@@ -786,3 +786,10 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
   .mbar a.go{background:#035A9D;color:#fff;font-size:15px;font-weight:600;margin:3px 0}
   body{padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
 }
+/* ---------- 客户标志墙 ---------- */
+.logos.logos-img{display:flex;flex-wrap:wrap;justify-content:center;border:0;gap:0;margin-top:40px}
+.logos.logos-img span{flex:0 0 calc(100%/6);box-sizing:border-box;min-height:104px;padding:22px 26px;border:0;background:transparent;display:flex;align-items:center;justify-content:center}
+.logos.logos-img img{max-width:100%;max-height:44px;width:auto;height:auto;filter:grayscale(1) contrast(1.05);opacity:.62;transition:filter .25s,opacity .25s}
+.logos.logos-img img[src$="porsche.png"],.logos.logos-img img[src$="icbc.png"],.logos.logos-img img[src$="starbucks.png"],.logos.logos-img img[src$="mcdonalds.png"],.logos.logos-img img[src$="burger-king.png"]{max-height:56px}
+.logos.logos-img span:hover img{filter:none;opacity:1}
+@media (max-width:860px){.logos.logos-img span{flex-basis:calc(100%/3);min-height:84px;padding:16px 18px}.logos.logos-img img{max-height:34px}}
