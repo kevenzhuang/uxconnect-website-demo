@@ -30,11 +30,12 @@
     this.svg=el('svg',{'class':'sm-svg',role:'img','aria-label':box.getAttribute('data-label')||'友讯网络节点分布示意'},box);
     this.motion=!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var self=this,src=box.getAttribute('data-mask')||'assets/land-mask.png',last='';
-    function go(){var w=box.clientWidth;if(!w)return;var k=(w<700?'n':'w')+w;if(k===last)return;last=k;self.render()}
+    function go(){var w=box.clientWidth;if(!w)return;var k=self.pick(w)+w;if(k===last)return;last=k;self.render()}
     loadMask(src,go);var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){if(maskData)go()},150)});
   }
+  Show.prototype.pick=function(w){if(w<700)return 'narrow';if(this.box.closest&&this.box.closest('.hero-split')&&window.matchMedia&&window.matchMedia('(min-width:1200px)').matches)return 'narrow';return 'wide'};
   Show.prototype.render=function(){
-    var w=this.box.clientWidth,mode=w<700?'narrow':'wide',win=WIN[mode];
+    var w=this.box.clientWidth,mode=this.pick(w),win=WIN[mode];
     var lonSpan=win.lon[1]-win.lon[0],latSpan=win.lat[0]-win.lat[1];
     var p=w/lonSpan,H=Math.round(latSpan*p*1.12); // gentle vertical stretch reads closer to familiar projections
     this.w=w;this.h=H;this.mode=mode;
