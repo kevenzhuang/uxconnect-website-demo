@@ -33,3 +33,6 @@
         else throw 0}).catch(function(){btn.disabled=false;btn.textContent='提交试用申请';err.textContent='提交未成功，请稍后重试，或直接致电 021-52359911。';err.hidden=false})
     })}
 })();
+(function(){var d=document.querySelector('dialog.wecom');if(!d)return;
+document.querySelectorAll('[data-wecom]').forEach(function(b){b.addEventListener('click',function(){try{d.showModal()}catch(e){d.setAttribute('open','')}})});
+d.addEventListener('click',function(e){if(e.target===d||e.target.tagName==='BUTTON'){if(d.close)d.close();else d.removeAttribute('open')}})})();
