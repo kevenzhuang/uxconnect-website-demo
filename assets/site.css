@@ -871,3 +871,10 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 .partners{border-bottom:0;padding-block:8px 36px}
 .partners .pt-title{font-size:16px;color:#3D4A57;font-weight:600}
 .partners{padding-block:48px 44px;border-top:1px solid #DCE5EE}.partners .pt-title{margin-bottom:14px}
+/* 首屏文字在所有屏幕宽度都居中（内容已精简为两行标题 + 一句话，适合居中） */
+.hero-split .hero-copy{text-align:center;max-width:880px;margin-inline:auto}
+.hero-copy>.eyebrow{justify-content:center}
+.hero-copy>.lede{margin-inline:auto;max-width:34em}
+.hero-copy>.cta{justify-content:center}
+@media (max-width:760px){.hero-copy>.cta{flex-direction:column;align-items:stretch;max-width:340px;margin-inline:auto}.hero-copy>.cta .btn{justify-content:center}}
+.hero-copy>.lede,.hero-copy>h1{text-wrap:balance}
