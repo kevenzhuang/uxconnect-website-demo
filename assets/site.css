@@ -664,3 +664,13 @@ body{color:#3D4A57}
 .logo img{height:46px}
 .site-footer .flogo{height:60px}
 @media (max-width:700px){.logo img{height:40px}}
+
+/* 老标志原色原样使用：页眉直接放；页脚深色底上放白色底板 */
+.logo img{height:54px}
+@media (max-width:700px){.logo img{height:46px}}
+.flogo-plate{display:inline-block;background:#fff;border-radius:6px;padding:8px 12px;margin-bottom:18px}
+.site-footer .flogo-plate .flogo{height:54px;margin:0}
+
+.certs{grid-template-columns:repeat(5,1fr)}
+@media (max-width:900px){.certs{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.certs{grid-template-columns:repeat(2,1fr)}}
