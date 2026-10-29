@@ -1101,3 +1101,12 @@ main section:not(.hero):not(.page-hero)>.wrap>h2::after{content:"";display:block
   url(hero-dc.jpg)!important;background-size:auto,auto,auto,auto,cover!important;background-position:center,center,center,center,49% 58%!important}}
 .hero{background:#fff!important}
 .logos-mq:hover .mq-track,.logos-mq:active .mq-track{animation-play-state:running!important}
+/* 认证徽章 */
+.certrow.cb{display:flex;align-items:center;gap:12px;flex-wrap:wrap;text-decoration:none;width:max-content;max-width:100%}
+.certrow.cb img{width:44px;height:44px;opacity:.85;transition:opacity .2s,transform .2s}
+.certrow.cb:hover img{opacity:1;transform:translateY(-2px)}
+.badges{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:44px}
+.badges figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:140px}
+.badges img{width:120px;height:120px}
+.badges figcaption{font-size:13px;color:#3D4A57;text-align:center;line-height:1.4}
+@media (max-width:600px){.badges{gap:20px 16px}.badges figure{width:42%}.badges img{width:96px;height:96px}}

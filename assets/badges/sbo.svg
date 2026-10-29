@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 200 200" role="img">
+<defs><path id="td" d="M-81 0A81 81 0 0 1 81 0"/><path id="bd" d="M-93 0A93 93 0 0 0 93 0"/>
+<radialGradient id="gd" cx="50%" cy="35%" r="70%"><stop offset="0" stop-color="#0B4A8A"/><stop offset="1" stop-color="#052E5A"/></radialGradient></defs>
+<circle r="98" fill="url(#gd)"/><circle r="71.5" fill="none" stroke="#FFB100" stroke-width="2"/><circle r="69" fill="#fff"/>
+<text fill="#fff" style="font-family:'UX Heading','PingFang SC','Noto Sans SC',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:2px" text-anchor="middle"><textPath href="#td" startOffset="50%">SERVICES-BASED OPERATOR</textPath></text>
+<text fill="#fff" style="font-family:'UX Heading','PingFang SC','Noto Sans SC',sans-serif;font-weight:700;font-size:14px;letter-spacing:2px" text-anchor="middle" dy="-4"><textPath href="#bd" startOffset="50%">LICENSED</textPath></text>
+<path d="M-86 4l3-3 3 3-3 3z M80 4l3-3 3 3-3 3z" fill="#FFB100"/><text y="4" fill="#052E5A" text-anchor="middle" style="font-family:'UX Heading','PingFang SC','Noto Sans SC',sans-serif;font-weight:700;font-size:42px;font-family:Georgia,serif">SBO</text><rect x="-22" y="16" width="44" height="2" fill="#FFB100"/><text y="36" fill="#035A9D" text-anchor="middle" style="font-family:'UX Heading','PingFang SC','Noto Sans SC',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px">HONG KONG</text></svg>
