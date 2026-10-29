@@ -1022,3 +1022,62 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
   .hero-copy>h1{font-size:clamp(44px,3.4vw,60px)!important}
   .hero-split .hero-copy{padding-bottom:9vh!important}
 }
+
+/* ======================= 七项统一（设计系统收口） ======================= */
+/* 3. 标题字体：内嵌思源黑体子集，Windows / Mac 一致 */
+@font-face{font-family:"UX Heading";src:url(fonts/heading-sc.woff2) format("woff2");font-weight:700;font-display:swap}
+h1,h2,h3,h4,.stat b{font-family:"UX Heading",var(--f-sans);font-weight:700}
+
+/* 4. 间距系统：板块 112 / 72，标题→内容 48 */
+section{padding-block:112px}
+@media (max-width:760px){section{padding-block:72px}}
+main section:not(.hero)>.wrap>h2{margin-top:0}
+main section:not(.hero)>.wrap>.lede{margin-top:16px}
+.grid3,.feats,.quotes,.certs,.logos-mq:not(.pt-mq),.cases,.specs,.steps,.offices,.tl,.faq{margin-top:48px!important}
+.band{padding-block:0 112px}
+@media (max-width:760px){.band{padding-block:0 72px}}
+
+/* 5. 颜色收口：藏青文字 / 品牌蓝交互 / 金色点缀；去掉橙色 */
+.draft{border-color:#C9D6E3!important;color:#6B7785!important;background:#F3F8FC}
+a.link,.link.go{color:#035A9D}
+.card .ico{background:#EEF5FB}
+.card .ico svg,.feats svg{stroke:#035A9D}
+.pg-index .why .feats svg{stroke:var(--ux-gold)!important}
+
+/* 6. 卡片与按钮统一：圆角 12 / 细边框 / 悬停轻浮 */
+.card,.quote,.case,.office,.lvl,.faq details,.rz-cat{border-radius:12px}
+.card,.quote,.case{border:1px solid #DCE5EE;box-shadow:none;background:#fff}
+.btn,.btn-sm{border-radius:8px}
+.cert .shot,.cert .ph,.cert .badge{border-radius:8px}
+@media (prefers-reduced-motion:no-preference){
+  .card,.quote,.case{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .card:hover,.quote:hover,.case:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(5,46,90,.08);border-color:#C9D9EA}
+}
+
+/* 7. 英文小标签：只保留首屏一处 */
+main section:not(.hero) .eyebrow{display:none}
+.card .k,.sub,.feats h3 small,.specs dt small,.steps b small{display:none}
+/* 板块标题下统一一条短金线（左对齐板块左对齐，居中板块居中） */
+main section:not(.hero):not(.page-hero)>.wrap>h2::after{content:"";display:block;width:36px;height:3px;border-radius:2px;background:var(--ux-gold);margin:16px 0 0}
+.pg-index section:not(.hero)>.wrap>h2::after,.center>h2::after{margin-inline:auto}
+
+/* 1. 子页面首屏与首页统一：浅色、居中、无装饰竖条、无英文副标题 */
+.page-hero{padding-block:96px 88px!important;text-align:center;border-bottom:0!important;
+  background:radial-gradient(60% 80% at 50% 0%,#E8F4FD 0%,#F5FAFE 55%,#FFFFFF 100%)!important}
+.page-hero .wrap{display:flex;flex-direction:column;align-items:center}
+.page-hero .crumb{margin-bottom:18px;font-size:13px}
+.page-hero h1{font-size:clamp(30px,3.6vw,52px);line-height:1.2;max-width:18em}
+.page-hero h1::after{content:"";display:block;width:36px;height:3px;border-radius:2px;background:var(--ux-gold);margin:22px auto 0}
+.page-hero .lede{margin:22px auto 0;max-width:40em;text-align:center}
+.page-hero .cta{justify-content:center;margin-top:32px}
+.page-hero .bars{display:none}
+
+/* 2. 地图板块标题 */
+.net-head{text-align:center;margin:0 auto 8px;max-width:40em;padding-inline:16px}
+.net-head h2{font-size:clamp(24px,2.4vw,34px);color:#052E5A}
+.net-head h2::after{content:"";display:block;width:36px;height:3px;border-radius:2px;background:var(--ux-gold);margin:14px auto 0}
+.net-head p{margin-top:14px;color:#5B6673;font-size:15.5px}
+@media (min-width:1200px){.hero-split .hero-map{margin-top:88px!important}}
+@media (max-width:1199px){.hero-split .hero-map{margin-top:56px}}
+.pg-index section:not(.hero)>.wrap>h2::after,.center>h2::after{margin-left:auto!important;margin-right:auto!important}
+@media (max-width:760px){.page-hero{padding-block:52px 56px!important}.page-hero .lede{font-size:15.5px;text-wrap:pretty}.page-hero h1::after{margin-top:16px}}
