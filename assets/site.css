@@ -1082,3 +1082,4 @@ main section:not(.hero):not(.page-hero)>.wrap>h2::after{content:"";display:block
 .pg-index section:not(.hero)>.wrap>h2::after,.center>h2::after{margin-left:auto!important;margin-right:auto!important}
 @media (max-width:760px){.page-hero{padding-block:52px 56px!important}.page-hero .lede{font-size:15.5px;text-wrap:pretty}.page-hero h1::after{margin-top:16px}}
 .pt-mq .mq-track .pt-n img[src$="china-broadnet.png"]{height:36px}
+.pt-mq .mq-track .pt-n img[src$="google-cloud.png"]{height:32px}
