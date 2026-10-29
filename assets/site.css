@@ -991,3 +991,7 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
   .hero-split .hero-map{margin-top:56px;scroll-margin-top:72px}
 }
 @media (prefers-reduced-motion:no-preference){.hero-down i{animation:hd 2.2s ease-in-out infinite}@keyframes hd{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}}
+/* 对称：底部提示真正居中（不受入场动画 transform 影响）；两个按钮等宽 */
+.hero-down{left:0!important;right:0!important;margin-inline:auto;width:max-content;transform:none!important}
+.hero-copy>.cta .btn{min-width:200px;justify-content:center}
+@media (max-width:760px){.hero-copy>.cta .btn{min-width:0}}
