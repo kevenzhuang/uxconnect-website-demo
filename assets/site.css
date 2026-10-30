@@ -1181,3 +1181,21 @@ html[lang^="zh"] .pg-index section.why::before{background:radial-gradient(60% 80
 #certs .rz-head h3::after{content:"";display:block;width:36px;height:3px;border-radius:2px;background:var(--ux-gold);margin:14px auto 0}
 @media (max-width:600px){#certs .badges{gap:28px 0!important;justify-content:space-around!important}#certs .badges figure{width:46%!important}}
 #certs>.wrap>.lede,.lede,.net-head p,.page-hero .lede{text-wrap:balance}#certs .cert{text-align:center}#certs .cert .shot{margin-inline:auto}
+/* 去掉手机底部联系条 */
+.mbar{display:none!important}
+@media (max-width:760px){body{padding-bottom:0!important}}
+/* 首页底部：合作流程横幅 */
+.band-proc .wrap{display:block!important;text-align:center;padding:56px 48px!important}
+.band-proc .proc-head h2{color:#052E5A}
+.band-proc .proc-head h2::after{content:"";display:block;width:36px;height:3px;border-radius:2px;background:var(--ux-gold);margin:14px auto 0}
+.band-proc .proc-head p{margin:14px auto 0;color:#5B6673}
+.proc{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;counter-reset:none}
+.proc::before{content:"";position:absolute;left:12.5%;right:12.5%;top:22px;height:2px;background:linear-gradient(90deg,#BFDDF4,#05A5E5,#BFDDF4)}
+.proc li{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 10px}
+.proc b{width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid #05A5E5;color:#035A9D;display:flex;align-items:center;justify-content:center;font-size:15px;font-family:"UX Heading",var(--f-sans);position:relative;z-index:1;margin-bottom:10px}
+.proc li:nth-child(3) b{background:#035A9D;border-color:#035A9D;color:#fff}
+.proc span{font-weight:700;color:#052E5A;font-size:16px}
+.proc small{color:#5B6673;font-size:13px;line-height:1.5}
+.band-proc .cta{justify-content:center;margin-top:40px!important}
+.band-proc .wrap::after{display:none!important}
+@media (max-width:760px){.band-proc .wrap{padding:40px 20px!important}.proc{grid-template-columns:1fr 1fr;gap:28px 8px}.proc::before{display:none}}

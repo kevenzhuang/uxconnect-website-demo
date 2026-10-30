@@ -30,7 +30,7 @@
       var btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='提交中…';
       fetch(f.getAttribute('action'),{method:'POST',body:new FormData(f)}).then(function(r){return r.json()}).then(function(j){
         if(j&&j.ok){f.reset();ok.textContent='提交成功。方案顾问将在一个工作日内与您联系。';ok.hidden=false;btn.textContent='已提交'}
-        else throw 0}).catch(function(){btn.disabled=false;btn.textContent='提交试用申请';err.textContent='提交未成功，请稍后重试，或直接致电 021-52359911。';err.hidden=false})
+        else throw 0}).catch(function(){btn.disabled=false;btn.textContent='提交咨询申请';err.textContent='提交未成功，请稍后重试，或直接致电 021-52359911。';err.hidden=false})
     })}
 })();
 (function(){var d=document.querySelector('dialog.wecom');if(!d)return;
