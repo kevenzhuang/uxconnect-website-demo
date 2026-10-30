@@ -1122,3 +1122,6 @@ html[lang^="zh"] .page-hero .bars i:nth-child(6){background:#05A5E5!important}
 html[lang^="zh"] .sm .hub{fill:#E30325!important}
 html[lang^="zh"] .sm .ring{stroke:#E30325!important}
 html[lang^="zh"] .sm-legend .a{background:#E30325!important;box-shadow:0 0 0 2px #fff,0 0 0 3px #E30325!important}
+html[lang^="zh"] .band .stripes{background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(1,144,238,.10) 18px 24px,transparent 24px 34px,rgba(5,165,229,.30) 34px 37px)!important}
+html[lang^="zh"] .band .wrap::after{background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(1,144,238,.20) 18px 24px,transparent 24px 34px,rgba(5,165,229,.40) 34px 37px)!important}
+html[lang^="zh"] .pg-index section.why::before{background:radial-gradient(60% 80% at 85% 0%,rgba(1,144,238,.22),transparent 60%),radial-gradient(40% 60% at 10% 100%,rgba(5,165,229,.10),transparent 60%)}
