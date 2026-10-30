@@ -1110,3 +1110,15 @@ main section:not(.hero):not(.page-hero)>.wrap>h2::after{content:"";display:block
 .badges img{width:120px;height:120px}
 .badges figcaption{font-size:13px;color:#3D4A57;text-align:center;line-height:1.4}
 @media (max-width:600px){.badges{gap:20px 16px}.badges figure{width:42%}.badges img{width:96px;height:96px}}
+
+/* ---------- 中文版使用 SYX 友讯实业标志：金/棕色（uXconnect 标志色）统一改为标志蓝，枢纽点用标志红 ---------- */
+html[lang^="zh"]{--ux-gold:#05A5E5;--ux-brown:#035A9D}
+html[lang^="zh"] .eyebrow i{display:none}
+html[lang^="zh"] .stat b sup{color:#05A5E5}
+html[lang^="zh"] .page-hero .bars i{background:#E6F3FB!important}
+html[lang^="zh"] .page-hero .bars i:nth-child(odd){background:#D2EAF8!important}
+html[lang^="zh"] .page-hero .bars i:nth-child(3n){background:#A9D7F2!important}
+html[lang^="zh"] .page-hero .bars i:nth-child(6){background:#05A5E5!important}
+html[lang^="zh"] .sm .hub{fill:#E30325!important}
+html[lang^="zh"] .sm .ring{stroke:#E30325!important}
+html[lang^="zh"] .sm-legend .a{background:#E30325!important;box-shadow:0 0 0 2px #fff,0 0 0 3px #E30325!important}
