@@ -1221,3 +1221,7 @@ html[lang^="zh"] .pg-index section.why::before{background:radial-gradient(60% 80
 .lang [aria-current="true"]{background:none!important;color:#052E5A!important;font-weight:700}
 .lang [aria-current="true"]::after{content:"";position:absolute;left:7px;right:7px;bottom:-1px;height:2px;border-radius:1px;background:#05A5E5}
 .lang>*+*::before{content:"";position:absolute;left:-1px;top:50%;width:1px;height:10px;margin-top:-5px;background:#D5DCE4}
+/* 首屏小标题：两侧细线，SINCE 1996 */
+.hero-eb{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 22px;font-size:12px;font-weight:600;letter-spacing:.28em;text-indent:.28em;color:#035A9D;line-height:1}
+.hero-eb::before,.hero-eb::after{content:"";width:36px;height:1px;background:currentColor;opacity:.45}
+@media (min-width:1200px){.hero-eb{font-size:14px;margin-bottom:28px}.hero-eb::before,.hero-eb::after{width:56px}}
