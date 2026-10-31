@@ -1207,8 +1207,8 @@ html[lang^="zh"] .pg-index section.why::before{background:radial-gradient(60% 80
   .hero-copy>.lede{font-size:clamp(12.5px,3.6vw,14px)!important;line-height:1.95!important;margin-top:22px!important;color:#3E4A57;max-width:none!important}
   .hero-copy>.lede br{display:none}
   .hero-copy>.lede .nw{display:block}
-  .hero-copy>.cta{display:grid!important;grid-template-columns:1fr 1fr;gap:12px;width:100%!important;max-width:310px!important;align-self:center;margin:40px auto 0!important}
-  .hero-copy>.cta .btn{height:48px;padding:0 12px;font-size:15px}
+  .hero-copy>.cta{display:flex!important;flex-direction:column;gap:12px;width:100%!important;max-width:240px!important;align-self:center;margin:40px auto 0!important}
+  .hero-copy>.cta .btn{height:48px;padding:0 12px;font-size:15px;justify-content:center}
   .hero-down{display:flex!important;flex-direction:column;align-items:center;gap:8px;position:absolute!important;bottom:28px;left:0!important;right:0!important;margin-inline:auto;width:max-content;font-size:12px;letter-spacing:.2em;color:#5B6673;text-decoration:none;transform:none!important}
   .hero-down i{width:1px;height:32px;background:linear-gradient(#5B6673,transparent);display:block}
   .net-head p{font-size:15px;line-height:1.85}
