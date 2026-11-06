@@ -1411,3 +1411,4 @@ main a.card{transition:transform .2s ease-out,box-shadow .2s ease-out,border-col
 main a.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(5,46,90,.10);border-color:#C9D6E3}
 .site-header .nav>a:hover,.site-header .nav .dd>button:hover{color:#035A9D}
 @media (prefers-reduced-motion:reduce){main .btn,main a.card,main .link,.site-header .btn-sm{transition:none!important}main a.card:hover{transform:none}}
+@media (max-width:960px){.site-header .right .btn-sm{display:none!important}}
