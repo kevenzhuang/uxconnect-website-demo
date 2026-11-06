@@ -1025,7 +1025,7 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 
 /* ======================= 七项统一（设计系统收口） ======================= */
 /* 3. 标题字体：内嵌思源黑体子集，Windows / Mac 一致 */
-@font-face{font-family:"UX Heading";src:url(fonts/heading-sc.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"UX Heading";src:url(fonts/heading-sc.woff2?v=2) format("woff2");font-weight:700;font-display:swap}
 h1,h2,h3,h4,.stat b{font-family:"UX Heading",var(--f-sans);font-weight:700}
 
 /* 4. 间距系统：板块 112 / 72，标题→内容 48 */
