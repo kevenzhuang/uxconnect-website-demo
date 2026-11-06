@@ -1312,7 +1312,6 @@ footer a[href^="mailto"]{color:inherit;text-decoration:none;border-bottom:1px so
    两种字体；九级字号；字重 700/600/400；行高 1.25/1.75/1.6
    ========================================================== */
 :root{--t-display:56px;--t-h1:48px;--t-h2:36px;--t-h2s:28px;--t-h3:20px;--t-h4:17px;--t-lede:18px;--t-body:16px;--t-small:14px;--t-cap:12px;--c-ink:#052E5A;--c-body:#3E4A57;--c-mute:#5B6673}
-@media (max-width:1100px){:root{--t-display:46px;--t-h1:40px;--t-h2:32px;--t-h2s:26px}}
 @media (max-width:760px){:root{--t-display:clamp(32px,9.8vw,38px);--t-h1:32px;--t-h2:26px;--t-h2s:22px;--t-h3:18px;--t-h4:16px;--t-lede:16px;--t-body:15px;--t-small:13.5px;--t-cap:11.5px}}
 /* 标题 */
 main .hero h1{font-size:var(--t-display)!important;line-height:1.2!important}
@@ -1464,8 +1463,15 @@ dialog.lb p{font-size:14px}
 .sd-diagram text,svg.arch text{font-size:12px}
 .pg-contact .cl2 a{display:inline-block;padding:10px 0;margin:-10px 0}
 .partners{padding-block:32px!important}
-@media (min-width:761px) and (max-width:1100px){.page-hero h1{font-size:48px!important}.stat b{font-size:44px!important}}
 .arch{border-radius:12px}
 .arch text{font-size:14px}.arch text.s{font-size:12px;font-family:var(--f-sans)}
 /* 页脚栏目标题：不占标题层级 */
 .site-footer .fh{color:#fff;font-size:14px;font-weight:600;margin:0 0 14px;line-height:1.4}
+/* v1.3 · 第三批：字号与间距自查 */
+.menu span{font-size:14px}
+.page-hero .crumb a{padding:14px 4px;margin:-14px -4px}
+.sm text,.sm-svg text{font-size:12px!important}
+.stat b{font-size:44px!important}
+@media (max-width:760px){.stat b{font-size:32px!important}}
+.home-certs .certs.certs3{grid-template-columns:repeat(3,1fr);margin-top:0}
+.rz-cat h4 em,.office em{font-size:12px!important}
