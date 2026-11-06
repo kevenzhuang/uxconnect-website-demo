@@ -1423,3 +1423,47 @@ main a.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(5,46,90
 @keyframes mnav-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 @keyframes scrim-in{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.site-header .mnav,.mnav-scrim{animation:none}}
+/* 设计规范 v1.3 · 色彩收口：全站只剩色板里的颜色 */
+body,.nav>a,.nav .dd>button,.wm-ctrl button,.hero-copy>.lede,.partners .pt-title,.fco span,.rz-cat li,.badges figcaption,main .card,main .case{color:#3E4A57}
+:root{--deep-muted:#3E4A57}
+.site-footer{color:#C9D6E3}
+.site-footer p,.site-footer a,.site-footer div,.site-footer span{color:#C9D6E3}
+.site-footer .legal,.site-footer .legal *,.site-footer .copy,.site-footer small,.site-footer .fco span{color:#8FA4BB}
+.site-footer a:hover{color:#fff}
+.site-footer .qr,.site-footer .certrow span,.site-footer .legal{border-color:#24406A}
+.pg-index section.why .lede,.pg-index .why .feats p{color:#C9D6E3}
+.pg-index section.why .eyebrow{color:#5BC1F0}
+.lang a,.lang span{color:#5B6673!important}
+.cb .tr{background:#F3F8FC}
+.card .ico{background:#E8F4FD}
+.hero.dark{background:linear-gradient(180deg,#E8F4FD 0,#F3F8FC 360px,#FFFFFF 600px)}
+.page-hero.dark{background:linear-gradient(180deg,#E8F4FD,#F3F8FC)}
+.sm .mesh line{stroke:#05A5E5;stroke-opacity:.35}
+.sm-legend .e{background:#05A5E5;opacity:.6}
+.sm circle.pkt{fill:#05A5E5}
+/* 按钮：主 / 次 两种，四种状态 */
+main .btn.primary,.site-header .btn-sm,.band .btn.primary,form.trial button.btn{background:#035A9D!important;color:#fff!important;border-color:transparent!important}
+main .btn.ghost,.dark .btn.ghost,.band .btn.ghost{background:#fff!important;color:#052E5A!important;border:1px solid #DCE5EE!important}
+main .btn.ghost:hover{background:#E8F4FD!important;color:#052E5A!important;border-color:#DCE5EE!important}
+main .btn[aria-disabled="true"],main .btn:disabled{background:#DCE5EE!important;color:#5B6673!important;border-color:transparent!important;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+main .filters button{border:1px solid #DCE5EE;color:#3E4A57;background:#fff}
+main .filters button:hover{border-color:#035A9D;color:#035A9D}
+main .filters button.on{background:#052E5A;border-color:#052E5A;color:#fff}
+main .tags span{background:#F3F8FC;color:#3E4A57;border:1px solid #DCE5EE}
+main input:focus,main textarea:focus,main select:focus{border-color:#035A9D;outline:2px solid #05A5E5;outline-offset:2px}
+form .err,form .error{color:#E30325;font-size:14px}
+/* v1.3 · 第二批：规范自查修正 */
+.mnav .group{font-size:12px}
+.lang a,.lang span{font-size:12px!important}
+.mnav a small{font-size:12px}
+.burger{width:44px;height:44px}
+.page-hero .crumb a{display:inline-block;padding:12px 4px;margin:-12px -4px}
+main .filters button{font-size:14px;padding:0 16px;height:44px;display:inline-flex;align-items:center}
+dialog.lb p{font-size:14px}
+.sm text,.sm-svg text{font-size:12px}
+.sd-diagram text,svg.arch text{font-size:12px}
+.pg-contact .cl2 a{display:inline-block;padding:10px 0;margin:-10px 0}
+.partners{padding-block:32px!important}
+@media (min-width:761px) and (max-width:1100px){.page-hero h1{font-size:48px!important}.stat b{font-size:44px!important}}
+.arch{border-radius:12px}
+.arch text{font-size:14px}.arch text.s{font-size:12px;font-family:var(--f-sans)}
