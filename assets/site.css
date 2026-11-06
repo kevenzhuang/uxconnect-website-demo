@@ -1523,3 +1523,5 @@ main .seg label:hover{border-color:#035A9D}
 main .seg label:has(input:checked){border-color:#035A9D!important;background:#E8F4FD!important;color:#052E5A}
 main .seg label:has(input:focus-visible){outline:2px solid #05A5E5;outline-offset:2px}
 main form .err{color:#E30325!important;font-size:var(--t-small)!important}
+/* 联系页：页头按钮跳到表单，留出页头高度 */
+#consult{scroll-margin-top:96px}
