@@ -1,7 +1,8 @@
 (function(){
   // mobile menu
   var b=document.querySelector('.burger'),m=document.getElementById('mnav');
-  if(b&&m)b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));m.hidden=o});
+  var sc=null;function setMenu(open){b.setAttribute('aria-expanded',String(open));m.hidden=!open;document.body.classList.toggle('menu-open',open);if(open&&!sc){sc=document.createElement('div');sc.className='mnav-scrim';sc.addEventListener('click',function(){setMenu(false)});document.body.appendChild(sc)}else if(!open&&sc){sc.remove();sc=null}}
+  if(b&&m){b.addEventListener('click',function(){setMenu(b.getAttribute('aria-expanded')!=='true')});m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true')setMenu(false)})}
   // dropdown: click toggles for touch
   document.querySelectorAll('.nav .dd>button').forEach(function(btn){btn.addEventListener('click',function(e){var d=btn.parentNode;var o=d.classList.toggle('open');btn.setAttribute('aria-expanded',String(o));e.stopPropagation()})});
   document.addEventListener('click',function(){document.querySelectorAll('.nav .dd.open').forEach(function(d){d.classList.remove('open');d.querySelector('button').setAttribute('aria-expanded','false')})});
