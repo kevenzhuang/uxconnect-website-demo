@@ -25,7 +25,7 @@ $d = [
   'addr'    => field('addr', 200),
   'biz'     => field('biz', 40),
   'msg'     => field('msg', 2000),
-  'lang'    => (strpos($_SERVER['HTTP_REFERER'] ?? '', '/en/') !== false) ? 'en' : 'zh',
+  'lang'    => (strpos($_SERVER['HTTP_REFERER'] ?? '', '/ja/') !== false) ? 'ja' : ((strpos($_SERVER['HTTP_REFERER'] ?? '', '/en/') !== false) ? 'en' : 'zh'),
   'ip'      => $_SERVER['REMOTE_ADDR'] ?? '',
 ];
 if ($d['company'] === '' || $d['name'] === '' || $d['tel'] === '') out(false, 422);
@@ -49,7 +49,7 @@ if ($new) { fwrite($f, "\xEF\xBB\xBF"); fputcsv($f, array_keys($d)); }
 fputcsv($f, array_map(function ($v) { return preg_match('/^[=+\-@\t]/', $v) ? "'" . $v : $v; }, array_values($d)));
 flock($f, LOCK_UN); fclose($f);
 
-$text = "官网新咨询（" . ($d['lang'] === 'en' ? '英文站' : '中文站') . "）\n公司：{$d['company']}\n联系人：{$d['name']}\n电话：{$d['tel']}"
+$text = "官网新咨询（" . ($d['lang'] === 'ja' ? '日文站' : ($d['lang'] === 'en' ? '英文站' : '中文站')) . "）\n公司：{$d['company']}\n联系人：{$d['name']}\n电话：{$d['tel']}"
       . ($d['email'] !== '' ? "\n邮箱：{$d['email']}" : '') . ($d['wechat'] !== '' ? "\n微信：{$d['wechat']}" : '') . ($d['addr'] !== '' ? "\n地址：{$d['addr']}" : '')
       . ($d['biz'] !== '' ? "\n业务：{$d['biz']}" : '') . ($d['msg'] !== '' ? "\n需求：{$d['msg']}" : '') . "\n时间：{$d['time']}";
 

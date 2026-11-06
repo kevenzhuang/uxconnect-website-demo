@@ -1729,3 +1729,31 @@ main section.showcase>.wrap>p{text-align:center!important;margin-left:auto!impor
 main:not(.pg-index) section:not(.page-hero):not(.showcase) .lede{text-wrap:pretty!important}
 /* 要点说明（短句、逗号多）只在标点处换行 */
 html[lang^="zh"] main .specs dd{word-break:keep-all;overflow-wrap:anywhere}
+/* ===== 日本語サイト（ja/）：uXconnect ブランド、和文フォント ===== */
+html[lang^="ja"]{--f-ja:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Yu Gothic","YuGothic","Meiryo","Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--f-sans:var(--f-ja)}
+/* 中国語の見出しフォント（簡体字グリフ）を使わない：見出しも本文も和文フォントで統一 */
+html[lang^="ja"][lang^="ja"][lang^="ja"][lang^="ja"][lang^="ja"] body,
+html[lang^="ja"][lang^="ja"][lang^="ja"][lang^="ja"][lang^="ja"] body *:not(svg):not(svg *){font-family:var(--f-ja)!important}
+html[lang^="ja"] body{line-height:1.8;font-feature-settings:"palt" 0}
+html[lang^="ja"] main h1,html[lang^="ja"] main h2,html[lang^="ja"] main h3{text-wrap:balance;letter-spacing:.01em!important}
+html[lang^="ja"] main p{line-break:strict}
+/* 英文サイトと同じブランド色：地図のハブは金色 */
+html[lang^="ja"] .sm .hub{fill:#FFB100!important}
+html[lang^="ja"] .sm .ring{stroke:#FFB100!important}
+html[lang^="ja"] .sm-legend .a{background:#FFB100!important;box-shadow:0 0 0 2px #fff,0 0 0 3px #FFB100!important}
+/* 首屏の英文アイブロウは英文サイトと同じ扱い */
+html[lang^="ja"] .hero-eb{letter-spacing:.1em!important;text-indent:.1em!important;white-space:nowrap}
+html[lang^="ja"] .hero-eb::before,html[lang^="ja"] .hero-eb::after{display:none}
+html[lang^="ja"] .hero-eb .eb-since{display:none}
+html[lang^="ja"] .hero-eb span{letter-spacing:inherit!important;color:inherit!important;font-weight:inherit!important}
+/* 一覧の項目名（その他のサービス、海外ノード）：和文は項目名が長いので幅を確保 */
+html[lang^="ja"] .more-list .ov3{grid-template-columns:168px 1fr}
+html[lang^="ja"] .ovlist:not(.more-list) .ov3{grid-template-columns:120px 1fr}
+@media (max-width:760px){html[lang^="ja"] .more-list .ov3,html[lang^="ja"] .ovlist .ov3{grid-template-columns:1fr;gap:4px}}
+html[lang^="ja"] .citybars .cb>span:first-child{white-space:nowrap}
+html[lang^="ja"] .badges figcaption b{white-space:normal}
+/* 和文見出しは文節（読点・中黒）で改行し、単語の途中で切らない */
+html[lang^="ja"] main h1,html[lang^="ja"] main h2,html[lang^="ja"] main h3,html[lang^="ja"] .hero h1 span{word-break:keep-all;overflow-wrap:anywhere}
+/* 入口卡（首页业务线）：同组等高时「了解详情」贴底对齐 */
+main a.card{display:flex!important;flex-direction:column}
+main a.card .link{margin-top:auto!important;padding-top:16px}

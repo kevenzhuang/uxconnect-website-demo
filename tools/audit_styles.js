@@ -2,7 +2,7 @@ const {chromium}=require('playwright');
 const pages=['index','access','sdwan','global','cloud','more','cases','about','contact','privacy'];
 (async()=>{const b=await chromium.launch();const W=+process.argv[2]||1440;
 const font={},color={},bg={},border={},radius={},misc=[];
-for(const pre of ['','en/'])for(const pg of pages){const p=await b.newPage({viewport:{width:W,height:900}});await p.goto('http://localhost:8792/'+pre+pg+'.html',{waitUntil:'networkidle'});
+for(const pre of ['','en/','ja/'])for(const pg of pages){const p=await b.newPage({viewport:{width:W,height:900}});await p.goto('http://localhost:8792/'+pre+pg+'.html',{waitUntil:'networkidle'});
 const r=await p.evaluate(()=>{const out={t:[],c:[],bg:[],bd:[],rad:[],misc:[]};
 const name=e=>{let s=e.tagName.toLowerCase();if(e.className&&typeof e.className=='string')s+='.'+e.className.trim().split(/\s+/).slice(0,2).join('.');const sec=e.closest('section,header,footer,nav');return (sec?(sec.tagName.toLowerCase()+(sec.className?'.'+String(sec.className).split(' ')[0]:'')+'>'):'')+s};
 for(const e of document.querySelectorAll('body *')){const cs=getComputedStyle(e);if(cs.display=='none'||cs.visibility=='hidden')continue;const rc=e.getBoundingClientRect();if(rc.width==0||rc.height==0)continue;if(e.closest('svg'))continue;

@@ -2,7 +2,7 @@ const {chromium}=require('playwright');
 const pages=['index','access','sdwan','global','cloud','more','cases','about','contact','privacy'];
 (async()=>{const b=await chromium.launch();const W=+process.argv[2]||1440;const agg={};
 const add=(k,v,w)=>{(agg[k]=agg[k]||{});(agg[k][v]=agg[k][v]||new Set()).add(w)};
-for(const pre of ['','en/'])for(const pg of pages){const p=await b.newPage({viewport:{width:W,height:900}});await p.goto('http://localhost:8792/'+pre+pg+'.html',{waitUntil:'networkidle'});
+for(const pre of ['','en/','ja/'])for(const pg of pages){const p=await b.newPage({viewport:{width:W,height:900}});await p.goto('http://localhost:8792/'+pre+pg+'.html',{waitUntil:'networkidle'});
 await p.addStyleTag({content:'*{transition:none!important;animation:none!important}.rv,[class*=rv]{opacity:1!important;transform:none!important}'});
 const r=await p.evaluate(()=>{const o=[];
 document.querySelectorAll('main > section, body > section').forEach(s=>{const cs=getComputedStyle(s);const c=s.className.split(' ')[0]||'plain';o.push(['sec-pad '+c,cs.paddingTop+'/'+cs.paddingBottom]);

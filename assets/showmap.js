@@ -17,7 +17,9 @@
   var TR={'上海':'Shanghai','香港':'Hong Kong','北京':'Beijing','成都':'Chengdu','武汉':'Wuhan','广州':'Guangzhou','西安':'Xi\'an','哈尔滨':'Harbin',
     '东京':'Tokyo','首尔':'Seoul','新加坡':'Singapore','马尼拉':'Manila','胡志明市':'Ho Chi Minh','雅加达':'Jakarta','孟买':'Mumbai','法兰克福':'Frankfurt','南非':'South Africa','洛杉矶':'Los Angeles','芝加哥':'Chicago','里约热内卢':'Rio de Janeiro',
     '印度':'India','欧洲':'Europe','非洲':'Africa','美洲':'Americas','日本':'Japan','韩国':'Korea','东南亚':'SE Asia','悉尼':'Sydney','澳洲':'Australia'};
-  function L(s){return EN&&TR[s]||s}
+  var JA=/^ja/i.test(document.documentElement.lang);
+  var TRJ={'广州':'広州','武汉':'武漢','哈尔滨':'ハルビン','东京':'東京','首尔':'ソウル','新加坡':'シンガポール','马尼拉':'マニラ','胡志明市':'ホーチミン','雅加达':'ジャカルタ','孟买':'ムンバイ','法兰克福':'フランクフルト','南非':'南アフリカ','洛杉矶':'ロサンゼルス','芝加哥':'シカゴ','里约热内卢':'リオデジャネイロ','印度':'インド','欧洲':'欧州','非洲':'アフリカ','美洲':'米州','韩国':'韓国','东南亚':'東南アジア','悉尼':'シドニー','澳洲':'オーストラリア'};
+  function L(s){return EN&&TR[s]||JA&&TRJ[s]||s}
   function TW(s,fs){return EN?s.length*fs*.56:s.length*fs}
   var WIN={wide:{lon:[-20,330],lat:[63,-44]},narrow:{lon:[72,152],lat:[55,-10]}};
 
@@ -34,7 +36,7 @@
   function Show(box){
     this.box=box;box.classList.add('sm');
     this.canvas=document.createElement('canvas');box.appendChild(this.canvas);
-    this.svg=el('svg',{'class':'sm-svg',role:'img','aria-label':box.getAttribute('data-label')||(EN?'uXconnect network map':'友讯网络节点分布示意')},box);
+    this.svg=el('svg',{'class':'sm-svg',role:'img','aria-label':box.getAttribute('data-label')||(EN?'uXconnect network map':JA?'uXconnect ネットワークマップ':'友讯网络节点分布示意')},box);
     this.motion=!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var self=this,src=box.getAttribute('data-mask')||'assets/land-mask.png',last='';
     function go(){var w=box.clientWidth;if(!w)return;var k=self.pick(w)+w;if(k===last)return;last=k;self.render()}
