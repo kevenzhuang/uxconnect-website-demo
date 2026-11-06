@@ -1351,3 +1351,63 @@ main input,main select,main textarea{font-size:var(--t-body)!important}
 .site-footer .fhours{font-size:var(--t-cap)!important}
 main .lvl .t small{font-size:var(--t-small)!important;font-family:var(--f-sans)!important;font-weight:400!important}
 .pg-contact .steps span{font-size:var(--t-small)!important}
+
+/* ===== 设计规范 v1 · 文字颜色：浅底三级、深底三级 ===== */
+/* 浅色背景 */
+main h1,main h2,main h3,main h4,main dt,main .stat b,main .case .side>b,main .office b,main .steps b,main .contact-list b,main .tl b,main .lvl b,main .proc span{color:var(--c-ink)!important}
+main p,main li,main dd,main td,main .lede,main .lede .nw,main .net-head p,main .card p,main .specs dd,main .faq p{color:var(--c-body)!important}
+main small,main .fine,main .crumb,main figcaption span,main .cert p,main .cert span,main .sm-legend span,main .qr-cap,main .proc small,main .pt-title,main .stat span,main .steps span,main .case .side>span:not(.k),main .case .kpi span,main .office p,main .badges figcaption span,main .cl2 small,main .hero-down span{color:var(--c-mute)!important}
+main .eyebrow,main .k,main .office em,main .contact-list em,main .cl2 em,main .ovs em,main .lvl .k,main .link,main .steps li::before,main .case .kpi strong,main .proc b,main .hero-eb,main .case .body h3::before{color:#035A9D!important}
+main summary,main .parks span,main .tags span,main .rz-cat li,main .ovs span,main .mdl b,main .pops b,main .pops span{color:var(--c-body)!important}
+main .mdl b{color:var(--c-ink)!important}
+main .band-proc .proc li:nth-child(3) b{color:#fff!important}
+/* 深色背景（深蓝板块、首页 why） */
+main .why h1,main .why h2,main .why h3,main .why h4,main .why b{color:#fff!important}
+main .why p,main .why li,main .why .lede,main .why .lede .nw{color:#C9D6E3!important}
+main .why small,main .why h3 small{color:#8FA4BB!important}
+main .why .eyebrow,main .why .k{color:#5BC1F0!important}
+/* 页面开头标题区（浅底）保持浅底规则 */
+main .page-hero h1,main .hero h1{color:var(--c-ink)!important}
+main .page-hero .lede,main .hero .lede{color:var(--c-body)!important}
+main .hero h1 em{color:#035A9D!important}
+main .citybars span,main .citybars b{color:var(--c-body)!important}
+
+/* ==========================================================
+   设计规范 v1.1 · 第二批：短线、圆角、间距、对齐、交互状态
+   ========================================================== */
+/* 8. 标题短线：所有板块 h2 都有（横幅、页面标题除外） */
+main section:not(.band):not(.hero):not(.page-hero) h2::after{content:"";display:block;width:36px;height:3px;border-radius:2px;background:var(--ux-gold);margin:16px 0 0}
+.pg-index main section:not(.band):not(.hero) h2::after,.home-certs h2::after,#certs h2::after,.net-head h2::after,.center>h2::after,main .band-proc h2::after{margin-left:auto!important;margin-right:auto!important}
+main .band-proc h2::after{content:"";display:block;width:36px;height:3px;border-radius:2px;background:var(--ux-gold);margin-top:16px}
+/* 9. 圆角两档：小元素 8，容器 12；胶囊只给筛选和标签 */
+main .card,main .case,main .office,main .lvl,main .faq details,main .rz-cat,form.trial,main .band .wrap,main .feats,main .quote,main .tl>div{border-radius:12px!important}
+main .btn,main .btn-sm,main .cert .shot,main .rz-shots .shot,main input,main textarea,main select,main .seg label,main .card .ico,main .lb img,main .qr{border-radius:8px!important}
+main .tags span,main .parks span,main .filters button{border-radius:999px!important}
+/* 12. 间距归档：卡片内边距 32/24；子页标题区 96/96；图标方块 */
+@media (min-width:761px){main .card{padding:32px!important}main .page-hero{padding-block:96px 96px!important}form.trial{padding:32px!important}}
+@media (max-width:760px){main .card{padding:24px!important}main .page-hero{padding-block:64px 56px!important}}
+main .card .ico{margin-bottom:8px!important}
+main .card h3{margin-top:0}
+main .card .link{margin-top:8px}
+/* 11. 分栏在平板叠放后居中 */
+@media (max-width:1100px){
+  main .split:not(.pg-contact .split){grid-template-columns:1fr!important;gap:40px!important}
+  main .split:not(.pg-contact .split)>div:first-child{text-align:center}
+  main .split:not(.pg-contact .split)>div:first-child h2::after{margin-left:auto!important;margin-right:auto!important}
+  main .split:not(.pg-contact .split)>div:first-child .lede{margin-left:auto;margin-right:auto}
+  main .split:not(.pg-contact .split)>div:first-child .cta{justify-content:center}
+}
+/* 顶部小按钮：高 44，字 14 */
+.site-header .btn-sm{font-size:14px!important;height:44px;display:inline-flex;align-items:center;padding:0 20px!important}
+/* 13. 交互状态 */
+main .btn,main .btn-sm,.site-header .btn-sm{transition:background-color .2s ease-out,color .2s ease-out,transform .2s ease-out,box-shadow .2s ease-out}
+main .btn.primary:hover,.site-header .btn-sm:hover,form.trial button.btn:hover{background:#052E5A!important;color:#fff!important}
+main .btn.ghost:hover{background:#E8F4FD!important;color:#052E5A!important}
+main .btn:active,.site-header .btn-sm:active{transform:translateY(1px)}
+main .btn:focus-visible,.site-header .btn-sm:focus-visible,main a:focus-visible,main button:focus-visible,main summary:focus-visible,main input:focus-visible,main textarea:focus-visible,main select:focus-visible,.site-header a:focus-visible,.site-header button:focus-visible,footer a:focus-visible{outline:2px solid #05A5E5!important;outline-offset:2px!important}
+main .link{transition:color .2s ease-out}
+main .link:hover{text-decoration:underline;text-underline-offset:4px}
+main a.card{transition:transform .2s ease-out,box-shadow .2s ease-out,border-color .2s ease-out}
+main a.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(5,46,90,.10);border-color:#C9D6E3}
+.site-header .nav>a:hover,.site-header .nav .dd>button:hover{color:#035A9D}
+@media (prefers-reduced-motion:reduce){main .btn,main a.card,main .link,.site-header .btn-sm{transition:none!important}main a.card:hover{transform:none}}
