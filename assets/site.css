@@ -1742,10 +1742,6 @@ html[lang^="ja"] .sm .hub{fill:#FFB100!important}
 html[lang^="ja"] .sm .ring{stroke:#FFB100!important}
 html[lang^="ja"] .sm-legend .a{background:#FFB100!important;box-shadow:0 0 0 2px #fff,0 0 0 3px #FFB100!important}
 /* 首屏の英文アイブロウは英文サイトと同じ扱い */
-html[lang^="ja"] .hero-eb{letter-spacing:.1em!important;text-indent:.1em!important;white-space:nowrap}
-html[lang^="ja"] .hero-eb::before,html[lang^="ja"] .hero-eb::after{display:none}
-html[lang^="ja"] .hero-eb .eb-since{display:none}
-html[lang^="ja"] .hero-eb span{letter-spacing:inherit!important;color:inherit!important;font-weight:inherit!important}
 /* 一覧の項目名（その他のサービス、海外ノード）：和文は項目名が長いので幅を確保 */
 html[lang^="ja"] .more-list .ov3{grid-template-columns:168px 1fr}
 html[lang^="ja"] .ovlist:not(.more-list) .ov3{grid-template-columns:120px 1fr}
@@ -1757,3 +1753,21 @@ html[lang^="ja"] main h1,html[lang^="ja"] main h2,html[lang^="ja"] main h3,html[
 /* 入口卡（首页业务线）：同组等高时「了解详情」贴底对齐 */
 main a.card{display:flex!important;flex-direction:column}
 main a.card .link{margin-top:auto!important;padding-top:16px}
+/* 首屏小标签（hero-eb）三站统一：标签级字号、字距 .28em、两侧短线、中蓝。
+   中文站「SINCE 1996」；英文站与日文站「ENTERPRISE CONNECTIVITY EXPERTS · SINCE 1996」，任何宽度都完整显示。
+   手机上国际版放不下一行：分两行（第二行 SINCE 1996），去掉中点和两侧短线，字距收到 .1em */
+html[lang^="en"] .hero-eb,html[lang^="ja"] .hero-eb{white-space:normal!important}
+html[lang^="en"] .hero-eb>span,html[lang^="ja"] .hero-eb>span{letter-spacing:inherit!important;color:inherit!important;font-weight:inherit!important}
+html[lang^="en"] .hero-eb .eb-since,html[lang^="ja"] .hero-eb .eb-since{display:inline!important}
+html[lang^="en"] .hero-eb .eb-dot,html[lang^="ja"] .hero-eb .eb-dot{font-style:normal}
+@media (min-width:761px){
+  html[lang^="ja"] .hero-eb{letter-spacing:.28em!important;text-indent:.28em!important}
+  html[lang^="ja"] .hero-eb::before,html[lang^="ja"] .hero-eb::after{display:block!important}
+}
+@media (max-width:760px){
+  html[lang^="en"] .hero-eb,html[lang^="ja"] .hero-eb{letter-spacing:.1em!important;text-indent:.1em!important;line-height:1.6!important}
+  html[lang^="en"] .hero-eb::before,html[lang^="en"] .hero-eb::after,html[lang^="ja"] .hero-eb::before,html[lang^="ja"] .hero-eb::after{display:none!important}
+  html[lang^="en"] .hero-eb>span,html[lang^="ja"] .hero-eb>span{display:flex;flex-direction:column;align-items:center;gap:4px}
+  html[lang^="en"] .hero-eb .eb-since,html[lang^="ja"] .hero-eb .eb-since{display:block!important}
+  html[lang^="en"] .hero-eb .eb-dot,html[lang^="ja"] .hero-eb .eb-dot{display:none}
+}
