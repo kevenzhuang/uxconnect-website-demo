@@ -1306,3 +1306,48 @@ footer a[href^="mailto"]{color:inherit;text-decoration:none;border-bottom:1px so
 .pg-contact .seg{display:grid!important;grid-template-columns:1fr 1fr;gap:10px!important}
 .pg-contact .seg label{justify-content:flex-start}
 @media (max-width:760px){.pg-contact .split>div{width:100%;max-width:none!important}}
+
+/* ==========================================================
+   设计规范 v1 · 第一批：字体与字号
+   两种字体；九级字号；字重 700/600/400；行高 1.25/1.75/1.6
+   ========================================================== */
+:root{--t-display:56px;--t-h1:48px;--t-h2:36px;--t-h2s:28px;--t-h3:20px;--t-h4:17px;--t-lede:18px;--t-body:16px;--t-small:14px;--t-cap:12px;--c-ink:#052E5A;--c-body:#3E4A57;--c-mute:#5B6673}
+@media (max-width:1100px){:root{--t-display:46px;--t-h1:40px;--t-h2:32px;--t-h2s:26px}}
+@media (max-width:760px){:root{--t-display:clamp(32px,9.8vw,38px);--t-h1:32px;--t-h2:26px;--t-h2s:22px;--t-h3:18px;--t-h4:16px;--t-lede:16px;--t-body:15px;--t-small:13.5px;--t-cap:11.5px}}
+/* 标题 */
+main .hero h1{font-size:var(--t-display)!important;line-height:1.2!important}
+main .page-hero h1{font-size:var(--t-h1)!important;line-height:1.25!important}
+main h2{font-size:var(--t-h2)!important;line-height:1.25!important;font-weight:700!important}
+main .band:not(.band-proc) h2{font-size:var(--t-h2s)!important}
+main h3{font-size:var(--t-h3)!important;line-height:1.35!important;font-weight:700!important;font-family:"UX Heading",var(--f-sans)!important}
+main h3 small{display:block;font-family:var(--f-sans)!important;font-size:var(--t-cap)!important;font-weight:400!important;letter-spacing:.06em;color:var(--c-mute);margin-top:4px;text-transform:none}
+main h4,main dt,main .office b,main .proc span,main .faq summary,main .tl b,main .lvl b,main .steps b,main .contact-list b,main .case .body h3{font-size:var(--t-h4)!important;font-weight:600!important;line-height:1.45!important;font-family:var(--f-sans)!important}
+main .cert h3,main .badges figcaption b,main .rz-shots h3{font-size:16px!important;font-family:var(--f-sans)!important;font-weight:600!important;line-height:1.4!important}
+main .case .side>b{font-size:var(--t-h3)!important;font-family:"UX Heading",var(--f-sans)!important;font-weight:700!important;line-height:1.3!important}
+main .mdl b{font-size:var(--t-h3)!important;font-family:"UX Heading",var(--f-sans)!important}
+/* 正文 */
+main .lede,main .lede .nw,main .net-head p{font-size:var(--t-lede)!important;line-height:1.75!important;color:var(--c-body)}
+main p:not(.lede):not(.fine):not(.crumb),main li,main dd,main td,main .card p,main .side span:not(.k),main .ovs span{font-size:var(--t-body)!important;line-height:1.75!important}
+main .card p,main .card li,main section ul li,main dd,main .tl p,main .feats p{color:var(--c-body)}
+main .hero-copy>.lede{font-size:var(--t-lede)!important}
+@media (max-width:760px){main .hero-copy>.lede{font-size:clamp(13px,3.85vw,15px)!important}}
+/* 小字 */
+main .fine,main small:not(h3 small),main figcaption span,main .cert p,main .cert span,main .sm-legend span,main .qr-cap,main .proc small,main .pt-title,main .rz-cat li,main .parks span,main .mdl span,main .tags span,main .stat span,main label,main legend,main .cl2 small,main .steps span{font-size:var(--t-small)!important;line-height:1.6!important}
+/* 标注：英文小标签统一正文字体 */
+main .crumb,main .eyebrow,main .k,main .office em,main .contact-list em,main .case .tag,main .group,main .ovs em,main .lvl .k,main .hero-down span,main .steps li::before,main .cl2 em{font-size:var(--t-cap)!important;letter-spacing:.12em!important;font-weight:500!important;line-height:1.4!important;font-family:var(--f-sans)!important}
+/* 大数字：标题字体 */
+main .stat b{font-size:44px!important;line-height:1.1!important;font-family:"UX Heading",var(--f-sans)!important}
+@media (max-width:760px){main .stat b{font-size:32px!important}}
+main .case strong,main .lvl .t{font-size:24px!important;font-family:"UX Heading",var(--f-sans)!important;line-height:1.2!important;font-weight:700!important}
+main .proc b{font-size:var(--t-body)!important;font-family:"UX Heading",var(--f-sans)!important}
+/* 按钮与链接 */
+main .btn,main button.btn{font-size:16px!important;font-weight:600!important}
+main .link{font-size:15px!important;font-weight:600!important}
+@media (max-width:760px){main .btn,main button.btn{font-size:15px!important}}
+main input,main select,main textarea{font-size:var(--t-body)!important}
+/* 页脚同一阶梯 */
+.site-footer .cols p,.site-footer .legal{font-size:var(--t-small)!important}
+.site-footer .cols h3{font-size:var(--t-body)!important}
+.site-footer .fhours{font-size:var(--t-cap)!important}
+main .lvl .t small{font-size:var(--t-small)!important;font-family:var(--f-sans)!important;font-weight:400!important}
+.pg-contact .steps span{font-size:var(--t-small)!important}
