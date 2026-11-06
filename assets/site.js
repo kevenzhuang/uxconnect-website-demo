@@ -19,6 +19,7 @@
   var fb=document.querySelectorAll('.filters button');
   fb.forEach(function(btn){btn.addEventListener('click',function(){var f=btn.getAttribute('data-f');fb.forEach(function(x){x.setAttribute('aria-pressed',String(x===btn))});
     document.querySelectorAll('.case').forEach(function(c){c.hidden=!(f==='all'||(c.getAttribute('data-tags')||'').indexOf(f)>-1)})})});
+  var qf=new URLSearchParams(location.search).get('f');if(qf){var qb=document.querySelector('.filters button[data-f="'+qf+'"]');if(qb)setTimeout(function(){qb.click()},0)}
   // header button on the contact page: jump to the form and focus the first empty field
   document.querySelectorAll('a[href="#consult"]').forEach(function(a){a.addEventListener('click',function(e){var fm=document.getElementById('consult');if(!fm)return;e.preventDefault();fm.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});var el=fm.querySelector('input[name=company]');if(el)setTimeout(function(){el.focus({preventScroll:true})},400)})});
   // trial form

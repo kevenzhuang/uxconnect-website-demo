@@ -1025,7 +1025,7 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 
 /* ======================= 七项统一（设计系统收口） ======================= */
 /* 3. 标题字体：内嵌思源黑体子集，Windows / Mac 一致 */
-@font-face{font-family:"UX Heading";src:url(fonts/heading-sc.woff2?v=6) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"UX Heading";src:url(fonts/heading-sc.woff2?v=16) format("woff2");font-weight:700;font-display:swap}
 h1,h2,h3,h4,.stat b{font-family:"UX Heading",var(--f-sans);font-weight:700}
 
 /* 4. 间距系统：板块 112 / 72，标题→内容 48 */
@@ -1525,3 +1525,207 @@ main .seg label:has(input:focus-visible){outline:2px solid #05A5E5;outline-offse
 main form .err{color:#E30325!important;font-size:var(--t-small)!important}
 /* 联系页：页头按钮跳到表单，留出页头高度 */
 #consult{scroll-margin-top:96px}
+/* 海外节点：按地区分组 */
+.regions{border-top:1px solid #DCE5EE}
+.rg{display:grid;grid-template-columns:128px 1fr;gap:16px;align-items:start;padding:16px 0;border-bottom:1px solid #DCE5EE}
+.rg-h{display:flex;align-items:baseline;gap:8px;padding-top:6px}
+main .rg-h b{font-size:var(--t-h4)!important;font-weight:600;color:#052E5A}
+main .rg-h span{font-size:var(--t-small)!important;font-weight:600;color:#035A9D}
+.rg ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.rg li{display:inline-flex;align-items:baseline;gap:6px;padding:6px 12px;border:1px solid #DCE5EE;border-radius:999px;background:#F3F8FC;color:#052E5A;line-height:1.4!important;margin:0!important}
+main .rg li{font-size:var(--t-small)!important}
+main .rg li em{font-style:normal;font-size:var(--t-cap)!important;color:#5B6673}
+@media (max-width:760px){.rg{grid-template-columns:1fr;gap:8px}.rg-h{padding-top:0}}
+html[lang^="en"] .rg{grid-template-columns:150px 1fr}
+.rg-h{flex-wrap:nowrap}
+main .rg-h b{white-space:nowrap}
+@media (max-width:760px){html[lang^="en"] .rg{grid-template-columns:1fr}}
+html[lang^="en"] .citybars .cb{grid-template-columns:88px 1fr 34px}html[lang^="en"] .citybars .cb>span:first-child{white-space:nowrap}
+/* 海外节点 v2：四大区域，城市网格，节点圆点与地图一致 */
+.regions2{margin-top:0}
+.rg2{padding:20px 0;border-top:1px solid #DCE5EE}
+.rg2:last-child{border-bottom:1px solid #DCE5EE}
+.rg2-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+main .rg2-h b{font-size:var(--t-h4)!important;font-weight:600;color:#052E5A;line-height:1.45}
+main .rg2-h span{font-size:var(--t-small)!important;font-weight:600;color:#035A9D}
+.rg2 ul{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px 16px}
+.rg2 li{position:relative;padding-left:16px;margin:0!important}
+.rg2 li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:#052E5A;box-shadow:0 0 0 2px #fff,0 0 0 3px #DCE5EE}
+main .rg2 li b{display:block;font-size:var(--t-body)!important;font-weight:500;color:#052E5A;line-height:1.5}
+main .rg2 li em{display:block;font-style:normal;font-size:var(--t-cap)!important;color:#5B6673;line-height:1.4}
+@media (max-width:1100px){.rg2 ul{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.rg2 ul{grid-template-columns:1fr 1fr}}
+.rg2-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;border-top:1px solid #DCE5EE;border-bottom:1px solid #DCE5EE}
+.rg2-row .rg2{border:0!important}
+.rg2-row .rg2-h{justify-content:flex-start;gap:8px}
+.rg2-row ul{grid-template-columns:1fr!important}
+.regions2>.rg2{border-bottom:0}
+@media (max-width:560px){.rg2-row .rg2-h{flex-direction:column;gap:2px}.rg2-row{gap:12px}}
+main .rg2-h span{white-space:nowrap}
+/* 海外节点 v3：极简列表，与左侧城市条形图同一节奏 */
+.ovlist{border-top:1px solid #DCE5EE}
+.ov3{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid #DCE5EE}
+html[lang^="en"] .ov3{grid-template-columns:112px 1fr}
+main .ov3 b{font-size:var(--t-body)!important;font-weight:600;color:#052E5A}
+main .ov3 p{margin:0!important;font-size:var(--t-body)!important;line-height:1.75!important;color:#3E4A57!important}
+.ov3 span{white-space:nowrap}
+.ov3 i{font-style:normal;color:#8FA4BB;margin:0 8px}
+@media (max-width:560px){.ov3{grid-template-columns:56px 1fr}html[lang^="en"] .ov3{grid-template-columns:1fr;gap:4px}}
+/* 产品清单 / 服务卡片 */
+.prodlist{margin-top:48px}
+.svc6{margin-top:48px}
+.more-svc .ovlist{margin-top:48px}
+html[lang^="zh"] .more-svc .ov3{grid-template-columns:120px 1fr}
+html[lang^="en"] .more-svc .ov3{grid-template-columns:200px 1fr}
+@media (max-width:560px){html[lang] .more-svc .ov3{grid-template-columns:1fr;gap:4px}}
+/* 四条业务线 */
+.grid4{grid-template-columns:repeat(4,1fr)!important}
+@media (max-width:1100px){.grid4{grid-template-columns:1fr 1fr!important}}
+@media (max-width:640px){.grid4{grid-template-columns:1fr!important}}
+/* 导航下拉：更多服务 */
+.menu a.menu-more{display:block;grid-column:1/-1;margin-top:4px;padding:12px;border-top:1px solid #DCE5EE;border-radius:0 0 8px 8px;font-size:14px;font-weight:600;color:#035A9D}
+.menu a.menu-more:hover{background:#F3F8FC}
+/* 产品卡片关键参数 */
+.kv{list-style:none;margin:16px 0 0!important;padding:12px 0 0!important;border-top:1px solid #DCE5EE;display:grid;gap:8px}
+.kv li{display:grid;grid-template-columns:56px 1fr;gap:12px;margin:0!important;align-items:baseline}
+html[lang^="en"] .kv li{grid-template-columns:84px 1fr}
+main .kv li span{font-size:var(--t-small)!important;color:#5B6673;line-height:1.5!important}
+main .kv li b{font-size:var(--t-small)!important;font-weight:600;color:#052E5A;line-height:1.5!important}
+/* 交付与运维 */
+.ops{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;border-top:1px solid #DCE5EE;padding-top:32px}
+main .ops h3{font-size:var(--t-h4)!important;line-height:1.45!important}
+main .ops p{margin-top:8px}
+@media (max-width:1100px){.ops{grid-template-columns:1fr 1fr;gap:32px 24px}}
+@media (max-width:560px){.ops{grid-template-columns:1fr}}
+/* 云与数据中心：合作云 logo */
+.cloud-logos{display:flex;flex-wrap:wrap;gap:16px;margin-top:48px}
+.cloud-logos span{display:flex;align-items:center;justify-content:center;width:160px;height:72px;background:#fff;border:1px solid #DCE5EE;border-radius:12px}
+.cloud-logos img{max-width:112px;max-height:32px;object-fit:contain}
+@media (max-width:560px){.cloud-logos span{width:calc(50% - 8px)}}
+.case-list,.more-list{margin-top:48px}
+html[lang^="zh"] .case-list .ov3,html[lang^="zh"] .more-list .ov3{grid-template-columns:120px 1fr}
+html[lang^="en"] .case-list .ov3,html[lang^="en"] .more-list .ov3{grid-template-columns:200px 1fr}
+@media (max-width:560px){html[lang] .case-list .ov3,html[lang] .more-list .ov3{grid-template-columns:1fr;gap:4px}}
+.pg-cloud .cta,.pg-more .cta{margin-top:32px}
+.svc-note{margin-top:32px!important;max-width:760px}
+/* 联系页：五个业务选项，最后一个占满一行 */
+.pg-contact .seg label:last-child:nth-child(odd){grid-column:1/-1}
+.card ul.kv li{grid-template-columns:56px 1fr}html[lang^="en"] .card ul.kv li{grid-template-columns:84px 1fr}.card ul.kv li::before{display:none}
+.scen-cta{margin-top:32px;justify-content:center}
+/* 卡片组规范：同组等高、参数区贴底对齐 */
+@media (min-width:641px){main .grid2,main .grid3,main .grid4{grid-auto-rows:1fr}}
+main .card:has(.kv){display:flex!important;flex-direction:column;gap:10px}
+main .card:has(.kv)>p{margin-bottom:16px}
+main .card .kv{margin-top:auto!important}
+/* 参数行：同组标签一致，标签列按文字宽度，值列尽量放满 */
+main .card ul.kv li,html[lang^="en"] main .card ul.kv li{grid-template-columns:auto 1fr;column-gap:16px}
+html[lang^="en"] .badges figcaption b{white-space:normal}
+/* 板块内小标题（同一主题下的分组，如网络覆盖里的国内 PoP / 海外节点） */
+main h3.sub-h{font-size:var(--t-h2s)!important;line-height:1.3!important;font-weight:700;color:#052E5A;margin:0 0 12px!important}
+main .cov-split{margin-top:72px;text-align:left}
+main .cov-split .lede{margin-bottom:32px}
+main #footprint > .wrap > h3.sub-h{margin-top:72px!important}
+main #footprint .ovs.routes{margin-top:32px}
+/* ===== v1.6 全站自查收口 ===== */
+/* 字号：导航与文字链接归入正文级 16 */
+.nav>a,.nav .dd>button{font-size:16px!important;border-radius:8px!important}
+main .link,main .link.go{font-size:16px!important}
+/* 字重：标注级统一 500；选项文字、提示语、成效句统一正文 400 */
+.lang [aria-current="true"]{font-weight:500!important}
+.rz-cat h4 em{font-weight:500!important;font-size:12px!important;border-radius:999px!important}
+main .seg label{font-weight:400!important}
+main .pt-title{font-weight:400!important}
+main .res p{font-weight:400!important;color:#052E5A!important}
+/* 交付与运维小节标题：小节标题级（正文字体 17 / 600） */
+main .ops h3{font-family:var(--f-sans)!important;font-weight:600!important}
+/* 大数字的单位（+ %）：卡片标题级 20，中蓝（亮蓝不能做文字） */
+.stat b sup,html[lang] .stat b sup,main b sup{font-size:20px!important;color:#035A9D!important}
+/* 圆角只用 8 / 12 / 胶囊 */
+.hw article,.esc,.sm,.arch,.case,.quote,form.trial,.band .wrap,.wm-view,dialog.wecom{border-radius:12px!important}
+.cert .shot,.cert .ph,.cert .badge,dialog.lb img,.flogo-plate,.site-footer .qr,.wm-views,.wm-zoom,.lang,.btn-sm,.burger{border-radius:8px!important}
+.cb .tr{border-radius:999px!important}
+/* 深底分割线统一 #24406A，不用半透明白 */
+.why .feats{background:#24406A!important;border-color:#24406A!important}
+.flogos img+img{border-left-color:#24406A!important}
+/* 间距：卡片之间 24；标题或导语到内容 48；横幅标题到说明 12；左右分栏标题到导语 16 */
+main .grid2,main .grid3,main .grid4{gap:24px!important}
+main .sm,main .arch,main .esc,main .hw,main .filters,main section>.wrap>h2+.grid2{margin-top:48px!important}
+main section .split h2+.lede{margin-top:16px!important}
+main .band h2+p{margin-top:12px!important}
+main .band-proc .proc-head p{margin-top:16px!important}
+/* 表单页：表单是页面标题区的延续，标题区下 96 后直接接表单，不加分割线、不另起标题 */
+.pg-contact .page-hero{padding-bottom:96px!important}
+.pg-contact section.mist{padding-top:0!important;border-top:0!important}
+@media (max-width:760px){main .grid2,main .grid3,main .grid4{gap:16px!important}.pg-contact .page-hero{padding-bottom:56px!important}.pg-contact section.mist{padding-top:0!important}}
+@media (max-width:760px){
+  .lang a,.lang span,.rz-cat h4 em{font-size:11.5px!important}
+  main .cb span,main .filters button,main .dark .cb span{font-size:13.5px!important}
+  main .cb b{font-size:13.5px!important}
+  main .link,main .link.go{font-size:15px!important}
+  main .steps b,main .proc b+span,main section.mist .steps b{font-size:16px!important}
+  .stat b sup,html[lang] .stat b sup,main b sup{font-size:18px!important}
+}
+@media (max-width:760px){main .cov-split{margin-top:56px!important}main #footprint > .wrap > h3.sub-h{margin-top:56px!important}main .cov-split > div + div{margin-top:56px}}
+/* 著作权分类名：名称和数量同一行，不拆行 */
+.rz-cat h4{display:block!important}
+.rz-cat h4 em{display:inline-block;margin-left:8px;vertical-align:1px}
+.rz-cat{grid-template-columns:176px 1fr!important}
+@media (max-width:620px){.rz-cat{grid-template-columns:1fr!important}}
+/* 列表行名称（海外节点区域、更多服务、常用线路）归入小节标题级 17 / 600 */
+main .ov3>b,main .ovs.routes>span{font-size:17px!important;font-weight:600!important}
+@media (max-width:760px){main .ov3>b,main .ovs.routes>span{font-size:16px!important}}
+/* 案例列表：同组卡片等高；左栏固定为 行业标签 / 客户名 / 行业 · 业务线 / 一项关键成效（贴底）；右栏「实施成效」贴底 */
+main .case-list{display:grid;gap:24px;margin-top:32px!important}
+main .case-list .case{margin:0!important}
+main .case .side{display:flex!important;flex-direction:column;gap:8px}
+main .case .side .kpi{margin-top:auto!important}
+@media (min-width:761px){
+  main .case{grid-template-columns:240px 1fr!important}
+  main .case .side .kpi{grid-template-columns:1fr!important}
+  main .case .body{grid-template-rows:auto 1fr}
+  main .case .body .res{align-self:end}
+}
+@media (min-width:1101px){main .case{grid-template-columns:280px 1fr!important}main .case-list{grid-auto-rows:1fr}}
+/* 案例筛选按钮选中态：与表单选项一致（浅蓝底 + 中蓝描边 + 中蓝字），不用深蓝实心 */
+main .filters button.on,main .filters button[aria-pressed="true"]{background:#E8F4FD!important;border-color:#035A9D!important;color:#035A9D!important}
+/* 案例卡平板布局：左栏变成顶部一行（标签、客户名、行业 · 业务线在左，关键成效在右），右栏需求与方案仍左右并排 */
+@media (min-width:761px) and (max-width:1100px){
+  main .case{grid-template-columns:1fr!important}
+  main .case .side{display:grid!important;grid-template-columns:1fr auto;column-gap:32px;row-gap:8px;align-items:start}
+  main .case .side>*:not(.kpi){grid-column:1}
+  main .case .side .kpi{grid-column:2;grid-row:1 / span 3;align-self:end;margin:0!important;border-top:0!important;padding-top:0!important;text-align:right}
+  main .case .body{grid-template-columns:1fr 1fr!important;padding:24px 32px!important}
+  main .case .body .res{grid-column:1 / -1}
+}
+@media (min-width:761px){
+  main .case-list{grid-auto-rows:1fr}
+  main .case .body{grid-template-rows:auto 1fr}
+  main .case .body .res{align-self:end}
+}
+@media (min-width:761px) and (max-width:1100px){
+  main .case{grid-template-rows:auto 1fr}
+  main .case .side .kpi>div{border-top:0!important;padding-top:0!important}
+}
+/* 对齐规则（v1.7）：页面标题区居中；首页是展示页，所有板块居中；子页面是阅读页，所有板块标题、导语、小标题一律左对齐（任何宽度都不改居中） */
+main:not(.pg-index) section:not(.page-hero) .split>div,
+main:not(.pg-index) section:not(.page-hero) .split>div:first-child,
+main:not(.pg-index) section:not(.page-hero) .split h2,
+main:not(.pg-index) section:not(.page-hero) .split h3,
+main:not(.pg-index) section:not(.page-hero) .split .lede{text-align:left!important;margin-left:0!important;margin-right:0!important}
+main:not(.pg-index) section:not(.page-hero):not(.band) h2::after{margin-left:0!important;margin-right:auto!important}
+main:not(.pg-index) section:not(.page-hero) .split>div:first-child h2::after,
+main:not(.pg-index) section:not(.page-hero) .split h2::after{margin-left:0!important;margin-right:auto!important}
+@media (max-width:1100px){main:not(.pg-index) section:not(.page-hero) .split>div:first-child h2::after{margin-left:0!important;margin-right:auto!important}}
+/* 展示型板块（内容居中排列：资质徽章与证书墙、客户 logo 墙）：标题、导语、短线跟内容一起居中，首页和子页一样 */
+main section.showcase>.wrap>h2,main section.showcase>.wrap>.lede,main section.showcase>.wrap>.eyebrow{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+main section.showcase>.wrap>.eyebrow{justify-content:center}
+main section.showcase>.wrap>h2::after{margin-left:auto!important;margin-right:auto!important}
+main section.showcase>.wrap>.lede{max-width:44em}
+main:not(.pg-index) section.showcase:not(.page-hero):not(.band)>.wrap>h2::after{margin-left:auto!important;margin-right:auto!important}
+main section.showcase>.wrap>p{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+/* 左右分栏两栏顶部对齐（规范第 5 节）；堆叠后右栏与导语间距 48 */
+@media (min-width:1101px){main .split>.specs{margin-top:0!important}}
+/* 子页面左对齐导语不做行长平衡（平衡是给居中导语用的，左对齐时会把行压短、把词拆开） */
+main:not(.pg-index) section:not(.page-hero):not(.showcase) .lede{text-wrap:pretty!important}
+/* 要点说明（短句、逗号多）只在标点处换行 */
+html[lang^="zh"] main .specs dd{word-break:keep-all;overflow-wrap:anywhere}
