@@ -1278,3 +1278,31 @@ footer a[href^="mailto"]{color:inherit;text-decoration:none;border-bottom:1px so
 /* 为什么选择友讯：底部留白加大，与顶部视觉对称 */
 .pg-index section.why{padding-bottom:152px!important}
 @media (max-width:760px){.pg-index section.why{padding-bottom:96px!important}}
+/* ===== 联系页 v2 ===== */
+.pg-contact .page-hero{padding-bottom:72px!important}
+.pg-contact .page-hero .lede{max-width:none!important}
+.pg-contact section.mist{padding-top:72px!important}
+.pg-contact .split{align-items:start!important}
+.pg-contact .steps{margin-top:0!important}
+.pg-contact .steps li{padding:18px 0!important}
+.pg-contact .steps b{font-size:17px!important;font-weight:600}
+.pg-contact .steps span{font-size:14.5px!important}
+.cl2{display:grid!important;grid-template-columns:1fr auto;gap:28px!important;margin-top:36px!important;align-items:start}
+.cl2 .cl-info{display:grid;gap:18px}
+.cl2 .cl-info>div,.cl2 .cl-qr{display:grid;gap:4px}
+.cl2 em{font-family:var(--f-sans)!important;font-size:12px!important;letter-spacing:.06em!important;text-transform:none!important;color:var(--blue,#035A9D)}
+.cl2 b{font-size:16px!important;font-weight:600;color:var(--navy,#052E5A);word-break:break-all}
+.cl2 b a{color:inherit;text-decoration:none}
+.cl2 small{font-size:12.5px;color:#5B6673}
+.cl2 .cl-qr{justify-items:start}
+.cl2 .qr.qr-lg{width:124px!important;height:124px!important;margin-top:4px!important}
+@media (min-width:1101px){.pg-contact form.trial{padding:32px!important}}
+@media (max-width:760px){
+  .pg-contact .split{display:flex!important;flex-direction:column}
+  .pg-contact .split>form.trial{order:-1;margin-bottom:40px}
+  .pg-contact section.mist{padding-top:40px!important}
+  .cl2{grid-template-columns:1fr}
+}
+.pg-contact .seg{display:grid!important;grid-template-columns:1fr 1fr;gap:10px!important}
+.pg-contact .seg label{justify-content:flex-start}
+@media (max-width:760px){.pg-contact .split>div{width:100%;max-width:none!important}}

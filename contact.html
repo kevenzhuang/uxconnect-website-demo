@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="assets/favicon.png">
 <link rel="preload" href="assets/fonts/heading-sc.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css?v=20261106wy">
+<link rel="stylesheet" href="assets/site.css?v=20261106ct">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body><div style="background:#052E5A;color:#E8F4FD;font-size:13px;text-align:center;padding:8px 16px;line-height:1.5">预览版 · 内容仍在完善中</div>
@@ -33,33 +33,26 @@
 <section class="page-hero dark" style="padding-bottom:60px"><div class="wrap">
   <div class="crumb"><a href="index.html">首页</a> / 联系我们</div>
   <div class="eyebrow"><i><b></b><b></b><b></b></i>Proof of Concept</div>
-  <h1>预约咨询，获取定制方案</h1>
+  <h1>预约咨询，定制方案</h1>
   <p class="sub">Validate before you commit</p>
-  <p class="lede">企业楼宇接入、SD-WAN 与跨境网络均提供 14 天免费试用，无附加条件。提交需求后，方案顾问将在一个工作日内与您联系。</p>
+  <p class="lede"><span class="nw">企业楼宇接入、SD-WAN 与跨境网络</span><span class="nw">均提供 14 天免费测试，无附加条件。</span><br><span class="nw">提交需求后，</span><span class="nw">方案顾问将在一个工作日内与您联系。</span></p>
 </div></section>
 <section class="mist">
   <div class="wrap split">
     <div>
-      <ol class="steps" style="margin-top:0">
-        <li><div><b>需求评估<small>Assessment</small></b><span>梳理办公点位、业务流量与现网架构</span></div></li>
-        <li><div><b>免费试用<small>Trial</small></b><span>真实环境下验证性能与稳定性</span></div></li>
-        <li><div><b>方案与报价<small>Proposal</small></b><span>定制架构设计与透明报价</span></div></li>
-        <li><div><b>交付与运维<small>Delivery</small></b><span>全程工程支持，7×24 持续保障</span></div></li>
-      </ol>
-      <div class="contact-list">
-        <div><em>Hotline</em><b>021-52359911 <button class="copy" data-c="021-52359911" type="button">复制</button></b><small class="qr-cap">服务时间 9:00–18:00</small></div>
-        <div><em>Email</em><b><a href="mailto:youxunxingzheng@youxun.com">youxunxingzheng@youxun.com</a> <button class="copy" data-c="youxunxingzheng@youxun.com" type="button">复制</button></b></div>
-        <div><em>Address</em><b>上海市徐汇区虹漕路 39 号 D3 栋 4 层 404 室</b></div>
-        <div><em>WeCom · 企业微信</em><div class="qr qr-img qr-lg"><img src="assets/wecom-qr.png" alt="扫码添加友讯客户经理企业微信" width="240" height="240" loading="lazy"></div><small class="qr-cap">扫码添加客户经理企业微信</small></div>
+      <ol class="steps"><li><div><b>免费评估</b><span>了解需求，勘察楼宇与现网</span></div></li><li><div><b>方案设计</b><span>量身定制架构与报价</span></div></li><li><div><b>14 天免费测试</b><span>真实业务流量，用数据说话</span></div></li><li><div><b>签约交付</b><span>开通上线，7×24 运维保障</span></div></li></ol>
+      <div class="contact-list cl2">
+        <div class="cl-info">
+          <div><em>服务热线</em><b><a href="tel:02152359911">021-52359911</a></b><small>服务时间 9:00–18:00</small></div>
+          <div><em>邮箱</em><b><a href="mailto:youxunxingzheng@youxun.com">youxunxingzheng@youxun.com</a></b></div>
+          <div><em>地址</em><b>上海市徐汇区虹漕路 39 号 D3 栋 4 层 404 室</b></div>
+        </div>
+        <div class="cl-qr"><em>企业微信</em><div class="qr qr-img qr-lg"><img src="assets/wecom-qr.png" alt="扫码添加友讯客户经理企业微信" width="240" height="240" loading="lazy"></div><small>扫码添加客户经理</small></div>
       </div>
     </div>
     <form class="trial" action="api/trial.php" method="post" novalidate>
       <fieldset class="full"><legend>咨询业务</legend>
-        <div class="seg">
-          <label><input type="radio" name="biz" id="biz-bb" value="企业接入" checked> 企业楼宇接入</label>
-          <label><input type="radio" name="biz" id="biz-xb" value="SD-WAN / 跨境"> SD-WAN / 跨境</label>
-          <label><input type="radio" name="biz" id="biz-both" value="综合方案"> 综合方案</label>
-        </div>
+        <div class="seg"><label><input type="radio" name="biz" value="企业接入" checked> 企业楼宇接入</label><label><input type="radio" name="biz" value="SD-WAN"> SD-WAN 组网</label><label><input type="radio" name="biz" value="跨境与云互联"> 跨境与云互联</label><label><input type="radio" name="biz" value="其他"> 其他 / 综合方案</label></div>
       </fieldset>
       <label>公司名称 *<input id="f-co" name="company" autocomplete="organization"></label>
       <label>联系人 *<input id="f-name" name="name" autocomplete="name"></label>
