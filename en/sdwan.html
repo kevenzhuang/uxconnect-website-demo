@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Global SD-WAN · uXconnect</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="uXconnect SD-WAN: an in-house platform with central orchestration, delivering private-line performance at internet cost.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="alternate" hreflang="zh-CN" href="../sdwan.html">
+<link rel="alternate" hreflang="en" href="sdwan.html">
+<link rel="preload" href="../assets/fonts/heading-sc.woff2?v=6" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css?v=20261106fm2">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="uXconnect home"><img src="../assets/ux-h-s.svg" alt="uXconnect" width="190" height="40"></a>
+    <nav class="nav" aria-label="Main">
+      <div class="dd cur"><button type="button" aria-expanded="false" aria-haspopup="true">Solutions</button><div class="menu"><a href="access.html"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M4 24V9l6-4v19M10 24V3l8 4v17M18 24V12l6 3v9M2 24h24"/></svg><b>Business Internet Access</b><span>Business broadband across Shanghai's business parks</span></a><a href="sdwan.html" aria-current="page"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="6" cy="14" r="3"/><circle cx="22" cy="6" r="3"/><circle cx="22" cy="22" r="3"/><path d="M9 13l10-6M9 15l10 6"/></svg><b>Global SD-WAN</b><span>Software-defined WAN on a private backbone</span></a><a href="global.html"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="11"/><path d="M3 14h22M14 3c4 4 4 18 0 22M14 3c-4 4-4 18 0 22"/></svg><b>Cross-Border &amp; Cloud</b><span>Licensed China links and multi-cloud connect</span></a></div></div>
+      <a href="cases.html">Case Studies</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="right">
+      <div class="lang" aria-label="Language"><a href="../sdwan.html" hreflang="zh-CN" lang="zh-CN">中</a><span aria-current="true">EN</span><span title="日本語・準備中" lang="ja">日</span></div>
+      <a class="btn-sm" href="contact.html">Book a consultation</a>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><i></i></button>
+    </div>
+  </div>
+  <div class="wrap mnav" id="mnav" hidden><div class="group">SOLUTIONS</div><a href="access.html">Business Internet Access<small>→</small></a><a href="sdwan.html">Global SD-WAN<small>→</small></a><a href="global.html">Cross-Border &amp; Cloud<small>→</small></a><div class="group">COMPANY</div><a href="cases.html">Case Studies<small>→</small></a><a href="about.html">About<small>→</small></a><a class="btn primary" href="contact.html">Book a consultation</a></div>
+</header>
+<main class="pg-sdwan"><section class="page-hero dark"><div class="wrap">
+  <div class="crumb"><a href="index.html">Home</a> / Solutions / Global SD-WAN</div>
+  <h1>Private-line performance at internet cost</h1>
+  <p class="lede">Our in-house <span class="nob">SD-WAN</span> platform runs every site from one controller. Each CPE connects to the nearest PoP over dual tunnels and picks the best path in real time, based on latency, bandwidth and jitter.</p>
+  <div class="cta"><a class="btn primary" href="contact.html?biz=SD-WAN">Book a consultation</a><a class="btn ghost" href="#arch">See the architecture</a></div>
+</div></section>
+<section class="dark" id="arch">
+  <div class="wrap">
+    <div class="eyebrow"><i><b></b><b></b><b></b></i>Architecture</div>
+    <h2>Three layers: controller, backbone PE and edge CPE</h2>
+    <p class="lede">The controller pushes certificates, tunnel IDs and QoS policies in one step. PE nodes scale out horizontally, and CPEs deploy in bypass, inline, routed or bridged mode.</p>
+    <div class="arch">
+  <svg viewBox="0 0 900 360" role="img" aria-label="uXconnect SD-WAN architecture: headquarters, branches, stores and remote users connect through CPEs to the uXconnect backbone, then on to public cloud, SaaS, data centers and overseas offices">
+    <text class="s" x="20" y="24">EDGE · CPE</text>
+    <rect class="box" x="20" y="40" width="170" height="54" rx="8"/><text x="38" y="64">Headquarters</text><text class="s" x="38" y="82">CPE-500 · 1 Gbps</text>
+    <rect class="box" x="20" y="108" width="170" height="54" rx="8"/><text x="38" y="132">Regional branch</text><text class="s" x="38" y="150">Broadband + 4G backup</text>
+    <rect class="box" x="20" y="176" width="170" height="54" rx="8"/><text x="38" y="200">Retail stores</text><text class="s" x="38" y="218">CPE-50 · Wi-Fi</text>
+    <rect class="box" x="20" y="244" width="170" height="54" rx="8"/><text x="38" y="268">Remote users</text><text class="s" x="38" y="286">L2TP over IPsec</text>
+    <rect class="core" x="300" y="40" width="300" height="258" rx="16"/>
+    <text class="t" x="450" y="70" text-anchor="middle">uXconnect backbone</text>
+    <text class="s" x="450" y="88" text-anchor="middle">CONTROLLER · PE MESH · 170+ POP</text>
+    <g class="mesh"></g>
+    <text class="s" x="450" y="285" text-anchor="middle">Dynamic routing · FEC · QoS · Encrypted tunnels</text>
+    <text class="s" x="710" y="24">DESTINATION</text>
+    <rect class="box" x="710" y="40" width="170" height="54" rx="8"/><text x="728" y="64">Public cloud</text><text class="s" x="728" y="82">AWS · Azure · Alibaba Cloud</text>
+    <rect class="box" x="710" y="108" width="170" height="54" rx="8"/><text x="728" y="132">SaaS apps</text><text class="s" x="728" y="150">M365 · Video meetings</text>
+    <rect class="box" x="710" y="176" width="170" height="54" rx="8"/><text x="728" y="200">Data centers</text><text class="s" x="728" y="218">DCI · Layer 2</text>
+    <rect class="box" x="710" y="244" width="170" height="54" rx="8"/><text x="728" y="268">Overseas offices</text><text class="s" x="728" y="286">HK · TYO · SIN · FRA</text>
+    <g class="links"></g>
+    <text class="s" x="450" y="340" text-anchor="middle">Breakout policies by application, domain or IP range · End-to-end visibility</text>
+  </svg>
+</div>
+<p class="scroll-hint">← Swipe to see the full architecture →</p>
+<script>
+(function(){var NS='http://www.w3.org/2000/svg';function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+document.querySelectorAll('.arch svg').forEach(function(svg){var mesh=svg.querySelector('.mesh'),links=svg.querySelector('.links');
+var pops=[[360,130],[450,115],[540,130],[340,200],[450,190],[560,200],[390,255],[510,255]];
+pops.forEach(function(a,i){pops.forEach(function(b,j){if(j>i&&Math.hypot(a[0]-b[0],a[1]-b[1])<140)el('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],'class':'ln',style:'opacity:.45'},mesh)})});
+pops.forEach(function(p){el('circle',{cx:p[0],cy:p[1],r:5,'class':'pp'},mesh)});
+[67,135,203,271].forEach(function(y,i){var p=pops[[0,3,3,6][i]];el('path',{d:'M190 '+(y-6)+' C250 '+(y-6)+' 270 '+p[1]+' '+p[0]+' '+p[1],'class':'ln g'},links);el('path',{d:'M190 '+(y+6)+' C250 '+(y+6)+' 280 '+(p[1]+14)+' '+p[0]+' '+(p[1]+2),'class':'ln d'},links)});
+[67,135,203,271].forEach(function(y,i){var p=pops[[2,2,5,7][i]];el('path',{d:'M'+p[0]+' '+p[1]+' C650 '+p[1]+' 650 '+y+' 710 '+y,'class':'ln g'},links)});});})();
+</script>
+    <div class="feats">
+      <div><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="6" cy="14" r="3"/><circle cx="22" cy="6" r="3"/><circle cx="22" cy="22" r="3"/><path d="M9 13l10-6M9 15l10 6"/></svg><h3>Application-aware routing<small>Application-aware routing</small></h3><p>DPI recognizes 200+ applications, with breakout policies by application, domain or IP range.</p></div>
+      <div><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M4 24V5M4 24h20"/><path d="M8 19l5-6 4 3 7-8"/></svg><h3>Forward error correction<small>Forward error correction</small></h3><p>FEC cuts packet loss sharply, keeping traffic stable even over 4G/LTE.</p></div>
+      <div><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M15 3L6 16h7l-1 9 9-13h-7z"/></svg><h3>Zero-touch provisioning<small>Zero-touch provisioning</small></h3><p>Configuration is pushed centrally. Plug the device in and it is online, so go-live is as fast as shipping.</p></div>
+      <div><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="15" r="10"/><path d="M14 9v6l4 3M11 2h6"/></svg><h3>Network visibility<small>Network visibility</small></h3><p>Real-time topology, traffic, latency and loss, with instant email alerts.</p></div>
+      <div><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="7" cy="7" r="2.5"/><circle cx="21" cy="7" r="2.5"/><circle cx="7" cy="21" r="2.5"/><circle cx="21" cy="21" r="2.5"/><path d="M9.5 7h9M7 9.5v9M21 9.5v9M9.5 21h9M9 9l10 10"/></svg><h3>Multi-WAN resilience<small>Multi-WAN resilience</small></h3><p>Broadband from multiple carriers and 4G/LTE back each other up, with automatic failover.</p></div>
+      <div><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3l9 4v7c0 6-4 9-9 11-5-2-9-5-9-11V7z"/><path d="M10 14l3 3 5-6"/></svg><h3>End-to-end encryption<small>Encrypted tunnels</small></h3><p>Certificate-based encrypted tunnels keep data secure between regions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow"><i><b></b><b></b><b></b></i>Value</div>
+    <h2>Why <span class="nob">SD-WAN</span> over MPLS</h2>
+    <div class="grid3">
+      <div class="card"><span class="k">Cost</span><h3>Lower circuit costs</h3><p>Building the WAN on broadband internet cuts point-to-point costs well below MPLS-VPN and MSTP, especially between provinces.</p></div>
+      <div class="card"><span class="k">Agility</span><h3>From weeks to plug-and-play</h3><p>A traditional private line typically takes 10 to 20 days per site. An SD-WAN device goes live after simple setup on arrival.</p></div>
+      <div class="card"><span class="k">Operations</span><h3>Simpler operations</h3><p>One management platform monitors the whole network, so branches need no dedicated network engineer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="mist">
+  <div class="wrap">
+    <div class="eyebrow"><i><b></b><b></b><b></b></i>Edge Devices</div>
+    <h2>uXconnect CPE devices</h2>
+    <div class="hw">
+      <article><div class="mdl"><b>CPE-50</b><span>Branches · Stores</span></div><table>
+        <tr><td>Ethernet ports</td><td>5 × 1000M</td></tr><tr><td>WAN access</td><td>Static IP · PPPoE · 4G</td></tr>
+        <tr><td>Internet throughput</td><td>500 Mbps+</td></tr><tr><td>SD-WAN encrypted throughput</td><td>50 Mbps</td></tr><tr><td>Wireless</td><td>Dual-band 2.4 / 5 GHz Wi-Fi</td></tr></table></article>
+      <article><div class="mdl"><b>CPE-500</b><span>HQ · High-traffic sites</span></div><table>
+        <tr><td>Ethernet ports</td><td>4 × 1000M</td></tr><tr><td>WAN access</td><td>Static IP · PPPoE · 4G</td></tr>
+        <tr><td>Internet throughput</td><td>1 Gbps+</td></tr><tr><td>SD-WAN encrypted throughput</td><td>500 Mbps</td></tr><tr><td>Deployment modes</td><td>Routed · Bridged · Bypass · Inline</td></tr></table></article>
+    </div>
+    <p class="fine">Mobile devices can also connect with built-in L2TP over IPsec, with no client to install; smart DNS steers each user to the best PoP.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow"><i><b></b><b></b><b></b></i>Use Cases</div>
+    <h2>Use cases</h2>
+    <div class="grid3">
+      <div class="card"><div class="ico"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M4 11l2-6h16l2 6M4 11v12h20V11M4 11h20M11 23v-7h6v7"/></svg></div><h3>Nationwide retail chains</h3><p>Hundreds of stores on multi-carrier broadband with 4G backup, in steady sync with HQ CRM, VoIP and cloud platforms.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="11"/><path d="M3 14h22M14 3c4 4 4 18 0 22M14 3c-4 4-4 18 0 22"/></svg></div><h3>Multinational branches</h3><p>China branches linked to overseas headquarters and regional data centers, with application-based steering that prioritizes critical traffic.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="8" y="3" width="12" height="22" rx="2"/><path d="M12 21h4"/></svg></div><h3>Global remote work</h3><p>Every traveling or overseas employee gets an account; internal systems go over the encrypted network and everything else breaks out locally.</p></div>
+    </div>
+  </div>
+</section>
+<section class="band"><div class="stripes"></div><div class="wrap">
+  <div><h2>See how fast your WAN can be in 14 days</h2><p>We deploy test devices free of charge and measure performance with your real traffic.</p></div>
+  <div class="cta"><a class="btn primary" href="contact.html?biz=SD-WAN">Book a consultation</a><a class="btn ghost" href="tel:+862152359911">Call +86 21 5235 9911</a></div>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="flogos"><img src="../assets/syx-lockup.svg" alt="SYX Youxun Industrial" width="155" height="40"><img src="../assets/ux-h-rev-s.svg" alt="uXconnect" width="190" height="40"></div>
+        <p>Room 404, 4F, Building D3, 39 Hongcao Road, Xuhui District, Shanghai, China</p>
+        <p>Tel +86 21 5235 9911<button class="copy" data-c="+86 21 5235 9911" type="button">Copy</button></p>
+        <p class="fhours">Hours 9:00–18:00 (UTC+8)</p>
+        <p>Email <a href="mailto:youxunxingzheng@youxun.com">youxunxingzheng@youxun.com</a></p>
+        <a class="certrow cb" href="about.html#certs" aria-label="View certifications"><img src="../assets/badges/iso9001-w.svg" alt="ISO 9001 quality management" title="ISO 9001 quality management" width="44" height="44"><img src="../assets/badges/iso27001-w.svg" alt="ISO/IEC 27001 information security" title="ISO/IEC 27001 information security" width="44" height="44"><img src="../assets/badges/gaoxin-w.svg" alt="National High-Tech Enterprise" title="National High-Tech Enterprise" width="44" height="44"><img src="../assets/badges/sbo-w.svg" alt="Hong Kong SBO license" title="Hong Kong SBO license" width="44" height="44"></a>
+      </div>
+      <div><p class="fh">Solutions</p><p><a href="access.html">Business Internet Access</a></p><p><a href="sdwan.html">Global SD-WAN</a></p><p><a href="global.html">Cross-Border &amp; Cloud</a></p></div>
+      <div><p class="fh">Customers</p><p><a href="cases.html">Case Studies</a></p></div>
+      <div><p class="fh">Company</p><p><a href="about.html">About uXconnect</a></p><p><a href="about.html#certs">Certifications</a></p><p><a href="about.html#service">Service &amp; Support</a></p><p><a href="contact.html">Contact</a></p></div>
+      <div><p class="fh">WeCom</p><div class="qr qr-img"><img src="../assets/wecom-qr.png" alt="Scan to add a uXconnect account manager on WeCom" width="240" height="240" loading="lazy"></div><p class="qr-cap">Scan to reach an account manager</p></div>
+    </div>
+    <div class="legal"><span>© 1996–2026 Shanghai Youxun Industrial Co., Ltd.</span><span>YouXun Industry (HongKong) Co., Limited</span><a href="privacy.html">Privacy Policy</a><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" lang="zh-CN">沪ICP备06018074号</a></div>
+  </div>
+</footer>
+<dialog class="lb" aria-label="Certificate"><img alt=""><p>Click anywhere to close</p></dialog>
+<script src="../assets/site.js?v=20261106fm"></script>
+</body>
+</html>

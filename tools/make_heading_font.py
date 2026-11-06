@@ -7,7 +7,7 @@ import sys,re,glob,html,subprocess,os
 src=sys.argv[1]
 root=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 chars=set()
-for f in glob.glob(os.path.join(root,'*.html')):
+for f in glob.glob(os.path.join(root,'*.html'))+glob.glob(os.path.join(root,'*','*.html')):
     t=open(f,encoding='utf-8').read()
     t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
     t=html.unescape(re.sub(r'<[^>]+>','',t))

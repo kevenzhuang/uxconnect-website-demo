@@ -1025,7 +1025,7 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 
 /* ======================= 七项统一（设计系统收口） ======================= */
 /* 3. 标题字体：内嵌思源黑体子集，Windows / Mac 一致 */
-@font-face{font-family:"UX Heading";src:url(fonts/heading-sc.woff2?v=2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"UX Heading";src:url(fonts/heading-sc.woff2?v=6) format("woff2");font-weight:700;font-display:swap}
 h1,h2,h3,h4,.stat b{font-family:"UX Heading",var(--f-sans);font-weight:700}
 
 /* 4. 间距系统：板块 112 / 72，标题→内容 48 */
@@ -1112,19 +1112,19 @@ main section:not(.hero):not(.page-hero)>.wrap>h2::after{content:"";display:block
 @media (max-width:600px){.badges{gap:20px 16px}.badges figure{width:42%}.badges img{width:96px;height:96px}}
 
 /* ---------- 中文版使用 SYX 友讯实业标志：金/棕色（uXconnect 标志色）统一改为标志蓝，枢纽点用标志红 ---------- */
-html[lang^="zh"]{--ux-gold:#05A5E5;--ux-brown:#035A9D}
-html[lang^="zh"] .eyebrow i{display:none}
-html[lang^="zh"] .stat b sup{color:#05A5E5}
-html[lang^="zh"] .page-hero .bars i{background:#E6F3FB!important}
-html[lang^="zh"] .page-hero .bars i:nth-child(odd){background:#D2EAF8!important}
-html[lang^="zh"] .page-hero .bars i:nth-child(3n){background:#A9D7F2!important}
-html[lang^="zh"] .page-hero .bars i:nth-child(6){background:#05A5E5!important}
-html[lang^="zh"] .sm .hub{fill:#E30325!important}
-html[lang^="zh"] .sm .ring{stroke:#E30325!important}
-html[lang^="zh"] .sm-legend .a{background:#E30325!important;box-shadow:0 0 0 2px #fff,0 0 0 3px #E30325!important}
-html[lang^="zh"] .band .stripes{background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(1,144,238,.10) 18px 24px,transparent 24px 34px,rgba(5,165,229,.30) 34px 37px)!important}
-html[lang^="zh"] .band .wrap::after{background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(1,144,238,.20) 18px 24px,transparent 24px 34px,rgba(5,165,229,.40) 34px 37px)!important}
-html[lang^="zh"] .pg-index section.why::before{background:radial-gradient(60% 80% at 85% 0%,rgba(1,144,238,.22),transparent 60%),radial-gradient(40% 60% at 10% 100%,rgba(5,165,229,.10),transparent 60%)}
+html[lang]{--ux-gold:#05A5E5;--ux-brown:#035A9D}
+html[lang] .eyebrow i{display:none}
+html[lang] .stat b sup{color:#05A5E5}
+html[lang] .page-hero .bars i{background:#E6F3FB!important}
+html[lang] .page-hero .bars i:nth-child(odd){background:#D2EAF8!important}
+html[lang] .page-hero .bars i:nth-child(3n){background:#A9D7F2!important}
+html[lang] .page-hero .bars i:nth-child(6){background:#05A5E5!important}
+html[lang] .sm .hub{fill:#E30325!important}
+html[lang] .sm .ring{stroke:#E30325!important}
+html[lang] .sm-legend .a{background:#E30325!important;box-shadow:0 0 0 2px #fff,0 0 0 3px #E30325!important}
+html[lang] .band .stripes{background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(1,144,238,.10) 18px 24px,transparent 24px 34px,rgba(5,165,229,.30) 34px 37px)!important}
+html[lang] .band .wrap::after{background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(1,144,238,.20) 18px 24px,transparent 24px 34px,rgba(5,165,229,.40) 34px 37px)!important}
+html[lang] .pg-index section.why::before{background:radial-gradient(60% 80% at 85% 0%,rgba(1,144,238,.22),transparent 60%),radial-gradient(40% 60% at 10% 100%,rgba(5,165,229,.10),transparent 60%)}
 
 /* ================= 对齐与动效完善 ================= */
 /* 页脚标志：固定高度、宽度随比例，左边缘与下方文字严格对齐，两枚标志垂直居中 */
@@ -1475,3 +1475,51 @@ dialog.lb p{font-size:14px}
 @media (max-width:760px){.stat b{font-size:32px!important}}
 .home-certs .certs.certs3{grid-template-columns:repeat(3,1fr);margin-top:0}
 .rz-cat h4 em,.office em{font-size:12px!important}
+/* 英文版：西文字体栈与行高 */
+html[lang^="en"]{--f-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+html[lang^="en"] body{line-height:1.6}
+html[lang^="en"] main h1,html[lang^="en"] main h2,html[lang^="en"] main h3{letter-spacing:-.01em!important;text-wrap:balance}
+html[lang^="en"] main p{text-wrap:pretty}
+html[lang^="en"] .hero h1{letter-spacing:-.015em!important}
+html[lang^="en"] .hero-copy>.lede{max-width:36em!important;margin-left:auto!important;margin-right:auto!important}
+html[lang^="en"] .net-head p{max-width:32em!important;margin-left:auto!important;margin-right:auto!important}
+.nob{white-space:nowrap}
+@media (max-width:760px){html[lang^="en"] .hero-eb{letter-spacing:.1em!important;text-indent:.1em!important;white-space:nowrap}html[lang^="en"] .hero-eb::before,html[lang^="en"] .hero-eb::after{display:none}html[lang^="en"] .hero-eb .eb-since{display:none}}
+html[lang^="en"] .hero-eb span{letter-spacing:inherit!important;color:inherit!important;font-weight:inherit!important}
+main .hero h1 .nob{color:inherit!important;display:inline!important}
+main .ovs em .nob,main .ovs span .nob{font-size:inherit!important;color:inherit!important}
+main .ovs.routes{grid-template-columns:repeat(3,1fr)!important;margin-top:48px}
+@media (max-width:900px){main .ovs.routes{grid-template-columns:1fr 1fr!important}}
+@media (max-width:560px){main .ovs.routes{grid-template-columns:1fr!important}}
+main .ovs.routes>span{font-weight:600;color:var(--c-ink)!important}
+main .ovs.routes>span em{font-weight:500;margin-top:4px}
+html[lang^="en"] .cl2 b{word-break:normal;overflow-wrap:anywhere}
+main .nob{font-size:inherit!important;font-weight:inherit!important;letter-spacing:inherit!important;color:inherit!important;padding:0!important;border:0!important;background:none!important}
+/* 英文站：地图枢纽点缀用 uXconnect 品牌金（中文站保持 SYX 红） */
+html[lang^="en"] .sm .hub{fill:#FFB100!important}
+html[lang^="en"] .sm .ring{stroke:#FFB100!important}
+html[lang^="en"] .sm-legend .a{background:#FFB100!important;box-shadow:0 0 0 2px #fff,0 0 0 3px #FFB100!important}
+/* 地图：按需线路（非自有节点）——虚线 + 空心点 */
+.sm .rtx{stroke-dasharray:5 5;opacity:.85}
+.sm .rq{fill:#fff;stroke:#035A9D;stroke-width:2}
+.sm-legend .f{width:9px!important;height:9px!important;border-radius:50%;background:#fff!important;box-shadow:inset 0 0 0 2px #035A9D!important}
+/* 首页客户成效 */
+.home-case .case-wrap{margin-top:48px}
+.home-case .cta{margin-top:32px;justify-content:center;display:flex}
+/* 隐私政策等法律文本 */
+.pp{max-width:720px;margin:0 auto}
+.pp-sec+.pp-sec{margin-top:48px}
+main .pp h2{font-size:var(--t-h3)!important;line-height:1.35!important}
+main .pp h2::after{display:none!important}
+.pp p,.pp ul{margin:16px 0 0}
+.pp ul{padding-left:24px}
+.pp li+li{margin-top:8px}
+/* 单选按钮：统一自绘，避免被输入框样式和浏览器默认样式影响 */
+main .seg input[type=radio]{-webkit-appearance:none;appearance:none;flex:none;width:18px!important;height:18px!important;min-height:0!important;margin:0;padding:0!important;border:1.5px solid #5B6673!important;border-radius:50%!important;background:#fff!important;box-shadow:none!important;cursor:pointer;transition:border-color .2s ease-out,box-shadow .2s ease-out}
+main .seg input[type=radio]:checked{border-color:#035A9D!important;box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 9px #035A9D!important}
+main .seg input[type=radio]:focus,main .seg input[type=radio]:focus-visible{outline:none!important}
+main .seg label{transition:border-color .2s ease-out,background-color .2s ease-out}
+main .seg label:hover{border-color:#035A9D}
+main .seg label:has(input:checked){border-color:#035A9D!important;background:#E8F4FD!important;color:#052E5A}
+main .seg label:has(input:focus-visible){outline:2px solid #05A5E5;outline-offset:2px}
+main form .err{color:#E30325!important;font-size:var(--t-small)!important}

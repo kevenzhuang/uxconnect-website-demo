@@ -8,10 +8,17 @@
   var M_LON0=-20,M_LAT0=72,M_S=4,M_W=1440,M_H=528; // land-mask geometry
 
   var DOM=[['上海',121.47,31.23,32],['广州',113.26,23.13,22],['北京',116.4,39.9,21],['深圳',114.06,22.54,16],['香港',114.17,22.32,6],['杭州',120.15,30.27,5],['南昌',115.86,28.68,4],['苏州',120.58,31.3,3],['无锡',120.3,31.57,3],['石家庄',114.9,38.6,3],['南京',118.8,32.06,3],['绍兴',120.58,30,3],['东莞',113.75,23.02,3],['佛山',113.12,23.02,3],['武汉',114.3,30.59,3],['成都',104.07,30.67,3],['昆山',120.98,31.38,2],['南通',120.86,32,2],['合肥',117.23,31.82,2],['中山',113.39,22.52,2],['长沙',112.94,28.23,2],['重庆',106.55,29.56,2],['昆明',102.71,25.04,2],['贵阳',106.63,26.65,2],['兰州',103.83,36.06,2],['西安',108.94,34.34,2],['哈尔滨',126.63,45.75,2],['呼和浩特',111.75,40.84,2],['太仓',121.1,31.45,1],['扬州',119.41,32.39,1],['常州',119.97,31.81,1],['天津',117.2,39.13,1],['嘉兴',120.76,30.75,1],['金华',119.65,29.08,1],['湖州',120.09,30.89,1],['义乌',120.07,29.31,1],['珠海',113.58,22.27,1],['福州',119.3,26.08,1],['南宁',108.37,22.82,1],['柳州',109.41,24.33,1],['长春',125.32,43.88,1],['大连',121.61,38.91,1],['中卫',105.19,37.5,1],['台北',121.56,25.04,1]];
-  var OVS=[['东京','Tokyo',139.69,35.69],['首尔','Seoul',126.98,37.57],['新加坡','Singapore',103.82,1.35],['马尼拉','Manila',120.98,14.6],['胡志明市','Ho Chi Minh',106.63,10.82],['雅加达','Jakarta',106.85,-6.21],['孟买','Mumbai',72.88,19.08],['法兰克福','Frankfurt',8.68,50.11],['南非','South Africa',28.05,-26.2],['洛杉矶','Los Angeles',-118.24,34.05],['芝加哥','Chicago',-87.63,41.88],['里约热内卢','Rio de Janeiro',-43.17,-22.91]];
+  var OVS=[['东京','Tokyo',139.69,35.69],['首尔','Seoul',126.98,37.57],['新加坡','Singapore',103.82,1.35],['马尼拉','Manila',120.98,14.6],['胡志明市','Ho Chi Minh',106.63,10.82],['雅加达','Jakarta',106.85,-6.21],['孟买','Mumbai',72.88,19.08],['法兰克福','Frankfurt',8.68,50.11],['南非','South Africa',28.05,-26.2],['洛杉矶','Los Angeles',-118.24,34.05],['芝加哥','Chicago',-87.63,41.88],['里约热内卢','Rio de Janeiro',-43.17,-22.91],['悉尼','Sydney',151.21,-33.87]];
+  var RTE=[]; // deliverable routes that are not our nodes (dashed line, hollow dot)
   var SH=[121.47,31.23],HK=[114.17,22.32];
   var DOM_LABELS=['北京','成都','武汉','广州','西安','哈尔滨'];
-  var REGION={'孟买':'印度','法兰克福':'欧洲','南非':'非洲','洛杉矶':'美洲','芝加哥':'美洲','里约热内卢':'美洲','东京':'日本','首尔':'韩国','新加坡':'东南亚','马尼拉':'东南亚','胡志明市':'东南亚','雅加达':'东南亚'};
+  var REGION={'孟买':'印度','法兰克福':'欧洲','南非':'非洲','洛杉矶':'美洲','芝加哥':'美洲','里约热内卢':'美洲','东京':'日本','首尔':'韩国','新加坡':'东南亚','马尼拉':'东南亚','胡志明市':'东南亚','雅加达':'东南亚','悉尼':'澳洲'};
+  var EN=/^en/i.test(document.documentElement.lang);
+  var TR={'上海':'Shanghai','香港':'Hong Kong','北京':'Beijing','成都':'Chengdu','武汉':'Wuhan','广州':'Guangzhou','西安':'Xi\'an','哈尔滨':'Harbin',
+    '东京':'Tokyo','首尔':'Seoul','新加坡':'Singapore','马尼拉':'Manila','胡志明市':'Ho Chi Minh','雅加达':'Jakarta','孟买':'Mumbai','法兰克福':'Frankfurt','南非':'South Africa','洛杉矶':'Los Angeles','芝加哥':'Chicago','里约热内卢':'Rio de Janeiro',
+    '印度':'India','欧洲':'Europe','非洲':'Africa','美洲':'Americas','日本':'Japan','韩国':'Korea','东南亚':'SE Asia','悉尼':'Sydney','澳洲':'Australia'};
+  function L(s){return EN&&TR[s]||s}
+  function TW(s,fs){return EN?s.length*fs*.56:s.length*fs}
   var WIN={wide:{lon:[-20,330],lat:[63,-44]},narrow:{lon:[72,152],lat:[55,-10]}};
 
   var maskData=null,waiting=[];
@@ -27,7 +34,7 @@
   function Show(box){
     this.box=box;box.classList.add('sm');
     this.canvas=document.createElement('canvas');box.appendChild(this.canvas);
-    this.svg=el('svg',{'class':'sm-svg',role:'img','aria-label':box.getAttribute('data-label')||'友讯网络节点分布示意'},box);
+    this.svg=el('svg',{'class':'sm-svg',role:'img','aria-label':box.getAttribute('data-label')||(EN?'uXconnect network map':'友讯网络节点分布示意')},box);
     this.motion=!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var self=this,src=box.getAttribute('data-mask')||'assets/land-mask.png',last='';
     function go(){var w=box.clientWidth;if(!w)return;var k=self.pick(w)+w;if(k===last)return;last=k;self.render()}
@@ -78,10 +85,13 @@
     OVS.forEach(function(o){var q=self.P(o[2],o[3]),from=(o[3]>25||o[2]<0||o[2]<60)?sh:hk;
       if(inside(q)){arc(from,q,.2,'rt',true);el('circle',{cx:q[0],cy:q[1],r:5.2,'class':'halo'},nodes);el('circle',{cx:q[0],cy:q[1],r:3.4,'class':'ov'},nodes);cands.push({x:q[0],y:q[1],r:5,t:o[0],pri:5})}
       else (o[2]>=0&&o[2]<100?west:east).push(o)});
+    RTE.forEach(function(o){var q=self.P(o[2],o[3]);
+      if(inside(q)){arc(hk,q,.2,'rt rtx',false);el('circle',{cx:q[0],cy:q[1],r:5.2,'class':'halo'},nodes);el('circle',{cx:q[0],cy:q[1],r:3.4,'class':'rq'},nodes);cands.push({x:q[0],y:q[1],r:5,t:o[0],pri:6})}
+      else east.push(o)});
     [[west,10,'start','← '],[east,w-10,'end','']].forEach(function(gp,i){if(!gp[0].length)return;
       var y=22,a=i?sh:hk;arc(a,[gp[1],y+10],.22,'rt',true);
-      var regs=[];gp[0].forEach(function(o){var rg=REGION[o[0]];if(regs.indexOf(rg)<0)regs.push(rg)});
-      var txt=gp[3]+regs.join(' · ')+(i?' →':''),tw=txt.length*12;
+      var regs=[];gp[0].forEach(function(o){var rg=REGION[o[0]];if(regs.indexOf(L(rg))<0)regs.push(L(rg))});
+      var txt=gp[3]+regs.join(' · ')+(i?' →':''),tw=TW(txt,12);
       edgeBoxes.push(i?[gp[1]-tw,y-13,gp[1],y+4]:[gp[1],y-13,gp[1]+tw,y+4]);
       var t=el('text',{x:gp[1],y:y,'class':'lb edge','text-anchor':gp[2]},labels);t.textContent=txt});
     arc(sh,hk,.28,'rt',true);
@@ -111,10 +121,10 @@
     var placed=[];function hit(b){if(b[0]<4||b[1]<4||b[2]>w-4||b[3]>H-4)return true;for(var i=0;i<placed.length;i++){var q=placed[i];if(b[0]<q[2]&&b[2]>q[0]&&b[1]<q[3]&&b[3]>q[1])return true}return false}
     kept.forEach(function(q){placed.push([q[0]-2.5,q[1]-2.5,q[0]+2.5,q[1]+2.5])});[sh,hk].forEach(function(q){placed.push([q[0]-7,q[1]-7,q[0]+7,q[1]+7])});edgeBoxes.forEach(function(b){placed.push(b)});
     cands.sort(function(a,b){return a.pri-b.pri}).forEach(function(c){
-      var fs=c.hub?15:12.5,W=c.t.length*fs+2,Hh=fs+3,g=c.r+3;
+      var fs=c.hub?15:12.5,lt=L(c.t),W=TW(lt,fs)+2,Hh=fs+3,g=c.r+3;
       var opts=c.hub&&c.t==='上海'?[[c.x+g,c.y-Hh/2],[c.x-W/2,c.y-g-Hh]]:[[c.x+g,c.y-Hh/2],[c.x-g-W,c.y-Hh/2],[c.x-W/2,c.y-g-Hh],[c.x-W/2,c.y+g],[c.x+g-2,c.y-g-Hh+2],[c.x-g-W+2,c.y-g-Hh+2],[c.x+g-2,c.y+g-2],[c.x-g-W+2,c.y+g-2]];
       for(var i=0;i<opts.length;i++){var o=opts[i],b=[o[0],o[1],o[0]+W,o[1]+Hh];if(hit(b))continue;placed.push(b);
-        var t=el('text',{x:o[0],y:o[1]+fs-1,'class':'lb'+(c.hub?' hubl':'')},labels);t.textContent=c.t;return}
+        var t=el('text',{x:o[0],y:o[1]+fs-1,'class':'lb'+(c.hub?' hubl':'')},labels);t.textContent=lt;return}
     });
   };
   function init(){document.querySelectorAll('[data-showmap]').forEach(function(b){if(!b._s)b._s=new Show(b)})}

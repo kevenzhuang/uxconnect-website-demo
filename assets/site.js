@@ -1,4 +1,6 @@
 (function(){
+  var EN=/^en/i.test(document.documentElement.lang);
+  var T=EN?{copied:'Copied',need:'Please enter your company, name and phone number.',tel:'Please check the phone number format.',mail:'Please check the email address.',preview:'Preview only — nothing was sent. Once live, your request goes straight to our team.',sending:'Sending…',ok:'Thank you. A solutions consultant will contact you within one business day.',sent:'Sent',submit:'Submit request',fail:'Something went wrong. Please try again or call +86 21 5235 9911.'}:{copied:'已复制',need:'请填写公司名称、联系人和手机号码。',tel:'手机号码格式不正确，请检查后重新填写。',mail:'邮箱格式不正确，请检查后重新填写。',preview:'预览环境不会真实发送。正式上线后，申请将直接送达业务负责人邮箱。',sending:'提交中…',ok:'提交成功。方案顾问将在一个工作日内与您联系。',sent:'已提交',submit:'提交咨询申请',fail:'提交未成功，请稍后重试，或直接致电 021-52359911。'};
   // mobile menu
   var b=document.querySelector('.burger'),m=document.getElementById('mnav');
   var sc=null;function setMenu(open){b.setAttribute('aria-expanded',String(open));m.hidden=!open;document.body.classList.toggle('menu-open',open);if(open&&!sc){sc=document.createElement('div');sc.className='mnav-scrim';sc.addEventListener('click',function(){setMenu(false)});document.body.appendChild(sc)}else if(!open&&sc){sc.remove();sc=null}}
@@ -12,7 +14,7 @@
     document.querySelectorAll('.cert .shot, .rz-shots .shot').forEach(function(s){s.addEventListener('click',function(){var im=s.querySelector('img');li.src=im.getAttribute('data-full')||im.src;li.alt=im.alt;try{lb.showModal()}catch(e){lb.setAttribute('open','')}})});
     lb.addEventListener('click',function(){if(lb.close)lb.close();else lb.removeAttribute('open')})}
   // copy
-  document.querySelectorAll('.copy').forEach(function(c){c.addEventListener('click',function(){var t=c.getAttribute('data-c');try{navigator.clipboard.writeText(t).then(function(){c.textContent='已复制'},function(){c.textContent=t})}catch(e){c.textContent=t}})});
+  document.querySelectorAll('.copy').forEach(function(c){c.addEventListener('click',function(){var t=c.getAttribute('data-c');try{navigator.clipboard.writeText(t).then(function(){c.textContent=T.copied},function(){c.textContent=t})}catch(e){c.textContent=t}})});
   // case filters
   var fb=document.querySelectorAll('.filters button');
   fb.forEach(function(btn){btn.addEventListener('click',function(){var f=btn.getAttribute('data-f');fb.forEach(function(x){x.setAttribute('aria-pressed',String(x===btn))});
@@ -25,13 +27,14 @@
       e.preventDefault();
       var err=f.querySelector('.err'),ok=f.querySelector('.ok');err.hidden=true;
       var need=['company','name','tel'].filter(function(n){return !f.elements[n].value.trim()});
-      if(need.length){err.textContent='请填写公司名称、联系人和手机号码。';err.hidden=false;f.elements[need[0]].focus();return}
-      if(!/^[0-9+\-\s]{7,20}$/.test(f.elements.tel.value.trim())){err.textContent='手机号码格式不正确，请检查后重新填写。';err.hidden=false;f.elements.tel.focus();return}
-      if(document.body.hasAttribute('data-preview')){ok.textContent='预览环境不会真实发送。正式上线后，申请将直接送达业务负责人邮箱。';ok.hidden=false;return}
-      var btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='提交中…';
+      if(need.length){err.textContent=T.need;err.hidden=false;f.elements[need[0]].focus();return}
+      if(!/^[0-9+\-\s()]{7,20}$/.test(f.elements.tel.value.trim())){err.textContent=T.tel;err.hidden=false;f.elements.tel.focus();return}
+      var em=f.elements.email;if(em&&em.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim())){err.textContent=T.mail;err.hidden=false;em.focus();return}
+      if(document.body.hasAttribute('data-preview')||/github\.io$|claude|localhost|^127\./.test(location.hostname)){ok.textContent=T.preview;ok.hidden=false;return}
+      var btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.textContent=T.sending;
       fetch(f.getAttribute('action'),{method:'POST',body:new FormData(f)}).then(function(r){return r.json()}).then(function(j){
-        if(j&&j.ok){f.reset();ok.textContent='提交成功。方案顾问将在一个工作日内与您联系。';ok.hidden=false;btn.textContent='已提交'}
-        else throw 0}).catch(function(){btn.disabled=false;btn.textContent='提交咨询申请';err.textContent='提交未成功，请稍后重试，或直接致电 021-52359911。';err.hidden=false})
+        if(j&&j.ok){f.reset();ok.textContent=T.ok;ok.hidden=false;btn.textContent=T.sent}
+        else throw 0}).catch(function(){btn.disabled=false;btn.textContent=T.submit;err.textContent=T.fail;err.hidden=false})
     })}
 })();
 (function(){var d=document.querySelector('dialog.wecom');if(!d)return;
