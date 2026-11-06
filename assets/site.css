@@ -1244,3 +1244,7 @@ footer a[href^="mailto"]{color:inherit;text-decoration:none;border-bottom:1px so
   .home-certs .certs h3{text-align:center}
   .home-certs .split>.certs{margin-top:0!important}
 }
+
+/* 案例 v2：客户需求 / 友讯方案 / 实施成效 */
+.case2 .body .res{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px}
+.case2 .body .res p{margin:0;color:var(--navy,#052E5A);font-weight:500;line-height:1.75}
