@@ -13,7 +13,7 @@
 <link href="../sdwan.html" hreflang="zh-CN" rel="alternate"/>
 <link href="../en/sdwan.html" hreflang="en" rel="alternate"/>
 <link href="sdwan.html" hreflang="ja" rel="alternate"/>
-<link href="../assets/site.css?v=20261106e2" rel="stylesheet"/>
+<link href="../assets/site.css?v=20261107d7" rel="stylesheet"/>
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -60,7 +60,7 @@
 <rect class="box" height="54" rx="8" width="170" x="20" y="176"></rect><text x="38" y="200">店舗</text><text class="s" x="38" y="218">CPE-50 · Wi-Fi</text>
 <rect class="box" height="54" rx="8" width="170" x="20" y="244"></rect><text x="38" y="268">リモートユーザー</text><text class="s" x="38" y="286">L2TP over IPsec</text>
 <rect class="core" height="258" rx="16" width="300" x="300" y="40"></rect>
-<text class="t" text-anchor="middle" x="450" y="70">uXconnect バックボーン</text>
+<text class="t" text-anchor="middle" x="450" y="70">バックボーン</text>
 <text class="s" text-anchor="middle" x="450" y="88">CONTROLLER · PE MESH · 170+ POP</text>
 <g class="mesh"></g>
 <text class="s" text-anchor="middle" x="450" y="285">動的ルーティング · FEC · QoS · 暗号化トンネル</text>
@@ -98,14 +98,14 @@ pops.forEach(function(p){el('circle',{cx:p[0],cy:p[1],r:5,'class':'pp'},mesh)});
 <div class="eyebrow"><i><b></b><b></b><b></b></i>Edge Devices</div>
 <h2>uXconnect CPE 機器</h2>
 <div class="hw">
-<article><div class="mdl"><b>CPE-50</b><span>支店 · 店舗</span></div><table>
-<tr><td>イーサネットポート</td><td>5 × 1000M</td></tr><tr><td>WAN 接続方式</td><td>固定 IP · PPPoE · 4G</td></tr>
-<tr><td>インターネットスループット</td><td>500 Mbps+</td></tr><tr><td><span class="nob">SD-WAN</span> 暗号化スループット</td><td>50 Mbps</td></tr><tr><td>無線</td><td>2.4 / 5 GHz デュアルバンド Wi-Fi</td></tr></table></article>
-<article><div class="mdl"><b>CPE-500</b><span>本社 · 大容量拠点</span></div><table>
-<tr><td>イーサネットポート</td><td>4 × 1000M</td></tr><tr><td>WAN 接続方式</td><td>固定 IP · PPPoE · 4G</td></tr>
+<article><figure class="hw-ph"><img alt="CPE-50" height="500" loading="lazy" src="../assets/cpe/cpe-50.jpg" width="800"/><img alt="uXconnect" class="hw-logo" height="31" src="../assets/ux-h-s.svg" width="120"/></figure><div class="mdl"><b>CPE-50</b><span>支店 · 店舗</span></div><table>
+<tr><td>WAN 接続方式</td><td>固定 IP · PPPoE · 4G</td></tr>
+<tr><td>インターネットスループット</td><td>500 Mbps+</td></tr><tr><td><span class="nob">SD-WAN</span> 暗号化スループット</td><td>50 Mbps</td></tr><tr><td>導入モード</td><td>ルーター · ブリッジ · バイパス · インライン</td></tr></table></article>
+<article><figure class="hw-ph"><img alt="CPE-500" height="500" loading="lazy" src="../assets/cpe/cpe-500.jpg" width="800"/><img alt="uXconnect" class="hw-logo" height="31" src="../assets/ux-h-s.svg" width="120"/></figure><div class="mdl"><b>CPE-500</b><span>本社 · 大容量拠点</span></div><table>
+<tr><td>WAN 接続方式</td><td>固定 IP · PPPoE · 4G</td></tr>
 <tr><td>インターネットスループット</td><td>1 Gbps+</td></tr><tr><td><span class="nob">SD-WAN</span> 暗号化スループット</td><td>500 Mbps</td></tr><tr><td>導入モード</td><td>ルーター · ブリッジ · バイパス · インライン</td></tr></table></article>
 </div>
-<p class="fine">モバイル端末も標準搭載の L2TP over IPsec で接続でき、クライアントのインストールは不要です。スマート DNS が各ユーザーを最適な PoP に振り分けます。</p>
+<p class="fine">モバイル端末は OS 標準の L2TP over IPsec で接続でき、クライアントのインストールは不要です。スマート DNS が最適な PoP へ自動で振り分けます。機器画像はイメージです。ポート数や外観は実際に納品する機器に準じます。</p>
 </div>
 </section>
 <section>
@@ -148,7 +148,7 @@ pops.forEach(function(p){el('circle',{cx:p[0],cy:p[1],r:5,'class':'pp'},mesh)});
 <div><p class="fh">会社情報</p><p><a href="about.html">uXconnect について</a></p><p><a href="about.html#certs">認証・ライセンス</a></p><p><a href="about.html#service">サービス・サポート</a></p><p><a href="contact.html">お問い合わせ</a></p></div>
 <div><p class="fh">WeCom（企業微信）</p><div class="qr qr-img"><img alt="WeCom で uXconnect の担当者を追加" height="240" loading="lazy" src="../assets/wecom-qr.png" width="240"/></div><p class="qr-cap">スキャンして担当者に連絡</p></div>
 </div>
-<div class="legal"><span>© 1996–2026 上海友訊実業有限公司</span><span>YouXun Industry (HongKong) Co., Limited</span><a href="privacy.html">プライバシーポリシー</a><a href="https://beian.miit.gov.cn/" lang="zh-CN" rel="noopener" target="_blank">沪ICP备06018074号</a></div>
+<div class="legal"><span>© 1996–2026 上海友訊実業有限公司</span><span>YouXun Industry (HongKong) Co., Limited</span><a href="privacy.html">プライバシーポリシー</a><a href="https://beian.miit.gov.cn/" lang="zh-CN" rel="noopener" target="_blank">沪ICP备06018074号</a><a href="https://wap.scjgj.sh.gov.cn/businessCheck/verifKey.do?showType=extShow&amp;serial=9031000020161230131942000001507429-SAIC_SHOW_310000-1934F1844FA9491FACC072706B8F8945491&amp;signData=MEQCIASCrNlt4IkJVFb3hQ9/DQYEOUv9HSZ5Yf09K6vQHkI4AiAmZyMn4JYhS2iFbI9v9SRc7hWaahQzHSXybKwtuiy+Cw==" rel="noopener" target="_blank">営業許可証（上海市）</a></div>
 </div>
 </footer>
 <dialog aria-label="証明書" class="lb"><img alt=""/><p>画面をクリックすると閉じます</p></dialog>

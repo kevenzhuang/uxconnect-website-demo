@@ -670,3 +670,67 @@ SV = {
 SV['AWS · Azure · Alibaba Cloud']='AWS · Azure など'
 SV['Broadband + 4G']='ブロードバンド + 4G'
 SV['AWS · Azure · Alibaba']='AWS · Azure など'
+T.update({
+"Two hubs, 29 overseas cities served": "2 つのハブ、海外 29 都市をカバー",
+"Overseas cities": "海外対応都市",
+"Overseas cities served": "海外対応都市",
+"Private lines, SD-WAN and cloud connectivity between our hubs and overseas cities, with other routes delivered on request. Common routes include:": "ハブと海外都市の間で専用線、SD-WAN、クラウド接続を提供し、その他のルートもご要望に応じて構築します。主なルートは以下のとおりです。",
+"170+ PoPs in 40+ Chinese cities, linked to Equinix, GDS and 29 overseas cities.": "中国 40 以上の都市に 170 超の PoP。Equinix、GDS、海外 29 都市とつながっています。",
+"Seattle, San Jose, Los Angeles, St. Paul, Chicago, Dallas, Houston, Washington, Toronto, Montreal, Querétaro,": "シアトル、サンノゼ、ロサンゼルス、セントポール、シカゴ、ダラス、ヒューストン、ワシントン、トロント、モントリオール、ケレタロ、",
+"Rio de Janeiro": "リオデジャネイロ",
+"London, Paris, Amsterdam, Frankfurt, Milan, Oslo": "ロンドン、パリ、アムステルダム、フランクフルト、ミラノ、オスロ",
+})
+U.update({
+'<b>29</b><span>Overseas cities served</span>': '<b>29</b><span>海外対応都市</span>',
+'Private lines, <span class="nob">SD-WAN</span> and cloud connectivity between our hubs and overseas cities, with other routes delivered on request. Common routes include:':
+ 'ハブと海外都市の間で専用線、SD-WAN、クラウド接続を提供し、その他のルートもご要望に応じて構築します。主なルートは以下のとおりです。',
+'Hubs in Shanghai and <span class="nob">Hong Kong</span> link 40+ Chinese cities to 29 overseas cities.': '上海と香港のハブが、中国 40 以上の都市と海外 29 都市を結びます。',
+'Tokyo, Seoul, Singapore, Manila, <span class="nob">Ho Chi Minh City</span>, Jakarta, Mumbai, Chennai, Sydney, Melbourne': '東京、ソウル、シンガポール、マニラ、ホーチミン、ジャカルタ、ムンバイ、チェンナイ、シドニー、メルボルン',
+'Seattle, San Jose, Los Angeles, St. Paul, Chicago, Dallas, Houston, Washington, Toronto, Montreal, Querétaro, <span class="nob">Rio de Janeiro</span>': 'シアトル、サンノゼ、ロサンゼルス、セントポール、シカゴ、ダラス、ヒューストン、ワシントン、トロント、モントリオール、ケレタロ、リオデジャネイロ',
+'<span><i class="a"></i>Hubs · Shanghai / Hong&nbsp;Kong</span><span><i class="b"></i>China PoPs</span><span><i class="c"></i>Overseas cities</span><span><i class="d"></i>Backbone &amp; international links</span><span><i class="e"></i>Node interconnects</span>':
+ '<span><i class="a"></i>ハブ · 上海 / 香港</span><span><i class="b"></i>中国国内 PoP</span><span><i class="c"></i>海外対応都市</span><span><i class="d"></i>バックボーン・国際回線</span><span><i class="e"></i>ノード間接続</span>',
+})
+A.update({"uXconnect PoPs in China and overseas cities served": "uXconnect の中国国内 PoP と海外対応都市"})
+U['<span><i class="a"></i>Hubs · Shanghai / <span class="nob">Hong Kong</span></span><span><i class="b"></i>China PoPs</span><span><i class="c"></i>Overseas cities</span><span><i class="d"></i>Backbone &amp; international links</span><span><i class="e"></i>Node interconnects</span>']='<span><i class="a"></i>ハブ · 上海 / 香港</span><span><i class="b"></i>中国国内 PoP</span><span><i class="c"></i>海外対応都市</span><span><i class="d"></i>バックボーン・国際回線</span><span><i class="e"></i>ノード間接続</span>'
+T["Business license (Shanghai)"]="営業許可証（上海市）"
+T.update({
+"Completed a 2,000 km metro fiber network across 13 districts of Shanghai.":"総延長 2,000 km のメトロネットワークを構築し、上海 13 区をカバー。",
+"Refocused on government and enterprise customers, office buildings and business parks, with enterprise communications and VoIP.":"官公庁・法人顧客とオフィスビル・産業パークに注力し、企業通信と VoIP 事業を展開。",
+"Expanded the metro network to 6,000 km, reaching 600+ buildings and over 10,000 enterprise customers.":"メトロネットワークを 6,000 km に拡大し、600 棟超のビル、1 万社超の法人顧客にサービスを提供。",
+"How it connects":"代表的な接続構成",
+"Multi-site aggregation":"複数拠点の集約",
+"Sites in several cities aggregate in Hong Kong over international private lines, then reach overseas sites":"各都市の拠点を国際専用線で香港に集約し、海外拠点へまとめて接続",
+"Split routing":"スマート振り分け",
+"Domestic traffic breaks out locally; international traffic rides our network straight overseas":"国内向けは最寄りの出口から、海外向けは uXconnect のネットワークで直接海外へ",
+"Network monitoring":"ネットワーク監視",
+"Traffic per site, latency and packet loss, 4G/LTE usage, top sessions and device uptime in one view, with instant email alerts. The layout below is an illustration.":"拠点ごとのトラフィック、遅延とパケットロス、4G/LTE 使用量、上位セッション、機器の稼働状況を一画面で確認でき、異常時は即座にメールで通知します。下図は画面構成のイメージです。",
+})
+SV.update({
+'Shanghai site':'上海拠点','Beijing site':'北京拠点','Seoul site':'ソウル拠点','uXconnect Hong Kong PoP':'uXconnect 香港 PoP','Aggregation & switching':'集約・交換','Singapore site':'シンガポール拠点',
+'Your site':'お客様拠点','uXconnect CPE':'uXconnect CPE','Local carrier breakout':'現地キャリア出口','China internet':'中国国内インターネット','uXconnect China PoP':'uXconnect 中国 PoP','Hong Kong PoP':'香港 PoP','Global internet · SaaS':'海外インターネット · SaaS',
+'Domestic traffic':'国内トラフィック','International traffic':'国際トラフィック',
+'Network monitoring (illustration)':'ネットワーク監視（イメージ）','Topology':'トポロジー','Site traffic':'拠点トラフィック','PoP latency':'PoP 遅延','4G/LTE usage':'4G/LTE 使用量','Packet loss · Top sessions':'パケットロス · 上位セッション',
+'HQ':'本社','Stores':'店舗','4G backup':'4G バックアップ','uXconnect backbone':'バックボーン',
+'China branch':'中国支社','Overseas HQ':'海外本社','Regional DC':'地域 DC','App-based steering':'アプリ別に振り分け',
+'Traveling staff':'出張者','Intranet':'社内ネットワーク','Local internet':'現地インターネット','Encrypted tunnel':'暗号化トンネル',
+})
+T["Traffic per site, latency and packet loss, 4G/LTE usage, top sessions and device uptime in one view, with instant email alerts."]="拠点ごとのトラフィック、遅延とパケットロス、4G/LTE 使用量、上位セッション、機器の稼働状況を一画面で確認でき、異常時は即座にメールで通知します。"
+SV.update({'Hong Kong PoP':'香港 PoP','uXconnect aggregation':'uXconnect 集約拠点','HK PoP':'香港 PoP','Local breakout':'ローカル出口','China internet':'中国インターネット','China PoP':'中国 PoP','Global internet':'海外インターネット','Domestic':'国内向け','International':'海外向け','Backbone':'バックボーン'})
+T.update({"Shifted to enterprise customers, adding business communications and VoIP.":"法人顧客へ軸足を移し、企業通信と VoIP 事業を開始。",
+"Expanded the metro network to 6,000 km, reaching 600+ buildings.":"メトロネットワークを 6,000 km に拡大し、600 棟超のビルをカバー。",
+"Built a 2,000 km metro network across 13 Shanghai districts.":"総延長 2,000 km のメトロネットワークで上海 13 区をカバー。"})
+T["Shifted to enterprise customers and office buildings, adding business communications and VoIP."]="法人顧客とオフィスビルへ軸足を移し、企業通信と VoIP 事業を開始。"
+T.update({"Every solution is designed around your sites and applications. Two common designs:":"ソリューションはすべて拠点の配置と業務に合わせて設計します。以下は代表的な構成例です。",
+"uXconnect network":"uXconnect ネットワーク","Carried by uXconnect":"uXconnect 経由","Not via uXconnect":"uXconnect を経由しない"})
+SV.update({'Aggregation hub':'集約・交換','Internet':'インターネット','Global SaaS':'海外 SaaS'})
+OVJ = {
+ 'Tokyo, Seoul, Singapore, Manila, Ho Chi Minh City, Jakarta, Mumbai, Chennai, Sydney, Melbourne': '東京、ソウル、シンガポール、マニラ、ホーチミン、ジャカルタ、ムンバイ、チェンナイ、シドニー、メルボルン',
+ 'Seattle, San Jose, Los Angeles, St. Paul, Chicago, Dallas, Houston, Washington, Toronto, Montreal, Querétaro, Rio de Janeiro': 'シアトル、サンノゼ、ロサンゼルス、セントポール、シカゴ、ダラス、ヒューストン、ワシントン、トロント、モントリオール、ケレタロ、リオデジャネイロ',
+ 'London, Paris, Amsterdam, Frankfurt, Milan, Oslo': 'ロンドン、パリ、アムステルダム、フランクフルト、ミラノ、オスロ',
+ 'South Africa': '南アフリカ',
+}
+SV.update({'Dynamic routing · FEC · QoS':'動的ルーティング · FEC · QoS','Encrypted tunnels':'暗号化トンネル','Breakout by app, domain or IP range':'アプリ・ドメイン・IP 範囲ごとの出口制御','End-to-end visibility':'エンドツーエンドの可視化'})
+T.update({"uXconnect PoPs and devices":"uXconnect の PoP・機器","International: uXconnect cross-border path":"海外向け：uXconnect の国際回線","Domestic: local internet breakout":"国内向け：現地から直接インターネットへ"})
+SV.update({'Ours or existing line':'自社回線または既存回線'})
+T["Not built in"]="内蔵なし"
+T["Mobile devices can also connect with built-in L2TP over IPsec, with no client to install; smart DNS steers each user to the best PoP. Device images are for illustration; ports and appearance follow the delivered hardware."]="モバイル端末は OS 標準の L2TP over IPsec で接続でき、クライアントのインストールは不要です。スマート DNS が最適な PoP へ自動で振り分けます。機器画像はイメージです。ポート数や外観は実際に納品する機器に準じます。"

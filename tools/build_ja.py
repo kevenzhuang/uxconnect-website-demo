@@ -3,7 +3,7 @@
 import re, os, sys, glob
 from bs4 import BeautifulSoup, NavigableString, Comment, Doctype
 sys.path.insert(0, os.path.dirname(__file__))
-from ja_dict import T, U, A, SV
+from ja_dict import T, U, A, SV, OVJ
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..') + '/'
 os.makedirs(ROOT + 'ja', exist_ok=True)
@@ -39,6 +39,14 @@ for src in sorted(glob.glob(ROOT + 'en/*.html')):
             frag = BeautifulSoup(U[k], 'html.parser')
             for c in list(frag.contents):
                 el.append(c)
+    # 海外都市リスト：リスト全体で訳し、都市名ごとに改行しない
+    for pp in soup.select('.ovlist .ov3 p'):
+        k = ' '.join(pp.get_text().split())
+        if k in OVJ:
+            pp.clear()
+            frag = BeautifulSoup('、'.join('<span class="nob">%s</span>' % x for x in OVJ[k].split('、')), 'html.parser')
+            for c in list(frag.contents):
+                pp.append(c)
     # T: text nodes
     for s in list(soup.find_all(string=True)):
         if isinstance(s, (Comment, Doctype)):
@@ -76,7 +84,9 @@ for src in sorted(glob.glob(ROOT + 'en/*.html')):
         t = t.replace('アジア太平洋', '<span class="nob">アジア太平洋</span>')
         t = t.replace('法人インターネット接続', '法人インターネット<wbr>接続')
         return t
-    body = re.sub(r'(?<=>)[^<>]+(?=<)', fix, body)
+    # SVG 内の文字には適用しない（<span> を入れると SVG が壊れる）
+    parts = re.split(r'(<svg\b.*?</svg>)', body, flags=re.S)
+    body = ''.join(p if p.startswith('<svg') else re.sub(r'(?<=>)[^<>]+(?=<)', fix, p) for p in parts)
     body = body.replace('<span class="nob"><span class="nob">', '<span class="nob">').replace('</span></span><!--nob-->', '</span>')
     out = head + sep + body
     open(ROOT + 'ja/' + name, 'w', encoding='utf-8').write(out)

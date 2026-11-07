@@ -422,7 +422,7 @@ body::before{background:#fff}
 .arch{background:#fff;border-color:var(--deep-line)}
 .arch .box{fill:var(--sky-mist);stroke:var(--deep-line)}
 .arch .core{fill:rgba(1,144,238,.05);stroke:var(--sky)}
-.arch .ln{stroke:#9FB4C7}.arch .ln.g{stroke:var(--sky)}
+.arch .ln{stroke:#8FA4BB}.arch .ln.g{stroke:var(--sky)}
 .arch text.t{fill:var(--blue)}.arch .pp{fill:var(--gold)}
 .cb .tr i{background:var(--sky)}
 .case .side{background:var(--sky-pale);color:var(--navy)}
@@ -1025,7 +1025,7 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 
 /* ======================= 七项统一（设计系统收口） ======================= */
 /* 3. 标题字体：内嵌思源黑体子集，Windows / Mac 一致 */
-@font-face{font-family:"UX Heading";src:url(fonts/heading-sc.woff2?v=16) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"UX Heading";src:url(fonts/heading-sc.woff2?v=17) format("woff2");font-weight:700;font-display:swap}
 h1,h2,h3,h4,.stat b{font-family:"UX Heading",var(--f-sans);font-weight:700}
 
 /* 4. 间距系统：板块 112 / 72，标题→内容 48 */
@@ -1771,3 +1771,63 @@ html[lang^="en"] .hero-eb .eb-dot,html[lang^="ja"] .hero-eb .eb-dot{font-style:n
   html[lang^="en"] .hero-eb .eb-since,html[lang^="ja"] .hero-eb .eb-since{display:block!important}
   html[lang^="en"] .hero-eb .eb-dot,html[lang^="ja"] .hero-eb .eb-dot{display:none}
 }
+/* CPE 实物照片：白底 16:10，右下角品牌标识；同组两张照片同尺寸 */
+main .hw-ph{position:relative;margin:0;aspect-ratio:16/10;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #DCE5EE}
+main .hw-ph img:first-child{width:100%;height:100%;object-fit:contain;display:block}
+main .hw-ph .hw-logo{position:absolute;right:12px;bottom:10px;width:auto;height:20px;opacity:.9}
+@media (min-width:761px){main .hw{grid-template-columns:repeat(2,1fr)!important}}
+/* 地图支线：区域内从门户城市接出的细线，比干线轻 */
+.sm .rt-s{stroke-width:1!important;stroke-opacity:.38!important}
+/* 地图层次：干线（带光晕）> 冗余干线 > 支线；门户城市点更大、带外环 */
+.sm .rt-glow{stroke:#05A5E5!important;stroke-width:5!important;stroke-opacity:.08!important}
+.sm .rt-ghost{stroke-opacity:0!important}
+.sm .rt-alt{stroke-width:1.1!important;stroke-opacity:.4!important;stroke-dasharray:2 4}
+.sm .rt-s{stroke-width:1.1!important;stroke-opacity:.55!important}
+.sm .gw-ring{fill:none;stroke:#035A9D;stroke-width:1;stroke-opacity:.35}
+html[lang^="en"] .sm .gw-ring,html[lang^="ja"] .sm .gw-ring{stroke:#035A9D}
+/* 示意图（跨境组网、监控界面、场景小图）：与 SD-WAN 架构图同一套线条语言 */
+/* v1.9 timeline: 5 per row (>=1101), each item carries its own segment of the line so rows wrap cleanly */
+@media (min-width:1101px){main .tl{grid-template-columns:repeat(5,1fr)!important;border-top:0!important;row-gap:48px!important}main .tl>div{border-top:2px solid #DCE5EE;border-radius:0!important;padding-right:32px}}
+@media (max-width:1100px){main .tl{grid-template-columns:1fr!important;border-top:0!important;border-left:2px solid #DCE5EE!important;gap:24px!important;padding-left:24px!important}main .tl div::before{left:-32px!important;top:6px!important}main .tl div{padding-top:0!important}}
+main .tl p{text-wrap:pretty}
+/* v1.9 示意图（跨境网络页「典型组网方式」）
+   白卡（内边距 32 / 手机 24）；电脑上图名在左（占剩余宽度）、图在右（720），画布 720 按 1:1 显示，方框文字 14、标注 12（与字号阶梯一致）；
+   平板图名在上（窄平板按宽度等比缩小，不低于 0.92 倍）；手机换竖版画布 320。图组下方是图例。 */
+main h3.sub-h.diag-h{margin-top:72px!important}
+main .diag-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:32px}
+main figure.diag{margin:0;border:1px solid #DCE5EE;border-radius:12px;padding:32px;background:#fff}
+main figure.diag figcaption{display:grid;gap:8px;align-content:start}
+main figure.diag figcaption b{font-size:var(--t-h4,17px);font-weight:600;line-height:1.45;color:#052E5A}
+main figure.diag figcaption>span{text-wrap:pretty}
+main figure.diag svg{display:block;width:100%;height:auto}
+main figure.diag svg.dv-d{max-width:720px}
+main figure.diag svg.dv-m{display:none;max-width:400px}
+main .diag .box{fill:#F3F8FC;stroke:#DCE5EE;stroke-width:1.2}
+main .diag .core{fill:#E8F4FD;stroke:#05A5E5;stroke-width:1.4;stroke-dasharray:4 4}
+main .diag .ln{stroke:#8FA4BB;stroke-width:1.4;fill:none}
+main .diag .ln.g{stroke:#05A5E5;stroke-width:1.8}
+main .diag .ln.d{stroke-dasharray:4 4}
+main .diag .pp{fill:#035A9D}
+main .diag text{fill:#052E5A;font-family:var(--f-sans);font-size:14px;font-weight:400}
+main .diag text.t{fill:#035A9D;font-weight:600}
+main .diag text.s{fill:#5B6673;font-size:12px;font-weight:500}
+html[lang="ja"] main .diag text{font-family:var(--f-ja)}
+main .diag-key{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px;font-size:var(--t-small);line-height:1.6;color:#5B6673}
+main .diag-key span{display:flex;align-items:center;gap:8px}
+main .diag-key i{display:inline-block;flex:none}
+main .diag-key .k-core{width:24px;height:16px;border:1.4px dashed #05A5E5;border-radius:8px;background:#E8F4FD}
+main .diag-key .k-g{width:24px;height:0;border-top:2px solid #05A5E5}
+main .diag-key .k-d{width:24px;height:0;border-top:2px dashed #8FA4BB}
+@media (min-width:1101px){main figure.diag{display:grid;grid-template-columns:minmax(0,1fr) 720px;gap:32px;align-items:center}}
+@media (max-width:1100px){main figure.diag figcaption{margin-bottom:24px}}
+@media (max-width:760px){main h3.sub-h.diag-h{margin-top:56px!important}main figure.diag{padding:24px}main figure.diag svg.dv-d{display:none}main figure.diag svg.dv-m{display:block;margin:0 auto}}
+html[lang="ja"] main .lede,html[lang="ja"] main figure.diag figcaption span{word-break:auto-phrase}
+.sm .ldr{stroke:#8FA4BB;stroke-width:1}
+/* v1.9 CPE 卡片按白卡规范：内边距 32 / 手机 24，照片到型号 24；照片底部留白放品牌标识，标识不压设备 */
+main .hw article{padding:32px!important;gap:16px!important}
+main .hw .hw-ph{margin-bottom:8px}
+html[lang^="zh"] main .hw td{word-break:keep-all}
+@media (max-width:760px){main .hw article{padding:24px!important}}
+/* 日文：按词组换行（Chrome 支持；其他浏览器按默认规则） */
+html[lang="ja"] main :is(p,li,dd,td,figcaption span){word-break:auto-phrase;overflow-wrap:anywhere}
+html[lang="ja"] main .hw td{word-break:normal}
