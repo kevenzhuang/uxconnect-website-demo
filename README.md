@@ -1,5 +1,5 @@
 # UXconnect 友讯官网 · 预览版
-
+https://kevenzhuang.github.io/uxconnect-website-demo/
 上海友讯实业有限公司新官网的公开预览版（静态页面，GitHub Pages 托管）。
 
 - 客户名称在取得书面授权前均已匿名处理
