@@ -57,13 +57,16 @@ def lab(x, y, t, anchor='middle'):
 # 电脑 / 平板版：画布 720 宽，按 1:1 显示（方框文字 14，标注 12）
 def d1(t):
     o = '<svg class="dv-d" viewBox="0 0 720 208" role="img" aria-label="%s">' % plain(t['d1_cap'])
-    for y, k in zip((0, 82, 164), ('sh', 'bj', 'se')):
+    # 每条专线各自接入香港 PoP（点对点，不在途中合并），三个接入点分开
+    for y, k, py in zip((0, 82, 164), ('sh', 'bj', 'se'), (80, 104, 128)):
         o += box(0, y, 140, 44, t[k])
-        o += '<path class="ln g" d="M140 %d C200 %d 196 104 250 104"/>' % (y + 22, y + 22)
-    o += core(250, 66, 180, 76, t['hk'], t['hk_s']) + dot(250, 104) + dot(430, 104)
-    o += lab(195, 76, t['line'], 'end')
-    o += '<path class="ln g" d="M430 104 L560 104"/>' + lab(495, 94, t['line'])
-    o += box(560, 82, 160, 44, t['sg'])
+        o += '<path class="ln g" d="M140 %d C195 %d 195 %d 250 %d"/>' % (y + 22, y + 22, py, py)
+    # 接入点圆点在方框之后画，才不会被方框盖住一半
+    # 绘制顺序：线 → 方框 → 圆点，圆点永远在最上层，不被线或方框盖住
+    o += '<path class="ln g" d="M430 104 L560 104"/>'
+    o += core(250, 66, 180, 76, t['hk'], t['hk_s']) + box(560, 82, 160, 44, t['sg'])
+    o += dot(250, 80) + dot(250, 104) + dot(250, 128) + dot(430, 104)
+    o += lab(192, 94, t['line']) + lab(495, 94, t['line'])   # 两侧一致：标在直线段上方 10px
     return o + '</svg>'
 
 def d2(t):
@@ -84,12 +87,12 @@ def d2(t):
 # 手机版：画布 320 宽，竖向
 def d1m(t):
     o = '<svg class="dv-m" viewBox="0 0 320 300" role="img" aria-label="%s">' % plain(t['d1_cap'])
-    for y, k in zip((0, 64, 128), ('sh', 'bj', 'se')):
+    for y, k, py in zip((0, 64, 128), ('sh', 'bj', 'se'), (64, 86, 108)):
         o += box(0, y, 124, 44, t[k])
-        o += '<path class="ln g" d="M124 %d C152 %d 142 86 166 86"/>' % (y + 22, y + 22)
-    o += core(166, 48, 154, 76, t['hk'], t['hk_s']) + dot(166, 86) + dot(243, 124)
-    o += '<path class="ln g" d="M243 124 L243 236"/>' + lab(234, 184, t['line'], 'end')
-    o += box(166, 236, 154, 44, t['sg'])
+        o += '<path class="ln g" d="M124 %d C145 %d 145 %d 166 %d"/>' % (y + 22, y + 22, py, py)
+    o += '<path class="ln g" d="M243 124 L243 236"/>'
+    o += core(166, 48, 154, 76, t['hk'], t['hk_s']) + box(166, 236, 154, 44, t['sg'])
+    o += dot(166, 64) + dot(166, 86) + dot(166, 108) + dot(243, 124) + lab(234, 184, t['line'], 'end')
     return o + '</svg>'
 
 def d2m(t):
