@@ -12,7 +12,7 @@
 <link rel="alternate" hreflang="zh-CN" href="sdwan.html">
 <link rel="alternate" hreflang="en" href="en/sdwan.html">
 <link rel="alternate" hreflang="ja" href="ja/sdwan.html">
-<link rel="preload" href="assets/fonts/heading-sc.woff2?v=17" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/heading-sc.woff2?v=18" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css?v=20261107d7">
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -43,7 +43,7 @@
 <section class="mist" id="products">
   <div class="wrap">
     <div class="eyebrow"><i><b></b><b></b><b></b></i>Services</div>
-    <h2>组网服务</h2>
+    <h2>企业组网服务</h2>
     <p class="lede">每家企业的组网方案都按站点分布、业务重要性与预算设计，通常组合使用：核心站点走专线，分支走 <span class="nob">SD-WAN</span>。</p>
     <div class="grid2 prodlist"><div class="card"><div class="ico"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="6" cy="14" r="3"/><circle cx="22" cy="6" r="3"/><circle cx="22" cy="22" r="3"/><path d="M9 13l10-6M9 15l10 6"/></svg></div><h3><span class="nob">SD-WAN</span> 智能组网</h3><p>基于互联网链路构建广域网，线路成本低于传统专线；集中管理，设备到场即可上线。</p></div><div class="card"><div class="ico"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="4" width="8" height="6" rx="1"/><rect x="17" y="4" width="8" height="6" rx="1"/><rect x="10" y="18" width="8" height="6" rx="1"/><path d="M7 10v4h14v-4M14 14v4"/></svg></div><h3>MPLS-VPN</h3><p>基于运营商骨干网的三层企业专网，隔离性好、质量稳定，支持星型、网状与多层结构。</p></div><div class="card"><div class="ico"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M4 9h20M4 19h20"/><circle cx="8" cy="9" r="2"/><circle cx="20" cy="19" r="2"/></svg></div><h3>二层组网</h3><p>VPLS、VXLAN over EVPN 等二层互联，各站点如同在同一局域网。</p></div><div class="card"><div class="ico"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="5" cy="14" r="3"/><circle cx="23" cy="14" r="3"/><path d="M8 14h12"/></svg></div><h3>国内点对点专线</h3><p>以太网专线、MSTP 等独享电路，带宽按需配置、不设上限，开通周期通常 10 至 20 天。</p></div></div>
   </div>
@@ -124,6 +124,19 @@ pops.forEach(function(p){el('circle',{cx:p[0],cy:p[1],r:5,'class':'pp'},mesh)});
   </div>
 </section>
 
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow"><i><b></b><b></b><b></b></i>FAQ</div>
+    <h2>常见问题</h2>
+    <div class="faq">
+      <details><summary>咨询时需要提供哪些信息？</summary><p>站点数量与所在城市、各站点现有线路，以及主要业务系统（如 ERP、CRM、VoIP）和对稳定性的要求。我们据此设计组网方案。</p></details>
+      <details><summary>开通需要多长时间？</summary><p><span class="nob">SD-WAN</span> 设备到场接电即可上线，开通速度主要取决于设备物流；国内点对点专线开通周期通常为 10 至 20 天。</p></details>
+      <details><summary><span class="nob">SD-WAN</span> 和专线该怎么选？</summary><p><span class="nob">SD-WAN</span> 基于互联网链路，线路成本低于传统专线，适合门店和分支；MPLS-VPN 与点对点专线隔离性好、质量稳定，适合核心站点。多数企业组合使用：核心站点走专线，分支走 <span class="nob">SD-WAN</span>。</p></details>
+      <details><summary>现有的路由器、防火墙要更换吗？</summary><p>不一定。友讯 CPE 支持路由、桥接、旁路与串联多种部署模式，可以按现有网络选择接入方式，具体在方案阶段确定。</p></details>
+      <details><summary>可以先测试吗？</summary><p>可以。我们可以免费部署测试设备，用真实业务流量验证性能。</p></details>
+    </div>
+  </div>
+</section>
 <section class="ops-sec">
   <div class="wrap">
     <div class="eyebrow"><i><b></b><b></b><b></b></i>Operations</div>

@@ -42,7 +42,7 @@
 <section class="mist" id="products">
 <div class="wrap">
 <div class="eyebrow"><i><b></b><b></b><b></b></i>Services</div>
-<h2>ネットワークサービス</h2>
+<h2>企業ネットワークサービス</h2>
 <p class="lede">拠点の分布、業務の重要度、ご予算に合わせて設計し、通常は複数の方式を組み合わせます。基幹拠点は専用線、支社は <span class="nob">SD-WAN</span> といった構成です。</p>
 <div class="grid2 prodlist"><div class="card"><div class="ico"><svg aria-hidden="true" viewbox="0 0 28 28"><circle cx="6" cy="14" r="3"></circle><circle cx="22" cy="6" r="3"></circle><circle cx="22" cy="22" r="3"></circle><path d="M9 13l10-6M9 15l10 6"></path></svg></div><h3><span class="nob">SD-WAN</span></span></h3><p>インターネット回線上に WAN を構築し、従来の専用線よりコストを抑えます。一元管理で、機器が届けばすぐに開通できます。</p></div><div class="card"><div class="ico"><svg aria-hidden="true" viewbox="0 0 28 28"><rect height="6" rx="1" width="8" x="3" y="4"></rect><rect height="6" rx="1" width="8" x="17" y="4"></rect><rect height="6" rx="1" width="8" x="10" y="18"></rect><path d="M7 10v4h14v-4M14 14v4"></path></svg></div><h3>MPLS-VPN</h3><p>キャリアのバックボーン上に構築するレイヤー 3 の閉域網。分離性と安定性に優れ、スター型・メッシュ型・多階層構成に対応します。</p></div><div class="card"><div class="ico"><svg aria-hidden="true" viewbox="0 0 28 28"><path d="M4 9h20M4 19h20"></path><circle cx="8" cy="9" r="2"></circle><circle cx="20" cy="19" r="2"></circle></svg></div><h3>レイヤー 2 ネットワーク</h3><p>VPLS や VXLAN over EVPN により、すべての拠点を同一 LAN のようにつなぎます。</p></div><div class="card"><div class="ico"><svg aria-hidden="true" viewbox="0 0 28 28"><circle cx="5" cy="14" r="3"></circle><circle cx="23" cy="14" r="3"></circle><path d="M8 14h12"></path></svg></div><h3>中国国内ポイントツーポイント専用線</h3><p>イーサネット専用線や MSTP などの専有回線。帯域は必要に応じて設定し上限はなく、通常 10〜20 日で開通します。</p></div></div>
 </div>
@@ -116,6 +116,19 @@ pops.forEach(function(p){el('circle',{cx:p[0],cy:p[1],r:5,'class':'pp'},mesh)});
 <div class="card"><div class="ico"><svg aria-hidden="true" viewbox="0 0 28 28"><path d="M4 11l2-6h16l2 6M4 11v12h20V11M4 11h20M11 23v-7h6v7"></path></svg></div><h3>全国展開の小売チェーン</h3><p>数百店舗をマルチキャリアのブロードバンドと 4G バックアップで接続し、本社の CRM、VoIP、クラウドと安定して同期します。</p></div>
 <div class="card"><div class="ico"><svg aria-hidden="true" viewbox="0 0 28 28"><circle cx="14" cy="14" r="11"></circle><path d="M3 14h22M14 3c4 4 4 18 0 22M14 3c-4 4-4 18 0 22"></path></svg></div><h3>多国籍企業の支社</h3><p>中国の支社を海外本社や地域データセンターと接続し、アプリケーションごとの制御で重要な通信を優先します。</p></div>
 <div class="card"><div class="ico"><svg aria-hidden="true" viewbox="0 0 28 28"><rect height="22" rx="2" width="12" x="8" y="3"></rect><path d="M12 21h4"></path></svg></div><h3>グローバルなリモートワーク</h3><p>出張者や海外駐在員一人ひとりにアカウントを発行。社内システムへは暗号化ネットワーク経由、その他の通信は現地からインターネットへ抜けます。</p></div>
+</div>
+</div>
+</section>
+<section id="faq">
+<div class="wrap">
+<div class="eyebrow"><i><b></b><b></b><b></b></i>FAQ</div>
+<h2>よくあるご質問</h2>
+<div class="faq">
+<details><summary>相談時にはどんな情報が必要ですか？</summary><p>拠点の数と所在地、各拠点の既存回線、主な業務システム（ERP、CRM、VoIP など）と求められる安定性をお知らせください。それをもとにネットワークを設計します。</p></details>
+<details><summary>開通までどのくらいかかりますか？</summary><p><span class="nob">SD-WAN</span> 機器は現地で電源を入れるだけで稼働するため、開通時期は主に配送次第です。国内のポイント・ツー・ポイント専用線は通常 10〜20 日で開通します。</p></details>
+<details><summary><span class="nob">SD-WAN</span> と専用線はどう選べばよいですか？</summary><p><span class="nob">SD-WAN</span> はインターネット回線を利用し、従来の専用線よりコストを抑えられるため、店舗や支店に適しています。MPLS-VPN やポイント・ツー・ポイント専用線は分離性が高く品質も安定しており、中核拠点に適しています。多くの企業は両方を組み合わせ、中核拠点は専用線、支店は <span class="nob">SD-WAN</span> としています。</p></details>
+<details><summary>既存のルーターやファイアウォールは交換が必要ですか？</summary><p>必ずしも必要ではありません。uXconnect の CPE はルーター、ブリッジ、バイパス、インラインの各導入モードに対応しており、既存ネットワークに合わせて接続方法を選べます。詳細は設計段階で決定します。</p></details>
+<details><summary>先に試すことはできますか？</summary><p>はい。テスト機器を無償で設置し、実際の業務トラフィックで性能をご確認いただけます。</p></details>
 </div>
 </div>
 </section>
