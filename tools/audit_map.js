@@ -2,8 +2,8 @@
 // map check: dropped labels, label/label overlap, label over dot, label crossing route lines
 const {chromium}=require('playwright');
 (async()=>{const b=await chromium.launch();
-for(const w of [1440,1280,1101,1024,820,390])for(const u of ['index.html','global.html','about.html','en/index.html','en/global.html','ja/global.html','ja/index.html']){const p=await b.newPage({viewport:{width:w,height:900}});const e=[];p.on('pageerror',x=>e.push(x.message));await p.goto('http://localhost:8792/'+u,{waitUntil:'networkidle'});await p.waitForTimeout(300);
-const r=await p.evaluate(()=>{const out=[];document.querySelectorAll('.sm-svg').forEach(sv=>{const dr=sv.getAttribute('data-dropped');if(dr)out.push('DROPPED:'+dr);
+for(const w of [1440,1280,1101,1024,932,844,820,390])for(const u of ['index.html','global.html','about.html','en/index.html','en/global.html','ja/global.html','ja/index.html']){const p=await b.newPage({viewport:{width:w,height:900}});const e=[];p.on('pageerror',x=>e.push(x.message));await p.goto('http://localhost:8792/'+u,{waitUntil:'networkidle'});await p.waitForTimeout(300);
+const r=await p.evaluate(()=>{const out=[];document.querySelectorAll('.sm-svg').forEach(sv=>{const dr=sv.getAttribute('data-dropped');if(dr)out.push('DROPPED:'+dr);const om=sv.getAttribute('data-omitted');if(om)out.push('omitted:'+om);
 const ts=[...sv.querySelectorAll('text.lb:not(.edge)')].map(t=>{const b=t.getBBox();return {t:t.textContent,b:[b.x,b.y,b.x+b.width,b.y+b.height]}});
 const ov=(a,q)=>a[0]<q[2]-.5&&a[2]>q[0]+.5&&a[1]<q[3]-.5&&a[3]>q[1]+.5;
 ts.forEach((a,i)=>ts.forEach((c,j)=>{if(i<j&&ov(a.b,c.b))out.push('LBL-OVERLAP:'+a.t+'/'+c.t)}));

@@ -11,7 +11,8 @@
   var OVS=[['东京','Tokyo',139.69,35.69],['首尔','Seoul',126.98,37.57],['新加坡','Singapore',103.82,1.35],['马尼拉','Manila',120.98,14.6],['胡志明市','Ho Chi Minh',106.63,10.82],['雅加达','Jakarta',106.85,-6.21],['孟买','Mumbai',72.88,19.08],['法兰克福','Frankfurt',8.68,50.11],['南非','South Africa',28.05,-26.2],['洛杉矶','Los Angeles',-118.24,34.05],['芝加哥','Chicago',-87.63,41.88],['里约热内卢','Rio de Janeiro',-43.17,-22.91],['悉尼','Sydney',151.21,-33.87],['墨尔本','Melbourne',144.96,-37.81],['金奈','Chennai',80.27,13.08],['伦敦','London',-0.13,51.51],['巴黎','Paris',2.35,48.86],['奥斯陆','Oslo',10.75,59.91],['阿姆斯特丹','Amsterdam',4.9,52.37],['米兰','Milan',9.19,45.46],['西雅图','Seattle',-122.33,47.61],['圣何塞','San Jose',-121.89,37.34],['圣保罗','St. Paul',-93.09,44.95],['达拉斯','Dallas',-96.8,32.78],['休斯敦','Houston',-95.37,29.76],['华盛顿','Washington',-77.04,38.91],['多伦多','Toronto',-79.38,43.65],['蒙特利尔','Montreal',-73.57,45.5],['克雷塔罗','Querétaro',-100.39,20.59]];
   var RTE=[]; // deliverable routes that are not our nodes (dashed line, hollow dot)
   var SH=[121.47,31.23],HK=[114.17,22.32];
-  var DOM_LABELS=['北京','成都','武汉','广州','西安','哈尔滨'];
+  // 想标名字的国内城市（按重要程度）。国内名字只放在点旁边、不引起歧义、不压线的位置；放不好就不标，以美观为先，不拉引线
+  var DOM_LABELS={wide:['北京','成都','西安','哈尔滨','武汉','广州'],narrow:['北京','成都','武汉','西安','哈尔滨','广州']};
   var REGION={'孟买':'印度','法兰克福':'欧洲','南非':'非洲','洛杉矶':'美洲','芝加哥':'美洲','里约热内卢':'美洲','东京':'日本','首尔':'韩国','新加坡':'东南亚','马尼拉':'东南亚','胡志明市':'东南亚','雅加达':'东南亚','悉尼':'澳洲','墨尔本':'澳洲','金奈':'印度','伦敦':'欧洲','巴黎':'欧洲','阿姆斯特丹':'欧洲','米兰':'欧洲','奥斯陆':'欧洲','西雅图':'美洲','圣何塞':'美洲','圣保罗':'美洲','达拉斯':'美洲','休斯敦':'美洲','华盛顿':'美洲','多伦多':'美洲','蒙特利尔':'美洲','克雷塔罗':'美洲'};
   var EN=/^en/i.test(document.documentElement.lang);
   var TR={'墨尔本':'Melbourne','金奈':'Chennai','伦敦':'London','巴黎':'Paris','阿姆斯特丹':'Amsterdam','米兰':'Milan','奥斯陆':'Oslo','西雅图':'Seattle','圣何塞':'San Jose','圣保罗':'St. Paul','达拉斯':'Dallas','休斯敦':'Houston','华盛顿':'Washington','多伦多':'Toronto','蒙特利尔':'Montreal','克雷塔罗':'Querétaro','上海':'Shanghai','香港':'Hong Kong','北京':'Beijing','成都':'Chengdu','武汉':'Wuhan','广州':'Guangzhou','西安':'Xi\'an','哈尔滨':'Harbin',
@@ -42,7 +43,7 @@
     function go(){var w=box.clientWidth;if(!w)return;var k=self.pick(w)+w;if(k===last)return;last=k;self.render()}
     loadMask(src,go);var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){if(maskData)go()},150)});
   }
-  Show.prototype.pick=function(w){if(w<900)return 'narrow';return 'wide'};
+  Show.prototype.pick=function(w){if(w<800)return 'narrow';return 'wide'};   // 地图容器 800 以上用世界图（含 844 以上的手机横屏）；更窄（手机竖屏、小屏横屏、平板竖屏）用亚太局部图，否则海外城市名字放不下
   Show.prototype.render=function(){
     var w=this.box.clientWidth,mode=this.pick(w),win=WIN[mode];
     var lonSpan=win.lon[1]-win.lon[0],latSpan=win.lat[0]-win.lat[1];
@@ -71,7 +72,7 @@
     x.fill();
   };
   Show.prototype.overlay=function(){
-    var svg=this.svg,self=this,w=this.w,H=this.h,narrow=this.mode==='narrow';
+    var svg=this.svg,self=this,w=this.w,H=this.h,narrow=this.mode==='narrow',DL=DOM_LABELS[this.mode];
     while(svg.firstChild)svg.removeChild(svg.firstChild);
     svg.setAttribute('viewBox','0 0 '+w+' '+H);svg.setAttribute('width',w);svg.setAttribute('height',H);
     var routes=el('g',{},svg),nodes=el('g',{},svg),labels=el('g',{},svg),n=0,cands=[];
@@ -106,11 +107,12 @@
     arc(sh,hk,.28,'rt',true);
     // domestic nodes: uniform markers, merged when closer than the marker spacing
     var minD=narrow?8:9,kept=[];
-    DOM.slice().sort(function(a,b){return b[3]-a[3]}).forEach(function(d){if(d[0]==='上海'||d[0]==='香港')return;var q=self.P(d[1],d[2]);
+    DOM.slice().sort(function(a,b){var la=DL.indexOf(a[0])>-1,lb=DL.indexOf(b[0])>-1;return (lb-la)||b[3]-a[3]})   // 要标名字的城市先占位，不会被邻近节点合并掉，各宽度、各语言一致
+      .forEach(function(d){if(d[0]==='上海'||d[0]==='香港')return;var q=self.P(d[1],d[2]);
       for(var i=0;i<kept.length;i++){var k=kept[i];if(Math.hypot(k[0]-q[0],k[1]-q[1])<minD)return}
       if(Math.hypot(sh[0]-q[0],sh[1]-q[1])<minD+3||Math.hypot(hk[0]-q[0],hk[1]-q[1])<minD+3)return;
       kept.push(q);el('circle',{cx:q[0],cy:q[1],r:4.6,'class':'halo'},nodes);el('circle',{cx:q[0],cy:q[1],r:2.9,'class':'nd'},nodes);
-      if(DOM_LABELS.indexOf(d[0])>-1)cands.push({x:q[0],y:q[1],r:4,t:d[0],pri:d[0]==='北京'?2:20+DOM_LABELS.indexOf(d[0])})});
+      if(DL.indexOf(d[0])>-1)cands.push({x:q[0],y:q[1],r:4,t:d[0],pri:d[0]==='北京'?2:20+DL.indexOf(d[0]),dom:1})});
     // mesh: minimum spanning tree + each node to its 2 nearest neighbours, so every PoP is connected
     var pts=kept.concat([sh,hk]),E={},mesh=el('g',{'class':'mesh'},routes);routes.insertBefore(mesh,routes.firstChild);
     function key(i,j){return i<j?i+'-'+j:j+'-'+i}
@@ -128,17 +130,19 @@
       cands.push({x:hb[0][0],y:hb[0][1],r:8,t:hb[1],pri:hb[1]==='上海'?-1:0,hub:1})});
     // labels: widths measured from the rendered font; a label never covers a dot, a hub ring or another label,
     // avoids crossing route lines, and in crowded areas moves outward with a thin leader line instead of disappearing.
-    var placed=[],dropped=[];
+    var placed=[],dropped=[],omitted=[];
     function ovl(b,q){return b[0]<q[2]&&b[2]>q[0]&&b[1]<q[3]&&b[3]>q[1]}
     // hub names may sit over the tiny domestic PoP dots (white halo keeps them legible); nothing else may
     var domBoxes=kept.map(function(q){return [q[0]-3,q[1]-3,q[0]+3,q[1]+3]});
-    function hit(b,hub){if(b[0]<4||b[1]<4||b[2]>w-4||b[3]>H-4)return true;for(var i=0;i<placed.length;i++)if(ovl(b,placed[i]))return true;if(!hub)for(i=0;i<domBoxes.length;i++)if(ovl(b,domBoxes[i]))return true;return false}
+    var lbls=[];   // 已放的文字框：两个名字之间至少留 4px，挨着枢纽名字留 10px，否则会连读成一个（如「香港 武汉」）
+    function hit(b,hub){if(b[0]<4||b[1]<4||b[2]>w-4||b[3]>H-4)return true;for(var i=0;i<placed.length;i++)if(ovl(b,placed[i]))return true;for(i=0;i<lbls.length;i++){var g=lbls[i].hub||hub?10:4;if(ovl([b[0]-g,b[1]-2,b[2]+g,b[3]+2],lbls[i]))return true}if(!hub)for(i=0;i<domBoxes.length;i++)if(ovl(b,domBoxes[i]))return true;return false}
     [sh,hk].forEach(function(q){placed.push([q[0]-10,q[1]-10,q[0]+10,q[1]+10])});
     ovDots.forEach(function(q){placed.push([q[0]-q[2],q[1]-q[2],q[0]+q[2],q[1]+q[2]])});
     edgeBoxes.forEach(function(b){placed.push(b)});
     var G={},CS=16;
     function addPt(x,y){var k=Math.floor(x/CS)+','+Math.floor(y/CS);(G[k]=G[k]||[]).push([x,y])}
     [].forEach.call(routes.querySelectorAll('path:not(.rt-glow):not(.rt-ghost)'),function(pa){var len=pa.getTotalLength();for(var d=0;d<=len;d+=4){var pt=pa.getPointAtLength(d);addPt(pt.x,pt.y)}});
+    [].forEach.call(routes.querySelectorAll('.mesh line'),function(l){var x1=+l.getAttribute('x1'),y1=+l.getAttribute('y1'),x2=+l.getAttribute('x2'),y2=+l.getAttribute('y2'),len=Math.hypot(x2-x1,y2-y1);for(var d=0;d<=len;d+=6)addPt(x1+(x2-x1)*d/len,y1+(y2-y1)*d/len)});
     function cross(b){var n=0;for(var gx=Math.floor(b[0]/CS);gx<=Math.floor(b[2]/CS);gx++)for(var gy=Math.floor(b[1]/CS);gy<=Math.floor(b[3]/CS);gy++){var a=G[gx+','+gy];if(a)for(var i=0;i<a.length;i++){var p0=a[i];if(p0[0]>b[0]-1&&p0[0]<b[2]+1&&p0[1]>b[1]-1&&p0[1]<b[3]+1)n++}}return n}
     var leaders=el('g',{'class':'ldrs'},svg);svg.insertBefore(leaders,labels);
     var probe=el('text',{'class':'lb',x:0,y:0},labels);
@@ -146,27 +150,29 @@
     cands.forEach(function(c){c.dn=0;cands.forEach(function(d){if(d!==c&&Math.abs(d.x-c.x)<80&&Math.abs(d.y-c.y)<50)c.dn++})});
     cands.sort(function(a,b){return a.pri-b.pri||b.dn-a.dn});
     var ANG=[0,180,-90,90,-30,30,-150,150,-60,60,-120,120];
-    var allDots=ovDots.map(function(q){return [q[0],q[1]]}).concat([sh,hk]);
+    var allDots=ovDots.map(function(q){return [q[0],q[1]]}).concat([sh,hk]).concat(kept.map(function(q){return [q[0],q[1]]}));
+    function ambig(b,c,tol){var dOwn=boxDist(b,c.x,c.y);return allDots.some(function(q){return (q[0]!==c.x||q[1]!==c.y)&&boxDist(b,q[0],q[1])<dOwn-(tol||.5)})}
     function boxDist(b,x,y){var dx=Math.max(b[0]-x,0,x-b[2]),dy=Math.max(b[1]-y,0,y-b[3]);return Math.hypot(dx,dy)}
     cands.forEach(function(c){
       var lt=L(c.t),m=measure(lt,c.hub),W=m[0]+2,Hh=m[1],best=null;
-      var radii=c.ov?[c.r+2,c.r+14,c.r+26,c.r+40]:[c.r+2,c.r+7,c.r+13];
+      var radii=c.ov?[c.r+2,c.r+14,c.r+26,c.r+40]:c.dom&&c.t!=='北京'?[c.r+2,c.r+6]:[c.r+2,c.r+7,c.r+13];
       radii.forEach(function(r,ri){ANG.forEach(function(a,ai){
         var ca=Math.cos(a*Math.PI/180),sa=Math.sin(a*Math.PI/180),ax=c.x+r*ca,ay=c.y+r*sa;
         var x0=ca>.3?ax:ca<-.3?ax-W:ax-W/2,y0=sa>.3?ay:sa<-.3?ay-Hh:ay-Hh/2,b=[x0,y0,x0+W,y0+Hh];
         if(hit(b,c.hub))return;
-        var sc=c.hub?ri*40+ai*2+cross(b)+domBoxes.filter(function(q){return ovl(b,q)}).length*6:ri*12+ai*1.5+cross(b)*5;
+        if(c.dom&&c.t!=='北京'&&(ambig(b,c,4)||cross(b)>6))return;   // 北京一定标   // 国内名字：会认错（别的点明显更近）或明显压线就不放这里
+        var sc=(c.hub?ri*40+ai*2+cross(b)*3+domBoxes.filter(function(q){return ovl(b,q)}).length*40:ri*12+ai*1.5+cross(b)*5)+(ambig(b,c)?(c.hub?60:15):0)+(c.dom?ri*8:0);   // 离别的点比离自己的点还近 = 看不出标的是谁：枢纽重罚；城市会加引线，轻罚，同时不让它跑太远
         if(!best||sc<best.sc)best={b:b,sc:sc,ri:ri}})});
-      if(!best){dropped.push(lt);return}
-      var b=best.b;placed.push(b);
+      if(!best){(c.dom?omitted:dropped).push(lt);return}
+      var b=best.b;placed.push(b);b.hub=c.hub;lbls.push(b);
       // leader line when the label sits away from its dot, or when another city's dot is nearer to the label than its own
-      var bb0=best.b,dOwn=boxDist(bb0,c.x,c.y),amb=allDots.some(function(q){return (q[0]!==c.x||q[1]!==c.y)&&boxDist(bb0,q[0],q[1])<dOwn});
+      var amb=ambig(best.b,c);
       if(c.ov&&(best.ri>0||amb)){var px=Math.max(b[0],Math.min(c.x,b[2])),py=Math.max(b[1],Math.min(c.y,b[3])),dx=px-c.x,dy=py-c.y,dd=Math.hypot(dx,dy)||1;
         el('line',{x1:(c.x+dx/dd*(c.r-2)).toFixed(1),y1:(c.y+dy/dd*(c.r-2)).toFixed(1),x2:px.toFixed(1),y2:py.toFixed(1),'class':'ldr'},leaders);
         for(var k=0;k<=dd;k+=4)addPt(c.x+dx*k/dd,c.y+dy*k/dd)}
       var t=el('text',{x:(b[0]+1).toFixed(1),y:(b[1]+m[2]).toFixed(1),'class':'lb'+(c.hub?' hubl':'')},labels);t.textContent=lt});
     labels.removeChild(probe);
-    svg.setAttribute('data-dropped',dropped.join(','));
+    svg.setAttribute('data-dropped',dropped.join(','));svg.setAttribute('data-omitted',omitted.join(','));   // dropped = 海外城市或枢纽没放下（不允许）；omitted = 国内城市为美观省略（允许）
   };
   function init(){document.querySelectorAll('[data-showmap]').forEach(function(b){if(!b._s)b._s=new Show(b)})}
   if(document.readyState!=='loading')init();else document.addEventListener('DOMContentLoaded',init);

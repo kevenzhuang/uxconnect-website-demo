@@ -49,7 +49,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .nav>a:focus-visible,.nav .dd>button:focus-visible{outline:2px solid var(--gold)}
 .nav .dd{position:relative;height:100%;display:flex;align-items:center}
 .nav .dd>button::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px)}
-.menu{position:absolute;top:100%;left:-10px;width:420px;background:var(--deep-2);border:1px solid var(--deep-line);border-radius:12px;padding:10px;display:grid;gap:2px;box-shadow:0 20px 40px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s}
+.menu{position:absolute;top:100%;left:-10px;width:420px;background:var(--deep-2);border:1px solid var(--deep-line);border-radius:12px;padding:10px;display:grid;gap:2px;box-shadow:0 20px 40px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s ease-out,transform .2s ease-out,visibility .2s ease-out}
 .dd:hover .menu,.dd:focus-within .menu,.dd.open .menu{opacity:1;visibility:visible;transform:none}
 .menu a{display:grid;grid-template-columns:36px 1fr;gap:2px 12px;padding:12px;border-radius:8px;text-decoration:none}
 .menu a:hover,.menu a:focus-visible{background:var(--deep)}
@@ -63,8 +63,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn-sm{font-size:13.5px;font-weight:600;padding:8px 16px;border-radius:6px;background:var(--gold);color:var(--on-gold);text-decoration:none;white-space:nowrap}
 .burger{all:unset;cursor:pointer;display:none;width:40px;height:40px;align-items:center;justify-content:center;border-radius:6px}
 .burger:focus-visible{outline:2px solid var(--gold)}
-.burger i{display:block;width:20px;height:2px;background:var(--deep-fg);position:relative}
-.burger i::before,.burger i::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--deep-fg);transition:.2s}
+.burger i{display:block;width:20px;height:2px;background:var(--deep-fg);position:relative;transition:background-color .2s ease-out}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--deep-fg);transition:top .2s ease-out,transform .2s ease-out}
 .burger i::before{top:-6px}.burger i::after{top:6px}
 .burger[aria-expanded="true"] i{background:transparent}
 .burger[aria-expanded="true"] i::before{top:0;transform:rotate(45deg)}
@@ -144,7 +144,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px}
 @media (max-width:900px){.grid3{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.grid3,.grid2{grid-template-columns:1fr}}
-.card{border:1px solid var(--line);border-radius:14px;padding:28px 26px;display:grid;gap:10px;align-content:start;background:var(--paper);text-decoration:none;transition:border-color .2s,transform .2s}
+.card{border:1px solid var(--line);border-radius:14px;padding:28px 26px;display:grid;gap:10px;align-content:start;background:var(--paper);text-decoration:none;transition:border-color .2s ease-out,transform .2s ease-out}
 a.card:hover{border-color:var(--gold);transform:translateY(-2px)}
 .card .k{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
 .card h3{font-size:19px}
@@ -278,7 +278,7 @@ a.card:hover{border-color:var(--gold);transform:translateY(-2px)}
 .certs{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:40px}
 .cert{display:grid;gap:4px;align-content:start}
 .cert .shot,.cert .ph,.cert .badge{all:unset;box-sizing:border-box;aspect-ratio:3/4;width:100%;border-radius:6px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:10px}
-.cert .shot{cursor:zoom-in;transition:transform .2s}
+.cert .shot{cursor:zoom-in;transition:transform .2s ease-out}
 .cert .shot:hover{transform:translateY(-2px)}
 .cert .shot img{width:100%;height:100%;object-fit:contain}
 .cert .badge img{width:60%;height:auto}
@@ -698,7 +698,7 @@ body{color:#3D4A57}
 .rz-intro h3{font-size:20px;margin-top:10px;color:#052E5A}
 .rz-intro p{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.7}
 .rz-shots{display:flex;gap:10px;margin-top:22px}
-.rz-shots .shot{all:unset;box-sizing:border-box;width:76px;aspect-ratio:3/4;border:1px solid var(--line);border-radius:4px;overflow:hidden;cursor:zoom-in;background:#fff;transition:transform .2s}
+.rz-shots .shot{all:unset;box-sizing:border-box;width:76px;aspect-ratio:3/4;border:1px solid var(--line);border-radius:4px;overflow:hidden;cursor:zoom-in;background:#fff;transition:transform .2s ease-out}
 .rz-shots .shot:hover{transform:translateY(-2px)}
 .rz-shots .shot img{width:100%;height:100%;object-fit:cover;display:block}
 .rz-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px;align-content:start}
@@ -789,7 +789,7 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 /* ---------- 客户标志墙 ---------- */
 .logos.logos-img{display:flex;flex-wrap:wrap;justify-content:center;border:0;gap:0;margin-top:40px}
 .logos.logos-img span{flex:0 0 calc(100%/6);box-sizing:border-box;min-height:104px;padding:22px 26px;border:0;background:transparent;display:flex;align-items:center;justify-content:center}
-.logos.logos-img img{max-width:100%;max-height:44px;width:auto;height:auto;filter:grayscale(1) contrast(1.05);opacity:.62;transition:filter .25s,opacity .25s}
+.logos.logos-img img{max-width:100%;max-height:44px;width:auto;height:auto;filter:grayscale(1) contrast(1.05);opacity:.62;transition:filter .2s ease-out,opacity .2s ease-out}
 .logos.logos-img img[src$="porsche.png"],.logos.logos-img img[src$="icbc.png"],.logos.logos-img img[src$="starbucks.png"],.logos.logos-img img[src$="mcdonalds.png"],.logos.logos-img img[src$="burger-king.png"]{max-height:56px}
 .logos.logos-img span:hover img{filter:none;opacity:1}
 @media (max-width:860px){.logos.logos-img span{flex-basis:calc(100%/3);min-height:84px;padding:16px 18px}.logos.logos-img img{max-height:34px}}
@@ -801,7 +801,7 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 .mq-row.rev .mq-track{animation-direction:reverse;animation-duration:52s}
 .logos-mq:hover .mq-track{animation-play-state:paused}
 .mq-track span{flex:0 0 auto;width:200px;height:96px;padding:0 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:center}
-.mq-track img{max-width:100%;max-height:42px;filter:grayscale(1) contrast(1.05);opacity:.6;transition:filter .25s,opacity .25s}
+.mq-track img{max-width:100%;max-height:42px;filter:grayscale(1) contrast(1.05);opacity:.6;transition:filter .2s ease-out,opacity .2s ease-out}
 .mq-track img[src$="porsche.png"],.mq-track img[src$="icbc.png"],.mq-track img[src$="starbucks.png"],.mq-track img[src$="mcdonalds.png"],.mq-track img[src$="burger-king.png"]{max-height:54px}
 .mq-track span:hover img{filter:none;opacity:1}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -851,7 +851,7 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 .pt-mq{margin-top:0}
 .pt-mq .mq-track{animation-duration:40s;animation-direction:reverse}
 .pt-mq .mq-track .pt-n{flex:0 0 auto;width:auto;height:72px;padding:0 40px;display:flex;align-items:center;font-size:19px;font-weight:700;color:#8A97A6;letter-spacing:.02em;white-space:nowrap}
-.pt-mq .mq-track .pt-n img{height:32px;width:auto;filter:grayscale(1);opacity:.6;transition:filter .25s,opacity .25s}
+.pt-mq .mq-track .pt-n img{height:32px;width:auto;filter:grayscale(1);opacity:.6;transition:filter .2s ease-out,opacity .2s ease-out}
 .pt-mq .mq-track .pt-n:hover img{filter:none;opacity:1}
 @media (max-width:760px){.pt-mq .mq-track .pt-n{height:58px;padding:0 24px;font-size:16px}.pt-mq .mq-track{animation-duration:28s}}
 @media (prefers-reduced-motion:reduce){.pt-mq .mq-track .pt-n[aria-hidden]{display:none}}
@@ -917,7 +917,7 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 .pg-index section.why .lede{color:#A9B8C8}
 .pg-index section.why .eyebrow{color:#7CC4F0}
 .pg-index .why .feats{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.10)}
-.pg-index .why .feats>div{background:rgba(5,46,90,.82);transition:background .25s}
+.pg-index .why .feats>div{background:rgba(5,46,90,.82);transition:background-color .2s ease-out}
 .pg-index .why .feats>div:hover{background:rgba(11,64,120,.9)}
 .pg-index .why .feats svg{stroke:var(--ux-gold)!important}
 .pg-index .why .feats h3{color:#fff}
@@ -931,7 +931,7 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 .partners .pt-title{font-size:14px;font-weight:500;color:#5B6673;margin:0 0 22px;letter-spacing:.06em}
 .pt-grid{display:grid;grid-template-columns:repeat(10,1fr);align-items:center;gap:8px 18px}
 .pt-grid span{display:flex;align-items:center;justify-content:center;height:52px}
-.pt-grid img{max-width:100%;max-height:30px;width:auto;height:auto;filter:grayscale(1);opacity:.55;transition:filter .25s,opacity .25s}
+.pt-grid img{max-width:100%;max-height:30px;width:auto;height:auto;filter:grayscale(1);opacity:.55;transition:filter .2s ease-out,opacity .2s ease-out}
 .pt-grid img[src$="china-unicom.png"],.pt-grid img[src$="aws.png"],.pt-grid img[src$="equinix.png"],.pt-grid img[src$="gds.png"]{max-height:38px}
 .pt-grid span:hover img{filter:none;opacity:1}
 @media (max-width:1100px){.pt-grid{grid-template-columns:repeat(5,1fr);gap:14px 28px}}
@@ -944,24 +944,22 @@ dialog.wecom p{font-size:14px;color:var(--muted);margin:14px 0 16px}
 .partners{padding-block:36px 30px}
 /* ---------- 克制的动效 ---------- */
 @media (prefers-reduced-motion:no-preference){
-  .js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
   .js .rv.in{opacity:1;transform:none}
   .js .rv-d1{transition-delay:.08s}.js .rv-d2{transition-delay:.16s}.js .rv-d3{transition-delay:.24s}.js .rv-d4{transition-delay:.32s}.js .rv-d5{transition-delay:.40s}
   /* 首屏入场 */
-  .js .hero-copy>*{animation:heroIn .8s cubic-bezier(.2,.7,.2,1) both}
+  .js .hero-copy>*{animation:heroIn .6s cubic-bezier(.2,.7,.2,1) both}
   .js .hero-copy>:nth-child(2){animation-delay:.08s}.js .hero-copy>:nth-child(3){animation-delay:.16s}.js .hero-copy>:nth-child(4){animation-delay:.24s}
-  .js .hero-map{animation:mapIn 1.2s .3s ease both}
+  .js .hero-map{animation:mapIn .6s .2s ease-out both}
   /* 板块标题下的金线展开 */
-  .js .pg-index section:not(.hero)>.wrap>h2.rv::after{width:0;transition:width .8s .35s cubic-bezier(.2,.7,.2,1)}
-  .js .pg-index section:not(.hero)>.wrap>h2.rv.in::after{width:36px}
   /* 卡片悬停轻微上浮 */
-  .card,.quote,.cert .shot{transition:transform .25s ease,box-shadow .25s ease}
-  .card:hover,.quote:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(5,46,90,.08)}
+  .card,.quote,.cert .shot{transition:transform .2s ease-out,box-shadow .2s ease-out}
+  a.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(5,46,90,.08)}
 }
-@keyframes heroIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes heroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes mapIn{from{opacity:0}to{opacity:1}}
 /* 页眉：滚动后加细阴影 */
-.site-header{transition:box-shadow .3s ease}
+.site-header{transition:box-shadow .2s ease-out}
 .site-header.scrolled{box-shadow:0 4px 18px rgba(5,46,90,.07)}
 /* 页脚标志：随列宽缩放，绝不溢出到相邻列 */
 .site-footer .cols>div:first-child{min-width:0}
@@ -1050,8 +1048,8 @@ a.link,.link.go{color:#035A9D}
 .btn,.btn-sm{border-radius:8px}
 .cert .shot,.cert .ph,.cert .badge{border-radius:8px}
 @media (prefers-reduced-motion:no-preference){
-  .card,.quote,.case{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-  .card:hover,.quote:hover,.case:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(5,46,90,.08);border-color:#C9D9EA}
+  .card,.quote,.case{transition:transform .2s ease-out,box-shadow .2s ease-out,border-color .2s ease-out}
+  a.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(5,46,90,.08);border-color:#C9D9EA}
 }
 
 /* 7. 英文小标签：只保留首屏一处 */
@@ -1103,7 +1101,7 @@ main section:not(.hero):not(.page-hero)>.wrap>h2::after{content:"";display:block
 .logos-mq:hover .mq-track,.logos-mq:active .mq-track{animation-play-state:running!important}
 /* 认证徽章 */
 .certrow.cb{display:flex;align-items:center;gap:12px;flex-wrap:wrap;text-decoration:none;width:max-content;max-width:100%}
-.certrow.cb img{width:44px;height:44px;opacity:.85;transition:opacity .2s,transform .2s}
+.certrow.cb img{width:44px;height:44px;opacity:.85;transition:opacity .2s ease-out,transform .2s ease-out}
 .certrow.cb:hover img{opacity:1;transform:translateY(-2px)}
 .badges{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:44px}
 .badges figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px;width:140px}
@@ -1141,24 +1139,23 @@ html[lang] .pg-index section.why::before{background:radial-gradient(60% 80% at 8
 
 /* 徽章动效：悬停轻浮 + 外圈细光；页脚徽章同样处理 */
 @media (prefers-reduced-motion:no-preference){
-  .badges img{transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .35s}
+  .badges img{transition:transform .2s ease-out,filter .2s ease-out}
   .badges figure:hover img{transform:translateY(-4px) scale(1.04);filter:drop-shadow(0 10px 18px rgba(5,46,90,.18))}
-  .badges figcaption{transition:color .25s}
+  .badges figcaption{transition:color .2s ease-out}
   .badges figure:hover figcaption{color:#035A9D}
-  .certrow.cb img{transition:transform .3s cubic-bezier(.2,.7,.2,1),opacity .3s}
+  .certrow.cb img{transition:transform .2s ease-out,opacity .2s ease-out}
   .certrow.cb img:hover{transform:translateY(-3px);opacity:1}
   .certrow.cb:hover img{transform:none}
   .certrow.cb:hover img:hover{transform:translateY(-3px)}
   /* 统一按钮反馈 */
-  .btn{transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease}
+  .btn{transition:transform .2s ease-out,box-shadow .2s ease-out,background-color .2s ease-out,border-color .2s ease-out}
   .btn:hover{transform:translateY(-1px)}
   .btn.primary:hover{box-shadow:0 8px 20px rgba(3,90,157,.22)}
   .btn:active{transform:none;box-shadow:none}
   /* 文字链接箭头轻移 */
-  .link.go,.card .link{transition:color .2s}
-  .card:hover .link.go{letter-spacing:.01em}
+  .link.go,.card .link{transition:color .2s ease-out}
   /* 子页首屏入场 */
-  .js .page-hero .wrap>*{animation:heroIn .7s cubic-bezier(.2,.7,.2,1) both}
+  .js .page-hero .wrap>*{animation:heroIn .6s cubic-bezier(.2,.7,.2,1) both}
   .js .page-hero .wrap>:nth-child(2){animation-delay:.06s}.js .page-hero .wrap>:nth-child(3){animation-delay:.12s}.js .page-hero .wrap>:nth-child(4){animation-delay:.18s}
 }
 .badges figure{width:120px!important}@media (max-width:600px){.badges figure{width:46%!important}}
@@ -1831,3 +1828,34 @@ html[lang^="zh"] main .hw td{word-break:keep-all}
 /* 日文：按词组换行（Chrome 支持；其他浏览器按默认规则） */
 html[lang="ja"] main :is(p,li,dd,td,figcaption span){word-break:auto-phrase;overflow-wrap:anywhere}
 html[lang="ja"] main .hw td{word-break:normal}
+
+/* v1.10 动效：触屏没有真正的悬停，点按后不留下「上浮」状态 */
+@media (hover:none){
+  a.card:hover,main a.card:hover,.btn:hover,.btn.primary:hover,main .btn:hover,.badges figure:hover img,.cert .shot:hover,.certrow.cb:hover img,.certrow.cb img:hover,.rz-shots .shot:hover{transform:none}
+  a.card:hover,main a.card:hover{box-shadow:none}
+}
+
+/* v1.10 动效补全 */
+@media (prefers-reduced-motion:no-preference){
+  /* 标题短线：所有页面统一，随标题出现从 0 展开到 36 */
+  .js .lnr:not(.lni)::after{width:0!important;transition:none}   /* 收起时不过渡，避免先缩回再展开 */
+  .js .lnr.lni::after{transition:width .6s .2s cubic-bezier(.2,.7,.2,1)}
+  /* 案例筛选后，显示出来的案例淡入 */
+  .case.fi{animation:fade-in .2s ease-out}
+  /* 常见问题展开：答案淡入 */
+  .faq details[open]>:not(summary){animation:fade-in .2s ease-out}
+  /* 弹窗（证书大图、企业微信）：打开淡入、关闭淡出 */
+  dialog.lb[open],dialog.wecom[open]{animation:fade-in .2s ease-out}
+  dialog.lb[open]::backdrop,dialog.wecom[open]::backdrop{animation:fade-in .2s ease-out}
+  dialog.closing,dialog.closing::backdrop{animation:fade-out .2s ease-out forwards}
+  /* 手机菜单收起：和打开对称 */
+  .site-header .mnav.closing{animation:mnav-out .2s ease-out forwards}
+  .mnav-scrim.closing{animation:fade-out .2s ease-out forwards}
+}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+@keyframes fade-out{from{opacity:1}to{opacity:0}}
+@keyframes mnav-out{from{opacity:1;transform:none}to{opacity:0;transform:translateY(-6px)}}
+/* 文字链接、按钮末尾的箭头：悬停右移 3px（只在有鼠标的设备上） */
+.arr{display:inline-block;transition:transform .2s ease-out}
+@media (hover:hover){a:hover>.arr,a.card:hover .arr,button:hover>.arr{transform:translateX(3px)}}
+@media (prefers-reduced-motion:reduce){.arr{transition:none}}
