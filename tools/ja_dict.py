@@ -148,7 +148,7 @@ T = {
 "Serving enterprises in Suzhou and nearby": "蘇州および周辺地域の企業をサポート",
 "Nanjing branch": "南京支社",
 "Serving enterprises in Nanjing and nearby": "南京および周辺地域の企業をサポート",
-"Tsim Sha Tsui, Kowloon; SBO licensed": "九龍・尖沙咀、SBO ライセンス保有",
+"Tsim Sha Tsui, Kowloon": "九龍・尖沙咀",
 "Japan": "Japan",
 "YUUTech K.K.": "YUUTech株式会社",
 "Chiyoda, Tokyo": "東京都千代田区",
